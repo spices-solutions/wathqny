@@ -39,8 +39,8 @@
     "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.6.0",
-    "astro": "^4.4.0",
-    "typescript": "^5.4.5"
+    "@astrojs/ts-plugin": "^1.8.0",
+    "astro": "^4.11.3",
+    "typescript": "^5.5.2"
   }
 }
