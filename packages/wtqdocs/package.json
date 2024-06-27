@@ -12,13 +12,17 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": ["spices", "docs", "wathqny"],
+  "keywords": [
+    "spices",
+    "docs",
+    "wathqny"
+  ],
   "exports": {
     ".": {
       "import": "./src/index.ts"
     },
     "./plugin": "./src/integration.ts",
-    "./page/home": "./src/pages/index.astro",
+    "./layout/home": "./src/pages/home.astro",
     "./page/docs": "./src/pages/docs.astro",
     "./page/docs/categories": "./src/pages/docs/[...categories].astro",
     "./page/docs/documents": "./src/pages/docs/[...documents].astro",
@@ -29,6 +33,7 @@
     "./schema": "./src/schema.ts",
     "./blog": "./src/blog.ts",
     "./styles": "./styles/scss/wathqny.scss",
+    "./styles/home": "./styles/theme.scss",
     "./block/styles": "./styles/code.css",
     "./script": {
       "navbar": "./src/components/navbar.ts",
@@ -50,22 +55,22 @@
     "@astrojs/mdx": "^3.1.2",
     "@astrojs/sitemap": "^3.1.6",
     "@inox-tools/custom-routing": "^0.3.1",
+    "@rehype-pretty/transformers": "^0.13.2",
     "@shikijs/transformers": "^1.9.1",
+    "@vite-pwa/assets-generator": "^0.2.4",
+    "@vite-pwa/astro": "^0.4.0",
+    "astro": "^4.11.3",
     "astro-auto-import": "^0.4.2",
     "astro-compressor": "^0.4.1",
     "astro-icon": "^1.1.0",
     "astro-meta-tags": "^0.3.0",
     "astro-purgecss": "^4.1.1",
-    "purgecss": "^6.0.0",
-    "astro": "^4.11.3",
     "astro-toolkit": "workspace:*",
-    "shiki": "^1.9.1",
-    "@vite-pwa/assets-generator": "^0.2.4",
-    "@vite-pwa/astro": "^0.4.0"
+    "purgecss": "^6.0.0",
+    "shiki": "^1.9.1"
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.8.0",
-
     "typescript": "^5.5.2"
   }
 }
