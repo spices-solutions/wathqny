@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://fruit-ui.vercel.app/sitemap-index.xml
+Sitemap: https://wathqny.pages.dev/sitemap-index.xml

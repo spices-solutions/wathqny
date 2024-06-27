@@ -40,8 +40,8 @@ importers:
         specifier: ^1.77.6
         version: 1.77.6
       sharp:
-        specifier: 0.33.4
-        version: 0.33.4
+        specifier: 0.32.6
+        version: 0.32.6
       sharp-ico:
         specifier: ^0.1.5
         version: 0.1.5
@@ -8308,7 +8308,7 @@ snapshots:
     dependencies:
       decode-ico: 0.4.1
       ico-endec: 0.1.6
-      sharp: 0.33.4
+      sharp: 0.32.6
 
   sharp@0.32.6:
     dependencies:
@@ -8346,6 +8346,7 @@ snapshots:
       '@img/sharp-wasm32': 0.33.4
       '@img/sharp-win32-ia32': 0.33.4
       '@img/sharp-win32-x64': 0.33.4
+    optional: true
 
   shebang-command@2.0.0:
     dependencies:

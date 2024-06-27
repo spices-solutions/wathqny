@@ -5,8 +5,6 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
     "build": "astro build",
     "serve": "astro preview",
     "preview": "astro build && astro preview",
@@ -17,7 +15,7 @@
     "astro": "^4.11.3",
     "@astrojs/rss": "^4.0.7",
     "sass": "^1.77.6",
-    "sharp": "0.33.4",
+    "sharp": "0.32.6",
     "sharp-ico": "^0.1.5",
     "@vite-pwa/assets-generator": "^0.2.4",
     "@vite-pwa/astro": "^0.4.0",

@@ -29,7 +29,7 @@ const Config: WathqnyConfig = {
     items: [
       {
         label: 'المستندات',
-        href: '/docs/getting-started/overview',
+        href: '/docs/',
       },
       {
         label: 'المدونة',
@@ -47,6 +47,7 @@ const Config: WathqnyConfig = {
       rel: 'stylesheet',
     },
   ],
+  font: '/font/RubikVF.woff2'
 }
 
 export default Config
