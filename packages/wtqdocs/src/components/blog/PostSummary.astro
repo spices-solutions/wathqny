@@ -17,8 +17,8 @@ type Props = {
 const { title, body, date, image, link } = Astro.props;
 ---
 
-<a href={`/blog${link}`}>
-  <div class="wtq-card wtq-shadow">
+<a href={`/blog${link}`} class="wtq-link-no-line">
+  <article class="wtq-card wtq-shadow">
     <h1 class="wtq-card-title">{title}</h1>
     <span class="wtq-card-subtitle">
       <time datetime={date.toISOString()}>
@@ -33,5 +33,5 @@ const { title, body, date, image, link } = Astro.props;
       src={image?.src ?? WathqnyConfig.OGImage?.src }
       alt={image?.alt ?? WathqnyConfig.OGImage?.alt }
     />
-  </div>
+  </article>
 </a>

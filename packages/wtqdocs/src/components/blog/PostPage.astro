@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import { getEntry } from 'astro:content'
 import WathqnyConfig from '/wathqny.config'
 import type { LayoutInterface } from '../../types/components'
 import BlogLayout from '../Layout/BlogLayout.astro'
@@ -7,7 +8,7 @@ import Breadcrumbs from '../Navigation/breadcrumbs.astro'
 import AuthorProfile from './AuthorProfile.astro'
 
 export interface Props extends LayoutInterface {
-  author: {
+  authors: {
     data: {
       name: string
       role: string
@@ -16,9 +17,16 @@ export interface Props extends LayoutInterface {
   }
 }
 
-const { title, keywords, description, OGImage, author } = Astro.props as Props
----
+const { title, keywords, description, OGImage, authors } = Astro.props as Props
 
+const authorData = (await getEntry('authors', authors?.id)) as {
+  data: {
+    name: string
+    role: string
+    profile: string
+  }
+}
+---
 
 <BlogLayout {title} {description} {keywords} {OGImage}>
   <Breadcrumbs />
@@ -26,9 +34,9 @@ const { title, keywords, description, OGImage, author } = Astro.props as Props
     <span class="wtq-post-head">
       <h1 class="wtq-main-heading">{title}</h1>
       <AuthorProfile
-        name={author.data.name}
-        role={author.data.role}
-        image={author.data.profile}
+        name={authorData.data.name}
+        role={authorData.data.role}
+        image={authorData.data.profile}
       />
       <figure>
         <Image

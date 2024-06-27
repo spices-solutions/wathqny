@@ -6,6 +6,8 @@
   transition: all 0.1s ease-in;
   padding: 10px 25px;
   line-height: 1;
+  text-decoration: none;
+  color: inherit;
 }   
 
 .wtq-alt {
@@ -17,15 +19,19 @@
 }
 
 .wtq-theme-color {
-  background-color: hsl(271, 81%, 56%);
+  background-color: var(--accent-color);
   border: inherit;
   color: white;
   .dark & {
-    background-color: hsl(271, 81%, 56%);
+    background-color: var(--accent-color-dark, --accent-color);
   }
 }
 
-main {
+.wtq-page { 
+  display: block;
+}
+
+#main-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +52,7 @@ main {
       margin: 0;
       padding-block: 5px;
 
-      font-size: clamp(1rem, 10vw, 4rem);
+      font-size: clamp(1.5rem, 15vw, 4rem);
       font-weight: 900;
       color: transparent;
       letter-spacing: -0.5px;
@@ -61,13 +67,26 @@ main {
       -webkit-text-fill-color: transparent;
     }
 
+    .logo {
+      max-width: 100%;
+      height: auto;
+      padding: 1rem;
+    }
+
     .subtitle {
-      max-width: 33ch;
+      max-width: var(--subtitle-width);
       margin-bottom: 24px;
 
-      font-size: clamp(1rem, 3vw, 2rem);
+      font-size: clamp(1.5rem, 3vw, 2rem);
       font-weight: 500;
       color: hsl(var(--dark));
+    }
+    .get-started {
+      display: flex;
+      gap: 1rem;
+      @media screen and (width <= 560px) { 
+        flex-direction: column;
+      }
     }
   }
 }

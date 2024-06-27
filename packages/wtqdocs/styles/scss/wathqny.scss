@@ -127,7 +127,8 @@
 
 .wtq-card {
   padding: 25px;
-
+  text-decoration: none;
+  color: inherit;
   background-color: hsl(var(--white));
   border: 1px solid hsl(var(--light), 0.5);
   border-radius: 20px;
@@ -135,7 +136,7 @@
   transition: all 200ms ease;
 
   .dark & {
-    background-color: hsl(var(--light), 0.3);
+    background-color: hsl(var(--light), 0.3) ;
     border-color: hsl(var(--lightest));
   }
 
@@ -206,4 +207,9 @@
     background-color: hsl(var(--medium), 0.1) !important;
     outline: none !important;
   }
+}
+
+.wtq-link-no-line {
+  text-decoration: none;
+  color: inherit;
 }

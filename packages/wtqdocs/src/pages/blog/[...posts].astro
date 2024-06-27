@@ -22,15 +22,7 @@ const { post } = Astro.props as Props
 
 const { authors } = post.data
 
-const authorData = (await getEntry('authors', authors?.id)) as {
-  data: {
-    name: string
-    role: string
-    profile: string
-  }
-}
-
-const { Content } = await post.render()
+const { Content } = await post.render();
 ---
 
 <PostPage
@@ -38,7 +30,7 @@ const { Content } = await post.render()
   description={post.data.description}
   keywords={post.data.keywords}
   OGImage={post.data.image}
-  author={authorData}
+  authors={authors}
 >
   <Content />
 </PostPage>
