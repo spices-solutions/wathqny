@@ -17,12 +17,13 @@ $font-md: 1.44rem;
 $font-sm: 1.2rem;
 $font-xs: 1rem;
 $pass: false !default;
+$font-face: "" !default;
 
 @font-face {
   font-family: Geist;
   font-weight: 100 900;
   font-display: swap;
-  src: url('/font/RubikVF.woff2') format('woff2');
+  src: url($font-face) format('woff2');
 }
 
 :root {
@@ -85,23 +86,20 @@ $pass: false !default;
 ::after,
 ::before {
   box-sizing: border-box;
-  scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
 }
 
 html {
-  height: 100%;
   font-size: 20px;
   text-size-adjust: none;
 }
 
 body {
+  height: 100%;
   scroll-behavior: smooth;
 
-  overflow: hidden;
-
-  height: 100%;
+  overflow-x: hidden;
   margin: 0;
 
   font-family:

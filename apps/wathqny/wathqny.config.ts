@@ -20,56 +20,10 @@ const Config: WathqnyConfig = {
     'framework',
     'library',
   ],
-  sidebar: [
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-    {
-      label: 'Getting started',
-      id: 'getting-started',
-    },
-  ],
+  sidebar: [    {
+    label: 'Getting started',
+    id: 'getting-started',
+  },],
   navbar: {
     items: [
       {
@@ -84,6 +38,10 @@ const Config: WathqnyConfig = {
   },
   css: [
     {
+      href: ThemeStyles,
+      rel: 'stylesheet',
+    },
+    {
       href: DocsStyles,
       rel: 'stylesheet',
     },
@@ -91,12 +49,8 @@ const Config: WathqnyConfig = {
       href: CodeStyles,
       rel: 'stylesheet',
     },
-    {
-      href: ThemeStyles,
-      rel: 'stylesheet',
-    },
   ],
-  font: '/font/RubikVF.woff2'
+  font: '/font/GeistVF.woff2'
 }
 
 export default Config
