@@ -12,7 +12,7 @@ const { logo, siteName, navbar } = WathqnyConfig;
 ---
 
 <nav class="wtq-navbar" role="navigation">
-  <a href="/" class="wtq-brand">
+  <a href="/" class="wtq-brand wtq-link-no-line">
     <Image
       alt="fruitUI logo, an beautiful orange with a gradient background"
       width={40}
@@ -32,7 +32,7 @@ const { logo, siteName, navbar } = WathqnyConfig;
       navbar?.items.map((item) => {
         return (
           <li class="link-item">
-            <a href={item.href}>{item.label}</a>
+            <a class="wtq-link-no-line" href={item.href}>{item.label}</a>
           </li>
         )
       })

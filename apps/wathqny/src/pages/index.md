@@ -4,7 +4,7 @@ logo:
   src: "/treadmark.svg"
   width: 500
   height: 300
-subtitle: wathqny a fast, easy and accessible Astro prowerd documentation site framework
+subtitle: wathqny a fast, easy and accessible Astro powered documentation site framework
 buttons:
   - label: Getting started
     type: primary
