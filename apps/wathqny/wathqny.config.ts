@@ -8,7 +8,7 @@ const Config: WathqnyConfig = {
   siteName: 'وثقني',
   OGImage: {
     src: '/og.png',
-    alt: 'An image displaying text “Fruit UI” in a large, bold font above the text “a modular styling framework” in a smaller font. Both texts are centered in the image.',
+    alt: "Logo of wathqny, featuring Arabic text in green that translates to 'wathqny' with a tagline below in black text that reads 'Where Arab Technology Shines'.",
   },
   description: 'fruit UI a modular styling framework',
   keywords: [

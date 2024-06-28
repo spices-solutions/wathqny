@@ -4,27 +4,40 @@ import {
   type LocalImageProps,
   type RemoteImageProps,
 } from 'astro:assets'
+import { getEntry } from 'astro:content'
 
 export interface Props {
-  image: string | LocalImageProps | RemoteImageProps
-  name: string
-  role: string
+  authors: {
+    image: string | LocalImageProps | RemoteImageProps
+    name: string
+    role: string
+  }
 }
 
-const { image, name, role } = Astro.props;
+const { authors } = Astro.props
+
+let authorData: Props
+
+try {
+  authorData = await getEntry('authors', authors?.id)
+} catch (error) {}
 ---
 
-<div class="wtq-avatar-contanier">
-  <Image
-    class="wtq-avatar"
-    width={48}
-    height={48}
-    loading="eager"
-    src={image as string}
-    alt="user avatar"
-  />
-  <div>
-    <p class="wtq-avatar-name">{name}</p>
-    <p class="wtq-avatar-role">{role}</p>
-  </div>
-</div>
+{
+  authorData && (
+    <div class="wtq-avatar-contanier">
+      <Image
+        class="wtq-avatar"
+        width={48}
+        height={48}
+        loading="eager"
+        src={authorData?.data.profile}
+        alt="user"
+      />
+      <div>
+        <p class="wtq-avatar-name">{authorData?.data.name}</p>
+        <p class="wtq-avatar-role">{authorData?.data.role}</p>
+      </div>
+    </div>
+  )
+}
