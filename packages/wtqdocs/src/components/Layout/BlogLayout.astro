@@ -4,7 +4,11 @@ import BaseLayout from './BaseLayout.astro'
 
 export interface Props extends LayoutInterface {}
 
-const { title, keywords, description, OGImage } = Astro.props as Props
+const { title, keywords, description, OGImage } =
+  Astro.props as Props
+
+import 'wtqdocs/styles/blog'
+
 ---
 
 <BaseLayout {title} {keywords} {description} {OGImage}>

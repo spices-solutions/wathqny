@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-
+import {unslugify} from "astro-toolkit/utils"
 let currentURL: string[] = Astro.url.pathname.split('/')
 
 currentURL = currentURL.filter((url) => url !== '')
@@ -43,7 +43,7 @@ currentURL = currentURL.filter((url) => url !== '')
           class="wtq-breadcrumb wtq-focusable"
           itemprop="item"
         >
-          <span itemprop="name">{url.toLowerCase().replace('-', ' ')}</span>
+          <span itemprop="name">{unslugify(url)}</span>
         </a>
         <meta itemprop="position" content={`${index + 2}`} />
       </li>

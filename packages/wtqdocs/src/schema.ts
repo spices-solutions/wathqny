@@ -22,7 +22,7 @@ export const docSchema = ({ image }) =>
     .strict()
     .transform((data) => ({
       ...data,
-      link: `${`/docs/${data.href}` ?? `${data.category}/${slugify(data.title)}`}`,
+      link: data.href ?? `${data.category}/${slugify(data.title)}`,
     }))
 
 export const blogSchema = ({ image }) =>

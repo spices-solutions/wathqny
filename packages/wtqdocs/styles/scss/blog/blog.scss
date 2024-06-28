@@ -11,12 +11,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 
-  img,
-  picture,
-  video,
-  canvas,
-  svg {
+  :is(img, picture) {
     display: block;
     max-width: 100%;
     height: auto;
@@ -32,9 +29,11 @@
 }
 
 .wtq-cover {
+  display: block;
+  max-width: 100%;
   height: auto;
   margin-inline: auto;
-  border: 1px solid hsl(var(--light),.5);
+  border: 1px solid hsl(var(--light), 0.5);
   border-radius: 20px;
 }
 
@@ -42,24 +41,21 @@
   box-shadow: 0 10px 9px -8px rgb(0 0 0 / 10%);
 }
 
-
-
 .wtq-pagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
   .pagination__link {
     .first-arrow {
-      transform: scaleX(-1)
+      transform: scaleX(-1);
     }
     &.active {
-      @extend .wtq-theme-color
+      // @extend var
     }
-    @extend .wtq-btn, .wtq-alt;
+    // @extend .wtq-btn, .wtq-alt;
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 }
-

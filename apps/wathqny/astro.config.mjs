@@ -4,7 +4,7 @@ import WathqnyConfig from './wathqny.config'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://fruit-ui.vercel.app/',
+  site: 'https://wathqny.pages.dev/',
   trailingSlash: 'ignore',
   i18n: {
     defaultLocale: 'en',

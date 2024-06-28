@@ -32,9 +32,10 @@
     "./page/404": "./src/pages/404.astro",
     "./schema": "./src/schema.ts",
     "./blog": "./src/blog.ts",
-    "./styles": "./styles/scss/wathqny.scss",
+    "./styles/docs": "./styles/scss/wathqny.scss",
+    "./styles/blog": "./styles/scss/blog/blog.scss",
     "./styles/home": "./styles/theme.scss",
-    "./block/styles": "./styles/code.css",
+    "./styles/block": "./styles/code.css",
     "./script": {
       "navbar": "./src/components/navbar.ts",
       "sidebar": "./src/components/sidebar.ts"

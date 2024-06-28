@@ -1,11 +1,11 @@
 import type { WathqnyConfig } from 'wtqdocs'
 
-import CodeStyles from 'wtqdocs/block/styles?url'
-import ThemeStyles from 'wtqdocs/styles?url'
+import CodeStyles from 'wtqdocs/styles/block?url'
+import ThemeDocsStyles from 'wtqdocs/styles/docs?url'
 
 const Config: WathqnyConfig = {
   logo: '/icon.svg',
-  siteName: 'وثقني',
+  siteName: 'wathqny',
   OGImage: {
     src: '/og.png',
     alt: "Logo of wathqny, featuring Arabic text in green that translates to 'wathqny' with a tagline below in black text that reads 'Where Arab Technology Shines'.",
@@ -28,18 +28,18 @@ const Config: WathqnyConfig = {
   navbar: {
     items: [
       {
-        label: 'المستندات',
+        label: 'docs',
         href: '/docs/',
       },
       {
-        label: 'المدونة',
+        label: 'blog',
         href: '/blog',
       },
     ],
   },
   css: [
     {
-      href: ThemeStyles,
+      href: ThemeDocsStyles,
       rel: 'stylesheet',
     },
     {
