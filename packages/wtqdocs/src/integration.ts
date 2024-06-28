@@ -1,6 +1,6 @@
-import mdx from '@astrojs/mdx'
-import sitemap from '@astrojs/sitemap'
-import { customRouting } from '@inox-tools/custom-routing'
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import { customRouting } from "@inox-tools/custom-routing";
 import {
   transformerMetaHighlight,
   transformerMetaWordHighlight,
@@ -8,14 +8,15 @@ import {
   transformerNotationErrorLevel,
   transformerNotationFocus,
   transformerNotationWordHighlight,
-} from '@shikijs/transformers'
-import AstroPWA from '@vite-pwa/astro'
-import AutoImport from 'astro-auto-import'
-import compressor from 'astro-compressor'
-import icon from 'astro-icon'
-import metaTags from 'astro-meta-tags'
-import purgecss from 'astro-purgecss'
-import type { WathqnyConfig } from './types/config'
+} from "@shikijs/transformers";
+import AstroPWA from "@vite-pwa/astro";
+import AutoImport from "astro-auto-import";
+import compressor from "astro-compressor";
+import icon from "astro-icon";
+import metaTags from "astro-meta-tags";
+import purgecss from "astro-purgecss";
+import min from "astro-min";
+import type { WathqnyConfig } from "./types/config";
 
 export const shikiBaseTransformers = () => [
   transformerNotationDiff(),
@@ -24,24 +25,24 @@ export const shikiBaseTransformers = () => [
   transformerNotationWordHighlight(),
   transformerNotationErrorLevel(),
   transformerMetaWordHighlight(),
-]
+];
 
 export function wathqnyPlugin(Wathqny: WathqnyConfig) {
   return [
     customRouting({
-      docs: 'wtqdocs/page/docs',
-      'docs/[...categories]': 'wtqdocs/page/docs/categories',
-      'docs/[...documents]': 'wtqdocs/page/docs/documents',
-      blog: 'wtqdocs/page/blog',
-      'blog/[...page]': 'wtqdocs/page/blog/pages',
-      'blog/[...posts]': 'wtqdocs/page/blog/posts',
-      '404': 'wtqdocs/page/404',
+      docs: "wtqdocs/page/docs",
+      "docs/[...categories]": "wtqdocs/page/docs/categories",
+      "docs/[...documents]": "wtqdocs/page/docs/documents",
+      blog: "wtqdocs/page/blog",
+      "blog/[...page]": "wtqdocs/page/blog/pages",
+      "blog/[...posts]": "wtqdocs/page/blog/posts",
+      "404": "wtqdocs/page/404",
     }),
     AutoImport({
       imports: [
         {
-          'astro:assets': ['Image'],
-          wtqdocs: ['BrowserBlock', 'Code'],
+          "astro:assets": ["Image"],
+          wtqdocs: ["BrowserBlock", "Code"],
         },
       ],
     }),
@@ -49,14 +50,14 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       optimize: true,
       shikiConfig: {
         themes: {
-          light: 'material-theme-lighter',
-          dark: 'material-theme-darker',
+          light: "material-theme-lighter",
+          dark: "material-theme-darker",
         },
         transformers: [...shikiBaseTransformers()],
       },
     }),
     icon({
-      iconDir: 'src/assets/icons',
+      iconDir: "src/assets/icons",
     }),
     sitemap(),
     purgecss(),
@@ -64,7 +65,7 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       experimental: {
         directoryAndTrailingSlashHandler: true,
       },
-      registerType: 'autoUpdate',
+      registerType: "autoUpdate",
       devOptions: {
         enabled: false,
       },
@@ -75,18 +76,18 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
         clientsClaim: true,
         skipWaiting: true,
         cleanupOutdatedCaches: true,
-        navigateFallback: '/404',
-        globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
+        navigateFallback: "/404",
+        globPatterns: ["**/*.{css,js,html,svg,png,ico,txt}"],
       },
       manifest: {
         name: Wathqny.siteName,
         description: Wathqny.description,
-        theme_color: '#18181B',
-        background_color: '#fff',
-        display: 'standalone',
-        scope: '/',
-        base: '/',
-        orientation: 'portrait',
+        theme_color: "#18181B",
+        background_color: "#fff",
+        display: "standalone",
+        scope: "/",
+        base: "/",
+        orientation: "portrait",
       },
     }),
     metaTags(),
@@ -94,5 +95,9 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       gzip: true,
       brotli: false,
     }),
-  ]
+    min({
+      do_not_minify_doctype: true,
+      keep_html_and_head_opening_tags: true
+    }),
+  ];
 }
