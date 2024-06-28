@@ -102,6 +102,9 @@ importers:
       astro-meta-tags:
         specifier: ^0.3.0
         version: 0.3.0(astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(terser@5.31.1)(typescript@5.5.2))
+      astro-min:
+        specifier: ^1.3.1
+        version: 1.3.1(astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(terser@5.31.1)(typescript@5.5.2))
       astro-purgecss:
         specifier: ^4.1.1
         version: 4.1.1(astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(terser@5.31.1)(typescript@5.5.2))(purgecss@6.0.0)
@@ -1068,6 +1071,21 @@ packages:
   '@mdx-js/mdx@3.0.1':
     resolution: {integrity: sha512-eIQ4QTrOWyL3LWEe/bu6Taqzq2HQvHcyTMaOrI95P2/LmJE7AsfPfgJGuFLPVqBUE1BC1rik3VIhU+s9u72arA==}
 
+  '@minify-html/node-darwin-x64@0.15.0':
+    resolution: {integrity: sha512-D9M9UDku/8I5VEMS0gTLFFQK1DFXK8io+QZvR5cbya4u8NmdDQix/t3EyCR4Wgv/Gfk86gwIS+zfMSvuKcpb5A==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@minify-html/node-linux-x64@0.15.0':
+    resolution: {integrity: sha512-cO893EV6O9ZHUFX+2Yge546OCo/eCiatjzJDmUmrPP56fQ7pzTRquHs4ko3t8Rg6tMKG7RT49mBuF09JWPnrgg==}
+    cpu: [x64]
+    os: [linux]
+
+  '@minify-html/node-win32-x64@0.15.0':
+    resolution: {integrity: sha512-n92IFdtntchlUtyrq13pRI8TT3sOddbzuo4EPTSeocuTJMXaR77v0JYDu0fIjxXNawgGq6nBEeicxAcH4CbvUQ==}
+    cpu: [x64]
+    os: [win32]
+
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -1083,6 +1101,11 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@redwerkz/html-min@0.15.1':
+    resolution: {integrity: sha512-Kwi6DSoOKI6q2oyt0kVTfWOBcQHBychE1BvOEyVF/j+nJjjRxEWvA0b0wx+p9ovM46P8CHD/8Y3lptYiAteZrQ==}
+    engines: {node: '>= 18.17.1'}
+    hasBin: true
 
   '@rehype-pretty/transformers@0.13.2':
     resolution: {integrity: sha512-p2ciQSwqy5Ip8aNUa9q6rdS/hJZXrxHYYfDVOHvKOsBu3t9HDmQ65YX6r9Qbl19vi160OAxmGF7MIoCRDJrRhg==}
@@ -1477,6 +1500,11 @@ packages:
     resolution: {integrity: sha512-BA8jZncOGz1DkjK4AQHt8mzXurGwhR96CZZlx2wLemRUqKTxft4N2Arg8DK/s49G/9F0g4TuxmiObVkIv/DX8g==}
     peerDependencies:
       astro: ^4.0.0
+
+  astro-min@1.3.1:
+    resolution: {integrity: sha512-TvHT24cGygf+h47WVrSxaF/6vUwJ8s+TlmwkKlNHNDqRmW5FNiUHspZnEwLsaHTtVGZWZN4NMSVPoD5oLyyrmQ==}
+    peerDependencies:
+      astro: '*'
 
   astro-purgecss@4.1.1:
     resolution: {integrity: sha512-Lrtd+8iwznjQUBW1aqgdEYyc5xSgRa+Ir97EMsX17WvI6aVXGLoEWsVxQD9qtcGfLU5Qoq1hQOUKzVbCJSHcAg==}
@@ -3675,6 +3703,11 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  svgo@3.3.2:
+    resolution: {integrity: sha512-OoohrmuUlBs8B8o6MB2Aevn+pRIH9zDALSR+6hhqVfa6fRwG/Qw9VUMSMW9VNg2CFc/MTIfabtdOVl9ODIJjpw==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+
   tar-fs@2.1.1:
     resolution: {integrity: sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==}
 
@@ -5307,6 +5340,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@minify-html/node-darwin-x64@0.15.0':
+    optional: true
+
+  '@minify-html/node-linux-x64@0.15.0':
+    optional: true
+
+  '@minify-html/node-win32-x64@0.15.0':
+    optional: true
+
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -5321,6 +5363,12 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@redwerkz/html-min@0.15.1':
+    optionalDependencies:
+      '@minify-html/node-darwin-x64': 0.15.0
+      '@minify-html/node-linux-x64': 0.15.0
+      '@minify-html/node-win32-x64': 0.15.0
 
   '@rehype-pretty/transformers@0.13.2': {}
 
@@ -5726,6 +5774,12 @@ snapshots:
   astro-meta-tags@0.3.0(astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(terser@5.31.1)(typescript@5.5.2)):
     dependencies:
       astro: 4.11.3(@types/node@20.14.9)(sass@1.77.6)(terser@5.31.1)(typescript@5.5.2)
+
+  astro-min@1.3.1(astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(terser@5.31.1)(typescript@5.5.2)):
+    dependencies:
+      '@redwerkz/html-min': 0.15.1
+      astro: 4.11.3(@types/node@20.14.9)(sass@1.77.6)(terser@5.31.1)(typescript@5.5.2)
+      svgo: 3.3.2
 
   astro-purgecss@4.1.1(astro@4.11.3(@types/node@20.14.9)(sass@1.77.6)(terser@5.31.1)(typescript@5.5.2))(purgecss@6.0.0):
     dependencies:
@@ -8581,6 +8635,16 @@ snapshots:
       commander: 7.2.0
       css-select: 5.1.0
       css-tree: 2.3.1
+      csso: 5.0.5
+      picocolors: 1.0.1
+
+  svgo@3.3.2:
+    dependencies:
+      '@trysound/sax': 0.2.0
+      commander: 7.2.0
+      css-select: 5.1.0
+      css-tree: 2.3.1
+      css-what: 6.1.0
       csso: 5.0.5
       picocolors: 1.0.1
 
