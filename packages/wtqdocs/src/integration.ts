@@ -97,7 +97,9 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
     }),
     min({
       do_not_minify_doctype: true,
-      keep_html_and_head_opening_tags: true
+      keep_html_and_head_opening_tags: true,
+      minify_css: true,
+      minify_js: true,
     }),
   ];
 }
