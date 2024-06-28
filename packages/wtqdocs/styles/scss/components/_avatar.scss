@@ -6,7 +6,7 @@
   .wtq-avatar {
     border-radius: 50%;
 
-    @media screen and (width <= 768px) {
+    @media screen and (width <= 868px) {
       width: 40px;
       height: auto;
     }
@@ -31,7 +31,7 @@
       letter-spacing: 0.5pt;
     }
 
-    @media screen and (width <= 768px) {
+    @media screen and (width <= 868px) {
       display: none;
     }
   }

@@ -82,7 +82,7 @@
 
 .wtq-nav-menu {
   display: none;
-  @media screen and (width <= 768px) {
+  @media screen and (width <= 868px) {
     display: flex;
     background-color: transparent;
     gap: .5rem;
@@ -105,16 +105,17 @@
 }
 
 .wtq-content {
+  width: 100%;
   padding-bottom: 40px;
 }
 
 .wtq-card-container-category {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.3rem;
   margin-top: 30px;
 
-  @media screen and (width <= 768px) {
+  @media screen and (width <= 868px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }

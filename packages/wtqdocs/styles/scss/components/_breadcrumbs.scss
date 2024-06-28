@@ -2,7 +2,6 @@
   user-select: none;
 
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
 
   margin-top: 20px;
@@ -25,7 +24,7 @@
     gap: 5px;
     align-items: center;
     justify-content: center;
-
+    white-space: nowrap;
     padding: 6px 10px;
 
     font-size: 16px;
