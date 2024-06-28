@@ -45,6 +45,7 @@
   }
 
   .sidebar-category {
+    overflow-y: auto; 
     margin-top: 15px;
     .category-toggle {
       display: flex;
@@ -60,6 +61,13 @@
         transform: rotate(90deg);
         width: 24px;
         height: 24px;
+        transition: transform ease 300ms;
+      }
+      
+    }
+    .wtq-active  .category-toggle{
+      .arrow-icon {
+        transform: rotate(-90deg);
       }
     }
 

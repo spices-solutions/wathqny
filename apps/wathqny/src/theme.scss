@@ -1,0 +1,3 @@
+@use '../node_modules/wtqdocs/styles/default' as * with (
+  $pass: true
+);

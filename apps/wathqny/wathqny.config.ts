@@ -1,7 +1,8 @@
 import type { WathqnyConfig } from 'wtqdocs'
 
 import CodeStyles from 'wtqdocs/styles/block?url'
-import ThemeDocsStyles from 'wtqdocs/styles/docs?url'
+import DocsStyles from 'wtqdocs/styles/docs?url'
+import ThemeStyles from './src/theme.scss?url'
 
 const Config: WathqnyConfig = {
   logo: '/icon.svg',
@@ -24,6 +25,50 @@ const Config: WathqnyConfig = {
       label: 'Getting started',
       id: 'getting-started',
     },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
   ],
   navbar: {
     items: [
@@ -39,11 +84,15 @@ const Config: WathqnyConfig = {
   },
   css: [
     {
-      href: ThemeDocsStyles,
+      href: DocsStyles,
       rel: 'stylesheet',
     },
     {
       href: CodeStyles,
+      rel: 'stylesheet',
+    },
+    {
+      href: ThemeStyles,
       rel: 'stylesheet',
     },
   ],

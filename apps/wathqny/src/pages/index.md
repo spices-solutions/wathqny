@@ -4,7 +4,7 @@ logo:
   src: "/treadmark.svg"
   width: 500
   height: 300
-subtitle: a fast Astro prowerd documentation site framework
+subtitle: wathqny a fast, easy and accessible Astro prowerd documentation site framework
 buttons:
   - label: Getting started
     type: primary
@@ -16,7 +16,7 @@ buttons:
 
 <style>
   :root {
-    --subtitle-width: 23ch;
+    --subtitle-width: 27ch;
     --accent-color: #08c136;
     --accent-color-dark: #148730
   }
