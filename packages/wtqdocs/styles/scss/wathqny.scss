@@ -154,17 +154,7 @@
   }
 }
 
-.dark {
-  :is(.shiki, .astro-code) span,
-  :is(.shiki, .astro-code) {
-    font-weight: var(--shiki-dark-font-weight) !important;
-    font-style: var(--shiki-dark-font-style) !important;
-    color: var(--shiki-dark) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
 
-    background-color: var(--shiki-dark-bg) !important;
-  }
-}
 
 .wtq-btn {
   box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.1882352941);
