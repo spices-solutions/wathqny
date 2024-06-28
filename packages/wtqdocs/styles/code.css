@@ -51,3 +51,9 @@
 .wtq-app-block .dot:last-of-type {
   background-color: #62c554;
 }
+
+.rehype-pretty-copy {
+  top: 5px;
+  border: none;
+  background-color: unset;
+}

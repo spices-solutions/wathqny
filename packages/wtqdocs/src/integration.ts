@@ -17,6 +17,7 @@ import metaTags from "astro-meta-tags";
 import purgecss from "astro-purgecss";
 import min from "astro-min";
 import type { WathqnyConfig } from "./types/config";
+import { transformerCopyButton } from "@rehype-pretty/transformers";
 
 export const shikiBaseTransformers = () => [
   transformerNotationDiff(),
@@ -25,6 +26,10 @@ export const shikiBaseTransformers = () => [
   transformerNotationWordHighlight(),
   transformerNotationErrorLevel(),
   transformerMetaWordHighlight(),
+  transformerCopyButton({
+    visibility: 'always',
+    feedbackDuration: 3_000,
+  }),
 ];
 
 export function wathqnyPlugin(Wathqny: WathqnyConfig) {
