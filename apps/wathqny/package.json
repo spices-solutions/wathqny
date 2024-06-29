@@ -3,23 +3,29 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "tinacms dev -c \"astro dev\"",
     "start": "astro dev",
     "build": "astro build",
     "serve": "astro preview",
     "preview": "astro build && astro preview",
+    "cms": "tinacms dev",
     "astro": "astro",
     "gpa": "pwa-assets-generator"
   },
   "dependencies": {
-    "astro": "^4.11.3",
     "@astrojs/rss": "^4.0.7",
+    "@vite-pwa/assets-generator": "^0.2.4",
+    "@vite-pwa/astro": "^0.4.0",
+    "astro": "^4.11.3",
     "sass": "^1.77.6",
     "sharp": "0.32.6",
     "sharp-ico": "^0.1.5",
-    "@vite-pwa/assets-generator": "^0.2.4",
-    "@vite-pwa/astro": "^0.4.0",
+    "tinacms": "^1.6.4",
     "workbox-window": "^7.1.0",
     "wtqdocs": "workspace:*"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^1.5.46",
+    "@types/node": "^20.14.9"
   }
 }

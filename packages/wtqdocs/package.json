@@ -22,6 +22,7 @@
       "import": "./src/index.ts"
     },
     "./plugin": "./src/integration.ts",
+    "./cms": "./src/cms.ts",
     "./layout/home": "./src/pages/home.astro",
     "./page/docs": "./src/pages/docs.astro",
     "./page/docs/categories": "./src/pages/docs/[...categories].astro",
