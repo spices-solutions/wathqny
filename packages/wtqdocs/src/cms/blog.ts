@@ -57,17 +57,9 @@ export default {
       list: true,
     },
     {
-      type: "number",
-      name: "position",
-      label: "Position",
-      required: false,
-    },
-    {
-      type: "reference",
+      type: "string",
       name: "authors",
       label: "Authors",
-      collections: ["authors"],
-      list: true,
     },
     {
       type: "datetime",
@@ -80,6 +72,12 @@ export default {
       name: "draft",
       label: "Draft",
       defaultValue: false,
+    },
+    {
+      type: 'rich-text',
+      label: 'docs content',
+      name: 'body',
+      isBody: true,
     },
   ],
 }
