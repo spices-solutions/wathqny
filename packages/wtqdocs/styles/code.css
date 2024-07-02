@@ -57,72 +57,11 @@
   background-color: #62c554;
 }
 
-
-
 .rehype-pretty-copy {
   top: 5px;
   border: none;
   background-color: unset;
 }
-
-
-
-/* .diff {
-  display: inline-block;
-  width: 100%;
-  margin: 0 -12px;
-  padding: 0 12px
-}
-
-.diff ::before {
-  position: absolute;
-  content: '';
-  height: 2.6ex;
-  width: 100%;
-  display: block;
-}
-
-.diff.add ::before {
-  background-color: rgba(61, 251, 61, 0.165) !important
-}
-
-.diff.remove ::before  {
-  background-color: rgba(255, 46, 46, 0.211) !important
-}
-
-
-.has-focused .line {
-  filter: blur(.095rem)
-}
-
-.has-focused .focused {
-  filter: blur(0)
-}
-
-.astro-code .tab,
-.astro-code .space {
-  position: relative;
-}
-
-.astro-code .tab::before {
-  content: '⇥';
-  position: absolute;
-  opacity: 0.3;
-}
-
-.astro-code .space::before {
-  content: '·';
-  position: absolute;
-  opacity: 0.3;
-}
-
-.astro-code .highlighted-word {
-  background-color: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-border);
-  padding: 1px 3px;
-  margin: -1px -3px;
-  border-radius: 4px;
-} */
 
 .dark :is(.shiki, .astro-code) span,
 .dark :is(.shiki, .astro-code) {
