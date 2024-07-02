@@ -17,7 +17,7 @@ type Props = {
 const { title, body, date, image, link } = Astro.props;
 ---
 
-<a href={`/blog/${link}`} class="wtq-link-no-line">
+<a href={`${link}`} class="wtq-link-no-line">
   <article class="wtq-card wtq-shadow">
     <h1 class="wtq-card-title">{title}</h1>
     <span class="wtq-card-subtitle">
