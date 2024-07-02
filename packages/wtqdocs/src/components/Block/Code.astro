@@ -1,13 +1,4 @@
 ---
-import type {
-  BuiltinLanguage,
-  BuiltinTheme,
-  LanguageRegistration,
-  SpecialLanguage,
-  ThemeRegistration,
-  ThemeRegistrationRaw,
-} from 'shiki'
-import { codeToHtml, createHighlighter } from 'shiki'
 import { transformerCopyButton } from '@rehype-pretty/transformers'
 import {
   transformerMetaHighlight,
@@ -17,6 +8,15 @@ import {
   transformerNotationFocus,
   transformerNotationWordHighlight,
 } from '@shikijs/transformers'
+import type {
+  BuiltinLanguage,
+  BuiltinTheme,
+  LanguageRegistration,
+  SpecialLanguage,
+  ThemeRegistration,
+  ThemeRegistrationRaw,
+} from 'shiki'
+import { codeToHtml, createHighlighter } from 'shiki'
 
 type themeType = BuiltinTheme | ThemeRegistration | ThemeRegistrationRaw
 
@@ -32,7 +32,7 @@ export interface Props {
 const {
   code,
   lang = 'plaintext',
-  themes = { light: 'material-theme-lighter', dark: 'material-theme-darker' },
+  themes = { light: 'light-plus', dark: 'dark-plus' },
 } = Astro.props as Props
 
 const shiki = await createHighlighter({
@@ -46,16 +46,18 @@ const codeOutput = codeToHtml(code, {
     light: themes.light,
     dark: themes.dark,
   },
-  transformers: [  transformerNotationDiff(),
-  transformerNotationFocus(),
-  transformerMetaHighlight(),
-  transformerNotationWordHighlight(),
-  transformerNotationErrorLevel(),
-  transformerMetaWordHighlight(),
-  transformerCopyButton({
-    visibility: 'always',
-    feedbackDuration: 3_000,
-  }),],
+  transformers: [
+    transformerNotationDiff(),
+    transformerNotationFocus(),
+    transformerMetaHighlight(),
+    transformerNotationWordHighlight(),
+    transformerNotationErrorLevel(),
+    transformerMetaWordHighlight(),
+    transformerCopyButton({
+      visibility: 'always',
+      feedbackDuration: 3_000,
+    }),
+  ],
 })
 
 const bgLight = shiki.getTheme(themes.light).bg

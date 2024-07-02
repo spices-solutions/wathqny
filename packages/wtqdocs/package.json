@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "a ",
   "license": "MIT",
-  "homepage": "http://fruit-ui.vercel.app",
+  "homepage": "http://wathqny.pages.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/spices-solutions/"
@@ -50,10 +50,6 @@
     "./styles/scss/wathqny.scss",
     "src"
   ],
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
   "dependencies": {
     "@astrojs/rss": "^4.0.7",
     "@astrojs/mdx": "^3.1.2",
