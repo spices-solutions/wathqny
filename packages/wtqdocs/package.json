@@ -23,6 +23,8 @@
     },
     "./plugin": "./src/integration.ts",
     "./layout/home": "./src/pages/home.astro",
+    "./page/rss.xml": "./src/pages/rss.xml.js",
+    "./page/robot.txt": "./src/pages/robot.txt.ts",
     "./page/docs": "./src/pages/docs.astro",
     "./page/docs/categories": "./src/pages/docs/[...categories].astro",
     "./page/docs/documents": "./src/pages/docs/[...documents].astro",
@@ -53,6 +55,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.7",
     "@astrojs/mdx": "^3.1.2",
     "@astrojs/sitemap": "^3.1.6",
     "@inox-tools/custom-routing": "^0.3.1",

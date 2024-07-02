@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://wathqny.pages.dev/sitemap-index.xml
