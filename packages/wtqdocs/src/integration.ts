@@ -8,6 +8,7 @@ import {
   transformerNotationDiff,
   transformerNotationErrorLevel,
   transformerNotationFocus,
+  transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from '@shikijs/transformers'
 import AstroPWA from '@vite-pwa/astro'
@@ -25,6 +26,7 @@ export const shikiBaseTransformers = () => [
   transformerMetaHighlight(),
   transformerNotationWordHighlight(),
   transformerNotationErrorLevel(),
+  transformerNotationHighlight(),
   transformerMetaWordHighlight(),
   transformerCopyButton({
     visibility: 'always',
