@@ -63,11 +63,43 @@
   background-color: unset;
 }
 
-.dark :is(.shiki, .astro-code) span,
+
 .dark :is(.shiki, .astro-code) {
+  background-color: var(--shiki-dark-bg) !important;
+}
+
+.dark :is(.shiki, .astro-code) span {
   font-weight: var(--shiki-dark-font-weight) !important;
   font-style: var(--shiki-dark-font-style) !important;
   color: var(--shiki-dark) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
-  background-color: var(--shiki-dark-bg) !important;
 }
+
+.line.diff {
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.line.diff.remove  {
+  opacity: 0.7;
+  background-color: #f43f5e29;
+}
+
+.line.diff.remove:before  {
+  content: '-';
+  color:#cb7676;
+  padding-inline: 5px;
+}
+
+.line.diff.add {
+  background-color: #10b98129;
+}
+
+.line.diff.add:before  {
+  padding-inline: 5px;
+  content: '+';
+  color:#3dd68c;
+}
+
