@@ -4,11 +4,8 @@ description: dawdawddwadawdw
 category: getting-started
 ---
 
-
-<Code code={
-`<Code code={\` \`} />
-<Code code={\` \`} />
-<Code code={\` \`} />`} lang="astro" />
+by default we support code highlight with beautiful syntax tricks
+thanks to shiki.js and shiki transformers 
 
 ````md
 ```js
@@ -151,3 +148,12 @@ const msg = 'Hello World'
 console.log(msg)
 console.log(msg) // prints Hello World
 ```
+
+## Code component
+
+we porvide a code block component auto-imported with some styles like browser
+
+<Code code={
+`<Code code={\`console.log("hello world")\`} lang="js" />`} lang="astro" />
+
+<Code code={`console.log("hello world")`} lang="js" />

@@ -6,6 +6,7 @@ import {
   transformerNotationDiff,
   transformerNotationErrorLevel,
   transformerNotationFocus,
+  transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from '@shikijs/transformers'
 import type {
@@ -17,7 +18,6 @@ import type {
   ThemeRegistrationRaw,
 } from 'shiki'
 import { codeToHtml, createHighlighter } from 'shiki'
-
 type themeType = BuiltinTheme | ThemeRegistration | ThemeRegistrationRaw
 
 export interface Props {
@@ -52,6 +52,7 @@ const codeOutput = codeToHtml(code, {
     transformerMetaHighlight(),
     transformerNotationWordHighlight(),
     transformerNotationErrorLevel(),
+    transformerNotationHighlight(),
     transformerMetaWordHighlight(),
     transformerCopyButton({
       visibility: 'always',
