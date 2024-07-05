@@ -12,33 +12,12 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-
-  :is(img, picture) {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-
-  figure figcaption {
-    margin-top: 1rem;
-    font-style: italic;
-    color: hsl(var(--dark), 0.8);
-    word-break: break-all;
-    text-align: center;
-  }
 }
 
 .wtq-cover {
-  display: block;
-  max-width: 100%;
-  height: auto;
   margin-inline: auto;
   border: 1px solid hsl(var(--light), 0.5);
   border-radius: 20px;
-}
-
-.wtq-shadow {
-  box-shadow: 0 10px 9px -8px rgb(0 0 0 / 10%);
 }
 
 .wtq-pagination {

@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "a ",
   "license": "MIT",
-  "homepage": "http://fruit-ui.vercel.app",
+  "homepage": "http://wathqny.pages.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/spices-solutions/"
@@ -23,6 +23,8 @@
     },
     "./plugin": "./src/integration.ts",
     "./layout/home": "./src/pages/home.astro",
+    "./page/rss.xml": "./src/pages/rss.xml.js",
+    "./page/robot.txt": "./src/pages/robot.txt.ts",
     "./page/docs": "./src/pages/docs.astro",
     "./page/docs/categories": "./src/pages/docs/[...categories].astro",
     "./page/docs/documents": "./src/pages/docs/[...documents].astro",
@@ -36,6 +38,7 @@
     "./styles/blog": "./styles/scss/blog/blog.scss",
     "./styles/home": "./styles/theme.scss",
     "./styles/block": "./styles/code.css",
+    "./actions": "./src/actions.ts",
     "./script": {
       "navbar": "./src/components/navbar.ts",
       "sidebar": "./src/components/sidebar.ts"
@@ -48,11 +51,8 @@
     "./styles/scss/wathqny.scss",
     "src"
   ],
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
   "dependencies": {
+    "@astrojs/rss": "^4.0.7",
     "@astrojs/mdx": "^3.1.2",
     "@astrojs/sitemap": "^3.1.6",
     "@inox-tools/custom-routing": "^0.3.1",
@@ -60,7 +60,7 @@
     "@shikijs/transformers": "^1.9.1",
     "@vite-pwa/assets-generator": "^0.2.4",
     "@vite-pwa/astro": "^0.4.0",
-    "astro": "^4.11.3",
+    "astro": "^4.11.5",
     "astro-auto-import": "^0.4.2",
     "astro-compressor": "^0.4.1",
     "astro-icon": "^1.1.0",

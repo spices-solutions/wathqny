@@ -2,6 +2,7 @@
 import type { MarkdownLayoutProps } from 'astro'
 import WathqnyConfig from '/wathqny.config'
 import DocsLayout from '../components/Layout/DocsLayout.astro'
+import "../../styles/scss/pages/_categories.scss"
 
 const { sidebar } = WathqnyConfig
 
@@ -18,7 +19,7 @@ type Props = MarkdownLayoutProps<{
     {
       sidebar?.map((doc) => {
         return (
-          <a href={`/docs/${doc.id}`} class="wtq-card wtq-shadow wtq-link-no-line">
+          <a href={`/docs/${doc.id}/`} class="wtq-card wtq-shadow">
               <h2 class="wtq-card-title">{doc.label}</h2>
           </a>
         )

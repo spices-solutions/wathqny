@@ -26,6 +26,9 @@
     },
     "./utils": {
       "import": "./src/utils.ts"
+    },
+    "./actions": {
+      "import": "./src/actions.ts"
     }
   },
   "module": "./src/index.ts",
