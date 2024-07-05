@@ -1,4 +1,14 @@
 ---
+import { transformerCopyButton } from '@rehype-pretty/transformers'
+import {
+  transformerMetaHighlight,
+  transformerMetaWordHighlight,
+  transformerNotationDiff,
+  transformerNotationErrorLevel,
+  transformerNotationFocus,
+  transformerNotationHighlight,
+  transformerNotationWordHighlight,
+} from '@shikijs/transformers'
 import type {
   BuiltinLanguage,
   BuiltinTheme,
@@ -7,8 +17,7 @@ import type {
   ThemeRegistration,
   ThemeRegistrationRaw,
 } from 'shiki'
-import { codeToHtml, getHighlighter } from 'shiki'
-
+import { codeToHtml, createHighlighter } from 'shiki'
 type themeType = BuiltinTheme | ThemeRegistration | ThemeRegistrationRaw
 
 export interface Props {
@@ -23,10 +32,13 @@ export interface Props {
 const {
   code,
   lang = 'plaintext',
-  themes = { light: 'material-theme-lighter', dark: 'material-theme-darker' },
+  themes = {
+    light: 'material-theme-lighter',
+    dark: 'material-theme-darker',
+  },
 } = Astro.props as Props
 
-const shiki = await getHighlighter({
+const shiki = await createHighlighter({
   themes: [themes.light, themes.dark],
   langs: [lang],
 })
@@ -37,10 +49,23 @@ const codeOutput = codeToHtml(code, {
     light: themes.light,
     dark: themes.dark,
   },
+  transformers: [
+    transformerNotationDiff(),
+    transformerNotationFocus(),
+    transformerMetaHighlight(),
+    transformerNotationWordHighlight(),
+    transformerNotationErrorLevel(),
+    transformerNotationHighlight(),
+    transformerMetaWordHighlight(),
+    transformerCopyButton({
+      visibility: 'always',
+      feedbackDuration: 3_000,
+    }),
+  ],
 })
 
 const bgLight = shiki.getTheme(themes.light).bg
-const bgDark = shiki.getTheme(themes.dark).bg;
+const bgDark = shiki.getTheme(themes.dark).bg
 ---
 
 <style define:vars={{ bgLight, bgDark }} lang="scss">
@@ -52,7 +77,7 @@ const bgDark = shiki.getTheme(themes.dark).bg;
   }
 </style>
 
-<div class="wtq-app-block wtq-code-block wtq-app-block-load">
+<div class="wtq-app-block wtq-code-block">
   <div class="head">
     <span class="dot"></span>
     <span class="dot"></span>

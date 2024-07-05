@@ -47,9 +47,10 @@ const { frontmatter } = Astro.props;
           frontmatter.buttons.map((button) => {
             return (
               <a
+                data-astro-prefetch
                 href={button.href}
                 class:list={[
-                  "wtq-btn wtq-link-no-line",
+                  "wtq-btn",
                   { "wtq-alt": button.type === "alt" },
                   { "wtq-theme-color": button.type === "primary" },
                 ]}

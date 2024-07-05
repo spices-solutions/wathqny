@@ -46,7 +46,7 @@ export const blogSchema = ({ image }) =>
     .strict()
     .transform((data) => ({
       ...data,
-      link: `/blog/${data.href}` ?? `/${slugify(data.title)}`,
+      link: data.href ?? `/${slugify(data.title)}`,
     }))
 
 export function authorSchema({ image }: { image: any }) {

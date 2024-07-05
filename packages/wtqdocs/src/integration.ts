@@ -1,23 +1,24 @@
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import { customRouting } from "@inox-tools/custom-routing";
+import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
+import { customRouting } from '@inox-tools/custom-routing'
+import { transformerCopyButton } from '@rehype-pretty/transformers'
 import {
   transformerMetaHighlight,
   transformerMetaWordHighlight,
   transformerNotationDiff,
   transformerNotationErrorLevel,
   transformerNotationFocus,
+  transformerNotationHighlight,
   transformerNotationWordHighlight,
-} from "@shikijs/transformers";
-import AstroPWA from "@vite-pwa/astro";
-import AutoImport from "astro-auto-import";
-import compressor from "astro-compressor";
-import icon from "astro-icon";
-import metaTags from "astro-meta-tags";
-import purgecss from "astro-purgecss";
-import min from "astro-min";
-import type { WathqnyConfig } from "./types/config";
-import { transformerCopyButton } from "@rehype-pretty/transformers";
+} from '@shikijs/transformers'
+import AstroPWA from '@vite-pwa/astro'
+import AutoImport from 'astro-auto-import'
+import compressor from 'astro-compressor'
+import icon from 'astro-icon'
+import metaTags from 'astro-meta-tags'
+import min from 'astro-min'
+import purgecss from 'astro-purgecss'
+import type { WathqnyConfig } from './types/config'
 
 export const shikiBaseTransformers = () => [
   transformerNotationDiff(),
@@ -25,29 +26,32 @@ export const shikiBaseTransformers = () => [
   transformerMetaHighlight(),
   transformerNotationWordHighlight(),
   transformerNotationErrorLevel(),
+  transformerNotationHighlight(),
   transformerMetaWordHighlight(),
   transformerCopyButton({
     visibility: 'always',
     feedbackDuration: 3_000,
   }),
-];
+]
 
 export function wathqnyPlugin(Wathqny: WathqnyConfig) {
   return [
     customRouting({
-      docs: "wtqdocs/page/docs",
-      "docs/[...categories]": "wtqdocs/page/docs/categories",
-      "docs/[...documents]": "wtqdocs/page/docs/documents",
-      blog: "wtqdocs/page/blog",
-      "blog/[...page]": "wtqdocs/page/blog/pages",
-      "blog/[...posts]": "wtqdocs/page/blog/posts",
-      "404": "wtqdocs/page/404",
+      'robot.txt': 'wtqdocs/page/robot.txt',
+      'rss.xml': 'wtqdocs/page/rss.xml',
+      docs: 'wtqdocs/page/docs',
+      'docs/[...categories]': 'wtqdocs/page/docs/categories',
+      'docs/[...documents]': 'wtqdocs/page/docs/documents',
+      blog: 'wtqdocs/page/blog',
+      'blog/[...page]': 'wtqdocs/page/blog/pages',
+      'blog/[...posts]': 'wtqdocs/page/blog/posts',
+      '404': 'wtqdocs/page/404',
     }),
     AutoImport({
       imports: [
         {
-          "astro:assets": ["Image"],
-          wtqdocs: ["BrowserBlock", "Code"],
+          'astro:assets': ['Image'],
+          wtqdocs: ['BrowserBlock', 'Code'],
         },
       ],
     }),
@@ -55,14 +59,14 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       optimize: true,
       shikiConfig: {
         themes: {
-          light: "material-theme-lighter",
-          dark: "material-theme-darker",
+          light: 'material-theme-lighter',
+          dark: 'material-theme-darker',
         },
         transformers: [...shikiBaseTransformers()],
       },
     }),
     icon({
-      iconDir: "src/assets/icons",
+      iconDir: 'src/assets/icons',
     }),
     sitemap(),
     purgecss(),
@@ -70,7 +74,7 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       experimental: {
         directoryAndTrailingSlashHandler: true,
       },
-      registerType: "autoUpdate",
+      registerType: 'autoUpdate',
       devOptions: {
         enabled: false,
       },
@@ -81,18 +85,18 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
         clientsClaim: true,
         skipWaiting: true,
         cleanupOutdatedCaches: true,
-        navigateFallback: "/404",
-        globPatterns: ["**/*.{css,js,html,svg,png,ico,txt}"],
+        navigateFallback: '/404',
+        globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
       },
       manifest: {
         name: Wathqny.siteName,
         description: Wathqny.description,
-        theme_color: "#18181B",
-        background_color: "#fff",
-        display: "standalone",
-        scope: "/",
-        base: "/",
-        orientation: "portrait",
+        theme_color: '#18181B',
+        background_color: '#fff',
+        display: 'standalone',
+        scope: '/',
+        start_url: '/',
+        orientation: 'portrait',
       },
     }),
     metaTags(),
@@ -106,5 +110,5 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       minify_css: true,
       minify_js: true,
     }),
-  ];
+  ]
 }
