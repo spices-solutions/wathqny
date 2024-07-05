@@ -19,6 +19,7 @@ currentURL = currentURL.filter((url) => url !== '')
     itemtype="https://schema.org/ListItem"
   >
     <a
+    data-astro-prefetch
       href="/"
       class="wtq-breadcrumb wtq-focusable"
       aria-label="Go to the homepage"
@@ -39,6 +40,7 @@ currentURL = currentURL.filter((url) => url !== '')
       >
         <Icon class="arrow-icon" name="arrow" />
         <a
+          data-astro-prefetch
           href={`/${currentURL.slice(0, index + 1).join('/')}`}
           class="wtq-breadcrumb wtq-focusable"
           itemprop="item"

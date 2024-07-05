@@ -67,6 +67,7 @@ const pagination = getPagination(currentPage, length)
     pagination.map((page) => (
       page ?
       <a
+        data-astro-prefetch
         class:list={[
           "pagination__link",
           { disabled: 1 == page },

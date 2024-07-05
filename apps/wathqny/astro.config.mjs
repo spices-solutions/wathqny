@@ -19,5 +19,7 @@ export default defineConfig({
       transformers: [...shikiBaseTransformers()],
     },
   },
+  prefetch: true,
   integrations: [...wathqnyPlugin(WathqnyConfig)],
+
 })
