@@ -30,7 +30,7 @@ filteredDocs.sort(
         }
       }) => {
         return (
-          <a href={`/docs/${doc.data.link}/`}  data-astro-prefetch class="wtq-card wtq-shadow">
+          <a href={`/docs/${doc.data.link}`}  data-astro-prefetch class="wtq-card wtq-shadow">
             <h2 class="wtq-card-title">{doc.data.title}</h2>
             <h3 class="wtq-card-subtitle">{doc.data.description}</h3>
           </a>
