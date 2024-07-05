@@ -5,18 +5,19 @@ import type { LayoutInterface } from '../../types/components'
 import BlogLayout from '../Layout/BlogLayout.astro'
 import Breadcrumbs from '../Navigation/breadcrumbs.astro'
 import AuthorProfile from './AuthorProfile.astro'
+import type { CollectionEntry } from 'astro:content'
 
 export interface Props extends LayoutInterface {
-  authors: {
-    data: {
-      name: string
-      role: string
-      profile: string
-    }
-  }
+  postMetaData: CollectionEntry<'blog'>
 }
 
-const { title, keywords, description, OGImage, authors } = Astro.props as Props
+const { postMetaData } = Astro.props as Props
+
+const { authors } = postMetaData.data
+
+const { Content } = await postMetaData.render();
+
+const { title, keywords, description, OGImage, } = postMetaData
 ---
 
 <BlogLayout {title} {description} {keywords} {OGImage}>
@@ -42,7 +43,7 @@ const { title, keywords, description, OGImage, authors } = Astro.props as Props
       </figure>
     </span>
     <main id="main-content">
-      <slot />
+      <Content />
     </main>
   </article>
 </BlogLayout>
