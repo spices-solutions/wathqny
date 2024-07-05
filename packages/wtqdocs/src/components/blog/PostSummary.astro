@@ -12,12 +12,13 @@ type Props = {
 		alt: string;
 	};
 	body: string;
+  index: number;
 };
 
-const { title, body, date, image, link } = Astro.props;
+const { title, body, date, image, link,index } = Astro.props;
 ---
 
-<a  data-astro-prefetch href={`/blog/${link}/`}>
+<a data-astro-prefetch href={`/blog/${link}/`}>
   <article class="wtq-card wtq-shadow">
     <h1 class="wtq-card-title">{title}</h1>
     <span class="wtq-card-subtitle">
@@ -30,6 +31,7 @@ const { title, body, date, image, link } = Astro.props;
       class="wtq-cover"
       width={640}
       height={360}
+      loading={index === 0 ? "eager" : "lazy"}
       src={image?.src ?? WathqnyConfig.OGImage?.src }
       alt={image?.alt ?? WathqnyConfig.OGImage?.alt }
     />

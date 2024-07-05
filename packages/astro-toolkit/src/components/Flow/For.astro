@@ -10,7 +10,7 @@ async function forloop(each: string[] | object[] | undefined) {
   let html = ''
   if (Astro.slots.has('default') && each) {
     for (let i = 0; i < each.length; i++) {
-      html += await Astro.slots.render('default', [each[i]])
+      html += await Astro.slots.render('default', [each[i],i])
     }
   }
   return html
