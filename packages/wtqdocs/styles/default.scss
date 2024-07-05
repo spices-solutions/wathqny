@@ -113,11 +113,20 @@ body {
   background-color: hsl(var(--white));
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 hr {
   height: 0;
   color: inherit;
   border: 1px solid hsl(var(--light));
 }
+
+:is(ul, ol) {
+  padding: 0;
+} 
 
 :is(code, kbd, samp, pre) {
   direction: ltr;
@@ -154,6 +163,7 @@ figure figcaption {
   font-style: italic;
   color: hsl(var(--dark), 0.8);
   word-break: break-all;
+  text-align: center;
 }
 
 table {

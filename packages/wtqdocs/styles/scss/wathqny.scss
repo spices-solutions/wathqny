@@ -1,8 +1,8 @@
-@import './base/base';
 @import './components/navbar';
 @import './components/breadcrumbs';
 @import './components/sidebar';
 @import './components/avatar';
+@import 'utils';
 
 %sr-only {
   position: absolute;
@@ -50,7 +50,6 @@
     background-color: white;
     border: 1px solid hsl(var(--light));
     border-radius: 10px;
-    outline: none;
     box-shadow: 0 10px 9px -8px rgb(0 0 0 / 10%);
 
     .dark & {
@@ -86,7 +85,6 @@
     display: flex;
     background-color: transparent;
     gap: .5rem;
-    cursor: pointer;
     align-items: center;
     padding: 6px 10px;
     font-size: .8rem;
@@ -154,45 +152,3 @@
   }
 }
 
-
-
-.wtq-btn {
-  box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.1882352941);
-  border-radius: 12px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.1s ease-in;
-  padding: 10px 25px;
-  line-height: 1;
-}   
-
-.wtq-alt {
-  background-color: white;
-  border: 1px solid hsl(var(--light));
-  .dark & {
-    background-color: hsl(var(--light));
-  }
-}
-
-.wtq-theme-color {
-  background-color: hsl(271, 81%, 56%);
-  border: inherit;
-  color: white;
-  .dark & {
-    background-color: hsl(271, 81%, 56%);
-  }
-}
-
-.wtq-focusable {
-  &:hover,
-  &:focus-visible {
-    color: var(--darkest) !important;
-    background-color: hsl(var(--medium), 0.1) !important;
-    outline: none !important;
-  }
-}
-
-.wtq-link-no-line {
-  text-decoration: none;
-  color: inherit;
-}

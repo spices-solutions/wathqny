@@ -20,7 +20,7 @@ currentURL = currentURL.filter((url) => url !== '')
   >
     <a
       href="/"
-      class="wtq-breadcrumb wtq-link-no-line wtq-focusable"
+      class="wtq-breadcrumb wtq-focusable"
       aria-label="Go to the homepage"
       itemprop="item"
     >
@@ -40,7 +40,7 @@ currentURL = currentURL.filter((url) => url !== '')
         <Icon class="arrow-icon" name="arrow" />
         <a
           href={`/${currentURL.slice(0, index + 1).join('/')}`}
-          class="wtq-breadcrumb wtq-focusable wtq-link-no-line"
+          class="wtq-breadcrumb wtq-focusable"
           itemprop="item"
         >
           <span itemprop="name">{unslugify(url)}</span>

@@ -1,0 +1,13 @@
+.wtq-focusable {
+  &:hover,
+  &:focus-visible {
+    color: var(--darkest) !important;
+    background-color: hsl(var(--medium), 0.1) !important;
+    outline: none !important;
+    cursor: pointer;
+  }
+}
+
+.wtq-shadow {
+  box-shadow: 0 10px 9px -8px rgb(0 0 0 / 10%);
+}
