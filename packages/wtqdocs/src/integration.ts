@@ -58,7 +58,10 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
     mdx({
       optimize: true,
       shikiConfig: {
-        themes: { light: 'light-plus', dark: 'dark-plus' },
+        themes: {
+          light: 'material-theme-lighter',
+          dark: 'material-theme-darker',
+        },
         transformers: [...shikiBaseTransformers()],
       },
     }),

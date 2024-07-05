@@ -32,7 +32,10 @@ export interface Props {
 const {
   code,
   lang = 'plaintext',
-  themes = { light: 'light-plus', dark: 'dark-plus' },
+  themes = {
+    light: 'material-theme-lighter',
+    dark: 'material-theme-darker',
+  },
 } = Astro.props as Props
 
 const shiki = await createHighlighter({
