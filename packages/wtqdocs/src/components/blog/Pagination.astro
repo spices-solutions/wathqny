@@ -73,7 +73,7 @@ const pagination = getPagination(currentPage, length)
           { disabled: 1 == page },
           { active: page === currentPage },
         ]}
-        href={1 == page ? firstUrl : `${firstUrl}/${page}/`}
+        href={1 == page ? firstUrl : `${firstUrl}/${page}`}
       >
         {page}
       </a> : <span
