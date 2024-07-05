@@ -30,6 +30,12 @@
   inset-inline-end: -20px;
 }
 
+.wtq-code-block pre {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
 .dark .wtq-code-block {
   border-color: #37373781;
 }
@@ -62,7 +68,6 @@
   border: none;
   background-color: unset;
 }
-
 
 .dark :is(.shiki, .astro-code) {
   background-color: var(--shiki-dark-bg) !important;
