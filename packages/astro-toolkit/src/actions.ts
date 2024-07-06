@@ -1,4 +1,4 @@
-export function action(callback) {
+export function action(callback: CallableFunction) {
   document.addEventListener("astro:after-swap", () => {
     callback()
   })
