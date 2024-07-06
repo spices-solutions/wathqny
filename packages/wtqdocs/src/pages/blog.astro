@@ -10,7 +10,7 @@ const blog = await getCollection("blog");
 <BlogLayout>
   <div class="wtq-post-container">
     <For each={blog}>
-      {(post,index)=> (
+      {(post, index)=> (
         <PostSummary
           index={index}
           title={post.data.title} 
