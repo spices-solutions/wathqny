@@ -1,26 +1,26 @@
-function usePagination(current: number, total: number, voidFormat = null) {
-  let center: number[]
+function usePagination(
+  current: number,
+  total: number,
+  voidFormat: number | undefined = undefined,
+) {
+  let center: number[] = [] // Initialize center as an empty array
+
   if (total < 6) {
-    return new Array(total).fill(total).map((v, i) => i + 1)
+    return new Array(total).fill(total).map((_v, i) => i + 1)
   }
-  if (current > 2) {
+  if (current > 2 && current < total - 1) {
     center = [current - 1, current, current + 1]
-  }
-  if (current === 2) {
+  } else if (current === 2) {
     center = [current, current + 1]
-  }
-  if (current === 1) {
+  } else if (current === 1) {
     center = [current + 1, current + 2]
-  }
-  if (current === total - 1) {
+  } else if (current === total - 1) {
     center = [current - 1, current]
-  }
-  if (current === total) {
+  } else if (current === total) {
     center = [current - 2, current - 1]
   }
 
   const arr = [1, ...center, total]
-  console.log(arr)
   if (arr.length < 2) {
     return arr // If the array has fewer than 2 elements, no changes are needed
   }
@@ -28,7 +28,7 @@ function usePagination(current: number, total: number, voidFormat = null) {
   const result = [arr[0]] // Start with the first element
 
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== arr[i - 1] + 1) {
+    if (arr[i] !== arr[i - 1] + 1 && voidFormat) {
       result.push(voidFormat) // Add dots if the current number is not consecutive
     }
     result.push(arr[i]) // Add the current number

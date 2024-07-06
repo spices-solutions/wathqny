@@ -11,7 +11,8 @@ const Config: WathqnyConfig = {
     src: '/og.png',
     alt: "Logo of wathqny, featuring Arabic text in green that translates to 'wathqny' with a tagline below in black text that reads 'Where Arab Technology Shines'.",
   },
-  description: 'wathqny a fast, easy and accessible Astro powered documentation site framework',
+  description:
+    'wathqny a fast, easy and accessible Astro powered documentation site framework',
   keywords: [
     'ui',
     'site',
@@ -26,10 +27,12 @@ const Config: WathqnyConfig = {
     'framework',
     'library',
   ],
-  sidebar: [    {
-    label: 'Getting started',
-    id: 'getting-started',
-  },],
+  sidebar: [
+    {
+      label: 'Getting started',
+      id: 'getting-started',
+    },
+  ],
   navbar: {
     items: [
       {
@@ -56,7 +59,7 @@ const Config: WathqnyConfig = {
       rel: 'stylesheet',
     },
   ],
-  font: '/font/GeistVF.woff2'
+  font: '/font/GeistVF.woff2',
 }
 
 export default Config

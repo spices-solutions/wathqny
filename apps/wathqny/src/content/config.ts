@@ -1,19 +1,19 @@
-import { blogSchema, docSchema, authorSchema } from "wtqdocs/schema";
-import { defineCollection } from "astro:content";
+import { blogSchema, docSchema, authorSchema } from 'wtqdocs/schema'
+import { defineCollection } from 'astro:content'
 
 const authors = defineCollection({
-  type: "data",
+  type: 'data',
   schema: authorSchema,
-});
+})
 
 const docs = defineCollection({
-  type: "content",
+  type: 'content',
   schema: docSchema,
-});
+})
 
 const blog = defineCollection({
-  type: "content",
+  type: 'content',
   schema: blogSchema,
-});
+})
 
-export const collections = { docs, blog, authors };
+export const collections = { docs, blog, authors }
