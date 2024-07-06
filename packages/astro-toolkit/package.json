@@ -33,9 +33,7 @@
   },
   "module": "./src/index.ts",
   "files": [
-    "./src/**/*",
-    "./src/index.ts",
-    "dist"
+    
   ],
   "scripts": {
     "lint": "eslint .",
