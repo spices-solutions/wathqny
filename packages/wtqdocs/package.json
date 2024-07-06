@@ -42,12 +42,7 @@
     "./actions": "./src/actions.ts"
   },
   "module": "./src/index.ts",
-  "files": [
-    "./src/components/*",
-    "./src/index.ts",
-    "./styles/wathqny.scss",
-    "src"
-  ],
+  "files": ["./src/**/*","./src/components/**/*"],
   "dependencies": {
     "@astrojs/rss": "^4.0.7",
     "@astrojs/mdx": "^3.1.2",

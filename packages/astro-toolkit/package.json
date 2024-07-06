@@ -25,17 +25,25 @@
       "import": "./src/flow.ts"
     },
     "./utils": {
-      "import": "./src/utils.ts"
+      "import": "./dist/utils.mjs",
+      "types": "./dist/utils.d.ts"
     },
     "./actions": {
-      "import": "./src/actions.ts"
+      "import": "./dist/actions.mjs",
+      "types": "./dist/actions.d.ts"
     }
   },
   "module": "./src/index.ts",
-  "files": [],
+  "files": ["./dist"],
+  "scripts": {
+    "build": "unbuild"
+  },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.8.0",
     "astro": "^4.11.3",
     "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "unbuild": "^2.0.0"
   }
 }
