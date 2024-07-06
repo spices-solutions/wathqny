@@ -2,7 +2,6 @@ import { defineConfig, passthroughImageService } from 'astro/config'
 import { shikiBaseTransformers, wathqnyPlugin } from 'wtqdocs/plugin'
 import WathqnyConfig from './wathqny.config'
 
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://wathqny.pages.dev/',
@@ -25,5 +24,4 @@ export default defineConfig({
   },
   prefetch: true,
   integrations: [...wathqnyPlugin(WathqnyConfig)],
-
 })

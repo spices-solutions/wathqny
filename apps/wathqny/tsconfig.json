@@ -3,12 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "config": [
-        "./wathqny.config"
-      ],
+      "config": ["./wathqny.config"]
     },
-    "types": [
-      "astro/client",
-    ]
+    "types": ["astro/client"]
   }
 }

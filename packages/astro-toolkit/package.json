@@ -12,11 +12,7 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": [
-    "spices",
-    "code",
-    "wathqny"
-  ],
+  "keywords": ["spices", "code", "wathqny"],
   "exports": {
     ".": {
       "import": "./src/index.ts"

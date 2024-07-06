@@ -1,6 +1,10 @@
 const sidebar = document.querySelector('.wtq-sidebar') as HTMLElement
-const sidebarOverlay = document.querySelector('.wtq-sidebar-overlay') as HTMLElement
-const sidebarCollapseBtn = sidebar.querySelector('.collapse-button') as HTMLElement
+const sidebarOverlay = document.querySelector(
+  '.wtq-sidebar-overlay',
+) as HTMLElement
+const sidebarCollapseBtn = sidebar.querySelector(
+  '.collapse-button',
+) as HTMLElement
 const toggle = document.querySelector('.wtq-nav-menu') as HTMLElement
 
 toggle?.addEventListener('click', () => {

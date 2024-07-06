@@ -1,21 +1,21 @@
 ---
-import { Image } from "astro:assets";
-import { formatDate } from "astro-toolkit/utils";
-import WathqnyConfig from "/wathqny.config";
+import { Image } from 'astro:assets'
+import { formatDate } from 'astro-toolkit/utils'
+import WathqnyConfig from '/wathqny.config'
 
 type Props = {
-	link: string;
-	title: string;
-	date: Date;
-	image: {
-		src: string;
-		alt: string;
-	};
-	body: string;
-  index: number;
-};
+  link: string
+  title: string
+  date: Date
+  image: {
+    src: string
+    alt: string
+  }
+  body: string
+  index: number
+}
 
-const { title, body, date, image, link,index } = Astro.props;
+const { title, body, date, image, link, index } = Astro.props
 ---
 
 <a data-astro-prefetch href={`/blog/${link}/`}>

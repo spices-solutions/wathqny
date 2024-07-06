@@ -2,13 +2,7 @@
 import { Icon } from 'astro-icon/components'
 import { usePagination } from 'astro-toolkit/utils'
 
-const {
-  length,
-  currentPage,
-  firstUrl,
-  prevUrl,
-  nextUrl,
-} = Astro.props
+const { length, currentPage, firstUrl, prevUrl, nextUrl } = Astro.props
 
 const pagination = usePagination(currentPage, length)
 ---

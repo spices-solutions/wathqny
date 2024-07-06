@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-import { unslugify } from "astro-toolkit/utils"
+import { unslugify } from 'astro-toolkit/utils'
 let currentURL: string[] = Astro.url.pathname.split('/')
 
 currentURL = currentURL.filter((url) => url !== '')

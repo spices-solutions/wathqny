@@ -1,4 +1,3 @@
-
 type WathqnyConfig = {
   logo: string
   siteName?: string

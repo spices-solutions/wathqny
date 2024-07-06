@@ -1,10 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-import { For } from "astro-toolkit/flow";
-import { BlogLayout } from "../blog";
-import PostSummary from "../components/blog/PostSummary.astro";
+import { getCollection } from 'astro:content'
+import { For } from 'astro-toolkit/flow'
+import { BlogLayout } from '../blog'
+import PostSummary from '../components/blog/PostSummary.astro'
 
-const blog = await getCollection("blog");
+const blog = await getCollection('blog')
 ---
 
 <BlogLayout>

@@ -15,9 +15,9 @@ const { postMetaData } = Astro.props as Props
 
 const { authors } = postMetaData.data
 
-const { Content } = await postMetaData.render();
+const { Content } = await postMetaData.render()
 
-const { title, keywords, description, OGImage, } = postMetaData
+const { title, keywords, description, OGImage } = postMetaData
 ---
 
 <BlogLayout {title} {description} {keywords} {OGImage}>

@@ -25,9 +25,9 @@ docs.sort(
 const currentUrl = `/${
   Astro.url.pathname
     .split('/')
-    .filter(url => url !== '')
+    .filter((url) => url !== '')
     .reverse()[0]
-}`;
+}`
 ---
 
 <div class="wtq-sidebar-overlay" aria-hidden></div>
