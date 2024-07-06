@@ -1,3 +1,3 @@
-import { action } from "astro-toolkit/actions"
+import { action } from 'astro-toolkit/actions'
 
 export { action }

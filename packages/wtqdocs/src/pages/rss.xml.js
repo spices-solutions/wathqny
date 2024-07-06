@@ -8,7 +8,7 @@ export async function GET(context) {
     title: Wathqny.siteName,
     description: Wathqny.description,
     site: context.site,
-    items: blog.map(post => ({
+    items: blog.map((post) => ({
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.pubDate,

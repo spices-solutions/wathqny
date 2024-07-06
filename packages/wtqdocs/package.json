@@ -12,11 +12,7 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": [
-    "spices",
-    "docs",
-    "wathqny"
-  ],
+  "keywords": ["spices", "docs", "wathqny"],
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -34,23 +30,15 @@
     "./page/404": "./src/pages/404.astro",
     "./schema": "./src/schema.ts",
     "./blog": "./src/blog.ts",
-    "./styles/docs": "./styles/scss/wathqny.scss",
-    "./styles/blog": "./styles/scss/blog/blog.scss",
-    "./styles/home": "./styles/theme.scss",
-    "./styles/block": "./styles/code.css",
-    "./actions": "./src/actions.ts",
-    "./script": {
-      "navbar": "./src/components/navbar.ts",
-      "sidebar": "./src/components/sidebar.ts"
-    }
+    "./styles/home": "./styles/pages/_home.scss",
+    "./styles/docs": "./styles/wathqny.scss",
+    "./styles/blog": "./styles/pages/_blog.scss",
+    "./styles/categories": "./styles/pages/_categories.scss",
+    "./styles/block": "./styles/pages/_code.scss",
+    "./actions": "./src/actions.ts"
   },
   "module": "./src/index.ts",
-  "files": [
-    "./src/components/*",
-    "./src/index.ts",
-    "./styles/scss/wathqny.scss",
-    "src"
-  ],
+  "files": ["./src/**/*", "./src/components/**/*"],
   "dependencies": {
     "@astrojs/rss": "^4.0.7",
     "@astrojs/mdx": "^3.1.2",

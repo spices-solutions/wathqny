@@ -1,7 +1,7 @@
 ---
 import type { MarkdownLayoutProps } from 'astro'
 import BaseLayout from '../components/Layout/BaseLayout.astro'
-import '../../styles/theme.scss'
+import 'wtqdocs/styles/home'
 
 type Props = MarkdownLayoutProps<{
   title: string
@@ -10,7 +10,6 @@ type Props = MarkdownLayoutProps<{
   sorry: string
   action: string
 }>
-
 ---
 
 <BaseLayout title={"404" ?? 'Not Found'} >

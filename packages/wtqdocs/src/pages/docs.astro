@@ -2,7 +2,7 @@
 import type { MarkdownLayoutProps } from 'astro'
 import WathqnyConfig from '/wathqny.config'
 import DocsLayout from '../components/Layout/DocsLayout.astro'
-import "../../styles/scss/pages/_categories.scss"
+import 'wtqdocs/styles/categories'
 
 const { sidebar } = WathqnyConfig
 
@@ -11,7 +11,6 @@ type Props = MarkdownLayoutProps<{
   description: string
   heading: string
 }>
-
 ---
 
 <DocsLayout title={"docs"} heading={"categories" ?? "docs"}>

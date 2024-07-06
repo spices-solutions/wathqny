@@ -1,23 +1,23 @@
 ---
-import type { MarkdownLayoutProps } from "astro";
-import BaseLayout from "../components/Layout/BaseLayout.astro";
-import "../../styles/theme.scss";
-import { Image } from "astro:assets";
-import WathqnyConfig from "/wathqny.config";
+import type { MarkdownLayoutProps } from 'astro'
+import BaseLayout from '../components/Layout/BaseLayout.astro'
+import 'wtqdocs/styles/home'
+import { Image } from 'astro:assets'
+import WathqnyConfig from '/wathqny.config'
 
 type Props = MarkdownLayoutProps<{
-  title?: string;
+  title?: string
   logo?: {
-    src: string;
-    height: number;
-    width: number;
-  };
-  subtitle: string;
-  description: string;
-  buttons: [{ label: string; href?: string; type?: "alt" | "primary" }];
-}>;
+    src: string
+    height: number
+    width: number
+  }
+  subtitle: string
+  description: string
+  buttons: [{ label: string; href?: string; type?: 'alt' | 'primary' }]
+}>
 
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
 ---
 
 <BaseLayout>
