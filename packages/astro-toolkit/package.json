@@ -1,7 +1,7 @@
 {
   "name": "astro-toolkit",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a ",
   "license": "MIT",
   "publishConfig": {
@@ -15,7 +15,11 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": ["spices", "code", "wathqny"],
+  "keywords": [
+    "spices",
+    "code",
+    "wathqny"
+  ],
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -33,7 +37,9 @@
     }
   },
   "module": "./src/index.ts",
-  "files": ["./dist"],
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "build:pkg": "unbuild"
   },
