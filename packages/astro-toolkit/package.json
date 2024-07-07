@@ -1,7 +1,7 @@
 {
   "name": "astro-toolkit",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "a ",
   "license": "MIT",
   "homepage": "http://fruit-ui.vercel.app",
@@ -12,7 +12,11 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": ["spices", "code", "wathqny"],
+  "keywords": [
+    "spices",
+    "code",
+    "wathqny"
+  ],
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -30,7 +34,9 @@
     }
   },
   "module": "./src/index.ts",
-  "files": ["./dist"],
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "build": "unbuild"
   },

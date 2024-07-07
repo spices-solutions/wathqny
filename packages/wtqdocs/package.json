@@ -1,7 +1,7 @@
 {
   "name": "wtqdocs",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "a ",
   "license": "MIT",
   "homepage": "http://wathqny.pages.dev",
@@ -12,7 +12,11 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": ["spices", "docs", "wathqny"],
+  "keywords": [
+    "spices",
+    "docs",
+    "wathqny"
+  ],
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -38,7 +42,10 @@
     "./actions": "./src/actions.ts"
   },
   "module": "./src/index.ts",
-  "files": ["./src/**/*", "./src/components/**/*"],
+  "files": [
+    "./src/**/*",
+    "./src/components/**/*"
+  ],
   "dependencies": {
     "@astrojs/rss": "^4.0.7",
     "@astrojs/mdx": "^3.1.2",
