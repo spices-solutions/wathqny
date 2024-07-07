@@ -1,7 +1,11 @@
 {
   "name": "docs",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.1",
+  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
