@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "description": "a ",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "http://fruit-ui.vercel.app",
   "repository": {
     "type": "git",

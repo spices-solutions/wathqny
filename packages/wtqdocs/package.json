@@ -5,6 +5,9 @@
   "description": "a ",
   "license": "MIT",
   "homepage": "http://wathqny.pages.dev",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/spices-solutions/"
