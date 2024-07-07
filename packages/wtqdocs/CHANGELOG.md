@@ -1,5 +1,13 @@
 # wtqdocs
 
+## 0.1.2
+
+### Patch Changes
+
+- 1018eda: hot fixes
+- Updated dependencies [1018eda]
+  - astro-toolkit@0.0.3
+
 ## 0.1.1
 
 ### Patch Changes
