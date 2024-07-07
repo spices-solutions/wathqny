@@ -10,7 +10,8 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "build": "turbo run build",
-    "release": "pnpm run build:pkg && changeset publish"
+    "build:pkg": "turbo run build:pkg",
+    "release": "turbo run build:pkg && changeset publish"
   },
   "devDependencies": {
     "turbo": "latest"

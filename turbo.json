@@ -12,6 +12,9 @@
     "lint:fix": {
       "cache": true
     },
+    "build:pkg": {
+      "cache": true
+    },
     "release": {
       "cache": true
     },
