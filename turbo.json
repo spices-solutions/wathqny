@@ -12,7 +12,11 @@
     "lint:fix": {
       "cache": true
     },
+    "release": {
+      "cache": true
+    },
     "build": {
+      "cache": true,
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
