@@ -49,6 +49,7 @@
   },
   "module": "./src/index.ts",
   "files": [
+    "./styles/**/**",
     "./src/**/*",
     "./src/components/**/*"
   ],
