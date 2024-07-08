@@ -1,7 +1,7 @@
 function usePagination(
   current: number,
   total: number,
-  voidFormat: number | undefined = undefined,
+  voidFormat: string | undefined | null = null,
 ) {
   let center: number[] = [] // Initialize center as an empty array
 
@@ -28,7 +28,7 @@ function usePagination(
   const result = [arr[0]] // Start with the first element
 
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== arr[i - 1] + 1 && voidFormat) {
+    if (arr[i] !== arr[i - 1] + 1) {
       result.push(voidFormat) // Add dots if the current number is not consecutive
     }
     result.push(arr[i]) // Add the current number

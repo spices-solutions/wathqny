@@ -1,0 +1,10 @@
+{
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "config": ["./wathqny.config"]
+    },
+    "types": ["astro/client"]
+  }
+}

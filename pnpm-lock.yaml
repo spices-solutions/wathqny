@@ -118,6 +118,9 @@ importers:
       astro-toolkit:
         specifier: workspace:*
         version: link:../astro-toolkit
+      cross-spawn:
+        specifier: ^7.0.3
+        version: 7.0.3
       purgecss:
         specifier: ^6.0.0
         version: 6.0.0
