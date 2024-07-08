@@ -29,6 +29,7 @@ function usePagination(
 
   for (let i = 1; i < arr.length; i++) {
     if (arr[i] !== arr[i - 1] + 1) {
+      // @ts-expect-error Argument of type 'string | null' is not assignable to parameter of type 'number'.Type 'null' is not assignable to type 'number'.ts(2345)
       result.push(voidFormat) // Add dots if the current number is not consecutive
     }
     result.push(arr[i]) // Add the current number
