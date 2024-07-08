@@ -38,7 +38,6 @@ export const blogSchema = ({ image }) =>
         .object({ src: z.union([image(), z.string().url()]), alt: z.string() })
         .optional(),
       keywords: z.union([z.string(), z.array(z.string())]).optional(),
-      position: z.number().optional(),
       authors: reference('authors').optional(),
       pubDate: z.date().transform((str: Date) => new Date(str)),
       draft: z.boolean().default(false),

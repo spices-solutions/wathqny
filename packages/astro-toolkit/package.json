@@ -1,24 +1,31 @@
 {
   "name": "astro-toolkit",
   "type": "module",
-  "version": "0.0.3",
-  "description": "a ",
+  "version": "0.0.0",
+  "description": "A collection of Astro tools, components, and utilities to streamline your development process.",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "http://fruit-ui.vercel.app",
+  "homepage": "https://github.com/spices-solutions/wathqny/blob/main/packages/astro-toolkit/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/spices-solutions/"
+    "url": "https://github.com/spices-solutions/wathqny/blob/main/packages/astro-toolkit/README.md"
   },
   "bugs": {
-    "url": "https://github.com/spices-solutions/"
+    "url": "https://github.com/spices-solutions/wathqny/issues"
   },
   "keywords": [
     "spices",
     "code",
-    "wathqny"
+    "wathqny",
+    "kit",
+    "astro-toolkit",
+    "wtqdocs",
+    "astro",
+    "withastro",
+    "utilities",
+    "components"
   ],
   "exports": {
     ".": {
@@ -46,9 +53,7 @@
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.8.0",
     "astro": "^4.11.3",
-    "typescript": "^5.5.2"
-  },
-  "dependencies": {
+    "typescript": "^5.5.2",
     "unbuild": "^2.0.0"
   }
 }
