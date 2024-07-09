@@ -1,5 +1,13 @@
 # wtqdocs
 
+## 0.1.5
+
+### Patch Changes
+
+- e5c910a: fix build, missing files, schema bug
+- Updated dependencies [e5c910a]
+  - astro-toolkit@0.1.1
+
 ## 0.1.4
 
 ### Patch Changes
