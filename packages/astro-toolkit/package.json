@@ -44,9 +44,6 @@
     }
   },
   "module": "./src/index.ts",
-  "files": [
-    "./dist"
-  ],
   "scripts": {
     "build:pkg": "unbuild"
   },
