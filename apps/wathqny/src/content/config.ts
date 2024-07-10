@@ -1,19 +1,73 @@
-import { blogSchema, docSchema, authorSchema } from 'wtqdocs/schema'
 import { defineCollection } from 'astro:content'
+import { z } from 'astro/zod'
+import type { SchemaContext } from 'astro:content'
+import { slugify } from 'astro-toolkit/utils'
 
 const authors = defineCollection({
   type: 'data',
-  schema: authorSchema,
+  schema: ({ image }: SchemaContext) => {
+    z.object({
+      name: z.string(),
+      bio: z.string().optional(),
+      email: z.string().email().optional(),
+      role: z.string().optional(),
+      profile: z.union([image(), z.string().url()]),
+    }).strict()
+  }
+  ,
 })
 
 const docs = defineCollection({
   type: 'content',
-  schema: docSchema,
+  schema: ({ image }: SchemaContext) =>
+    z
+      .object({
+        title: z.string().max(60, "it can't be more than 60 characters").min(3),
+        description: z
+          .string()
+          .max(160, "it can't be more than 160 characters")
+          .min(10),
+        href: z.string().optional(),
+        image: z
+          .object({ src: z.union([image(), z.string().url()]), alt: z.string() })
+          .optional(),
+        keywords: z.union([z.string(), z.array(z.string())]).optional(),
+        category: z.string(),
+        position: z.number().optional(),
+        authors: z.string().optional(),
+        draft: z.boolean().default(false),
+      })
+      .strict()
+      .transform((data) => ({
+        ...data,
+        link: data.href ?? `${data.category}/${slugify(data.title)}`,
+      })),
 })
 
 const blog = defineCollection({
   type: 'content',
-  schema: blogSchema,
+  schema: ({ image }: SchemaContext) =>
+    z
+      .object({
+        title: z.string().max(60, "it can't be more than 60 characters").min(3),
+        description: z
+          .string()
+          .max(160, "it can't be more than 160 characters")
+          .min(10),
+        href: z.string().optional(),
+        image: z
+          .object({ src: z.union([image(), z.string().url()]), alt: z.string() })
+          .optional(),
+        keywords: z.union([z.string(), z.array(z.string())]).optional(),
+        authors: z.string().optional(),
+        pubDate: z.date().transform((str: Date) => new Date(str)),
+        draft: z.boolean().default(false),
+      })
+      .strict()
+      .transform((data) => ({
+        ...data,
+        link: data.href ?? `/${slugify(data.title)}`,
+      })),
 })
 
 export const collections = { docs, blog, authors }

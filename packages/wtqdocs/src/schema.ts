@@ -26,28 +26,7 @@ export const docSchema = ({ image }: SchemaContext) =>
       link: data.href ?? `${data.category}/${slugify(data.title)}`,
     }))
 
-export const blogSchema = ({ image }: SchemaContext) =>
-  z
-    .object({
-      title: z.string().max(60, "it can't be more than 60 characters").min(3),
-      description: z
-        .string()
-        .max(160, "it can't be more than 160 characters")
-        .min(10),
-      href: z.string().optional(),
-      image: z
-        .object({ src: z.union([image(), z.string().url()]), alt: z.string() })
-        .optional(),
-      keywords: z.union([z.string(), z.array(z.string())]).optional(),
-      authors: z.string().optional(),
-      pubDate: z.date().transform((str: Date) => new Date(str)),
-      draft: z.boolean().default(false),
-    })
-    .strict()
-    .transform((data) => ({
-      ...data,
-      link: data.href ?? `/${slugify(data.title)}`,
-    }))
+export const 
 
 export function authorSchema({ image }: SchemaContext) {
   z.object({
