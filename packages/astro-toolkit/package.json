@@ -35,22 +35,15 @@
       "import": "./src/flow.ts"
     },
     "./utils": {
-      "import": "./dist/utils.mjs",
-      "types": "./dist/utils.d.ts"
+      "import": "./src/utils.ts"
     },
     "./actions": {
-      "import": "./dist/actions.mjs",
-      "types": "./dist/actions.d.ts"
+      "import": "./src/actions.ts"
     }
-  },
-  "module": "./src/index.ts",
-  "scripts": {
-    "build:pkg": "unbuild"
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.9.0",
     "astro": "^4.11.5",
-    "typescript": "^5.5.3",
-    "unbuild": "^2.0.0"
+    "typescript": "^5.5.3"
   }
 }
