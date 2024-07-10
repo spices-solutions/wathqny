@@ -39,7 +39,7 @@ export const blogSchema = ({ image }: SchemaContext) =>
         .object({ src: z.union([image(), z.string().url()]), alt: z.string() })
         .optional(),
       keywords: z.union([z.string(), z.array(z.string())]).optional(),
-      authors: reference('authors').optional(),
+      authors: z.string().optional(),
       pubDate: z.date().transform((str: Date) => new Date(str)),
       draft: z.boolean().default(false),
     })

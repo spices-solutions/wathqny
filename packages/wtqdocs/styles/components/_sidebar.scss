@@ -24,13 +24,13 @@
   transition: width 400ms ease;
   @media screen and (width >= 868px) {
     &.wtq-aside-collapse {
+      width: 50px;
+      overflow: hidden;
+      flex-direction: row;
       .collapse-button {
         transform: scale(-1);
         padding: 5px 0.3rem;  
       }
-      width: 50px;
-      overflow: hidden;
-      flex-direction: row;
       ul {
         display: none;
       }
