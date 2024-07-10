@@ -1,5 +1,13 @@
 # wtqdocs
 
+## 0.1.6
+
+### Patch Changes
+
+- 48fc13b: fix build, convert to fully native ts
+- Updated dependencies [48fc13b]
+  - astro-toolkit@0.1.2
+
 ## 0.1.5
 
 ### Patch Changes
