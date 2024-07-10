@@ -10,7 +10,7 @@ Formats a given date string into a more readable format.
 
 #### Usage
 
-```astro
+```ts
 import { formatDate } from 'astro-toolkit/utils'
 
 // Example usage
@@ -23,7 +23,7 @@ Converts strings to URL-friendly slugs and back to their original form.
 
 #### Usage
 
-```astro
+```ts
 import { slugify, unslugify } from 'astro-toolkit/utils'
 
 // Convert a string to a slug
@@ -87,13 +87,14 @@ Easy-to-use view transition callback function to re-run your scripts when the pa
 
 ```astro
 ---
-import { action } from 'astro-toolkit/actions'
 ---
 
 <script>
-  action(() => {
-    console.log("Re-run on page transition change")
-  })
+import { action } from 'astro-toolkit/actions'
+
+action(() => {
+  console.log("Re-run on page transition change")
+})
 </script>
 ```
 
@@ -113,7 +114,7 @@ npm install astro-toolkit
 
 You can import specific utilities, components, and actions as needed:
 
-```astro
+```ts
 import { formatDate, slugify, unslugify } from 'astro-toolkit/utils'
 import { For } from 'astro-toolkit/flow'
 import { action } from 'astro-toolkit/actions'
@@ -121,4 +122,4 @@ import { action } from 'astro-toolkit/actions'
 
 ### Contribution
 
-If you would like to contribute to the Astro Toolkit, please follow the guidelines in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+If you would like to contribute to the Astro Toolkit, please follow the guidelines in the [CONTRIBUTING.md](https://github.com/spices-solutions/wathqny/blob/astro-toolkit%400.1.0/packages/astro-toolkit/CONTRIBUTING.md)
