@@ -37,6 +37,7 @@ export const shikiBaseTransformers = () => [
 export function wathqnyPlugin(Wathqny: WathqnyConfig) {
   return [
     customRouting({
+      'search.json': 'wtqdocs/page/search.json',
       'robot.txt': 'wtqdocs/page/robot.txt',
       'rss.xml': 'wtqdocs/page/rss.xml',
       docs: 'wtqdocs/page/docs',
