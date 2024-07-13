@@ -1,57 +1,35 @@
 import { getCollection } from 'astro:content'
 
 async function getPosts() {
-  const posts = (await getCollection('blog')).sort(
-    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
-  )
-  const blog = posts.map((post) => ({
-    title: post.data.title,
-    date: post.data.pubDate,
-    body: post.body,
-    link: post.data.link,
-  }))
-  return {
-    posts: blog,
-  }
+  const posts = await getCollection('blog')
+  return posts
+    .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+    .map((post) => ({
+      title: post.data.title,
+      date: post.data.pubDate,
+      body: post.body,
+      link: post.data.link,
+    }))
 }
 
 async function getDocs() {
   const docs = await getCollection('docs')
-
   return docs.map((doc) => ({
     title: doc.data.title,
-    // body: doc.body,
     link: doc.data.link,
   }))
 }
 
+// Main function to get both posts and docs
 async function getPostsAndDocs() {
-  const docsData = await getCollection('docs')
-  const docs = docsData.map((doc) => ({
-    title: doc.data.title,
-    // body: doc.body,
-    link: doc.data.link,
-  }))
-
-  const postsData = (await getCollection('blog')).sort(
-    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
-  )
-
-  const posts = postsData.map((post) => ({
-    title: post.data.title,
-    date: post.data.pubDate,
-    body: post.body,
-    link: post.data.link,
-  }))
-
-  return {
-    posts: posts,
-    docs: docs,
-  }
+  const [posts, docs] = await Promise.all([getPosts(), getDocs()])
+  return { posts, docs }
 }
 
+// API endpoint function
 export async function GET() {
-  return new Response(JSON.stringify(await getPostsAndDocs()), {
+  const data = await getPostsAndDocs()
+  return new Response(JSON.stringify(data), {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
