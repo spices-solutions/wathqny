@@ -21,13 +21,11 @@ async function getDocs() {
   }))
 }
 
-// Main function to get both posts and docs
 async function getPostsAndDocs() {
   const [posts, docs] = await Promise.all([getPosts(), getDocs()])
   return { posts, docs }
 }
 
-// API endpoint function
 export async function GET() {
   const data = await getPostsAndDocs()
   return new Response(JSON.stringify(data), {

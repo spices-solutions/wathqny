@@ -1,0 +1,87 @@
+<div class="wtq-search">
+  <input type="search" aria-label="Search" class="wtq-focusable" id="search">
+  <svg class="wtq-search-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M232.49 215.51L185 168a92.12 92.12 0 1 0-17 17l47.53 47.54a12 12 0 0 0 17-17ZM44 112a68 68 0 1 1 68 68a68.07 68.07 0 0 1-68-68"/></svg>
+</div>
+
+<script>
+  
+let data = {}
+
+// Fetch the data from the JSON file
+fetch('/search.json')
+  .then((response) => response.json())
+  .then((json) => {
+    data = json
+    initializeSearch()
+  })
+  .catch((error) => console.error('Error loading search data:', error))
+
+function initializeSearch() {
+  document.getElementById('search').addEventListener('input', (event) => {
+    const query = event.target.value.toLowerCase()
+    const results = []
+
+    if (query) {
+      ;['posts', 'docs'].forEach((type) => {
+        data[type].forEach((item) => {
+          if (
+            item.title.toLowerCase().includes(query) ||
+            item.body.toLowerCase().includes(query)
+          ) {
+            results.push({
+              title: item.title,
+              snippet: getSnippet(item.body, query),
+              link: item.link,
+            })
+          }
+        })
+      })
+    }
+
+    displayResults(results)
+  })
+}
+
+function getSnippet(body, query) {
+  const index = body.toLowerCase().indexOf(query)
+  if (index !== -1) {
+    const snippetStart = Math.max(0, index - 30)
+    const snippetEnd = Math.min(body.length, index + 30 + query.length)
+    const snippet = body.substring(snippetStart, snippetEnd)
+
+    // Highlight the query in the snippet
+    const highlightedSnippet = snippet.replace(
+      new RegExp(query, 'gi'),
+      (match) => `<mark>${match}</mark>`,
+    )
+
+    return `...${highlightedSnippet}...`
+  }
+  return ''
+}
+
+function displayResults(results) {
+  const searchContent = document.getElementById('search-content')
+  searchContent.innerHTML = ''
+
+  if (results.length > 0) {
+    const ul = document.createElement('ul')
+    results.forEach((result) => {
+      const li = document.createElement('li')
+      const a = document.createElement('a')
+      a.href = result.link
+      a.textContent = result.title
+
+      const snippet = document.createElement('p')
+      snippet.innerHTML = result.snippet
+
+      li.appendChild(a)
+      li.appendChild(snippet)
+      ul.appendChild(li)
+    })
+    searchContent.appendChild(ul)
+  } else {
+    searchContent.textContent = 'No results found'
+  }
+}
+</script>

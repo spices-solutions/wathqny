@@ -105,7 +105,21 @@
 }
 
 #search {
-  border-radius: 1rem;
-  border: 1px solid hsl(var(--medium));
+  border-radius: 8px;
+  border: 1px solid hsl(var(--light));
   padding: 2px 10px;
+  // position: relative;
+}
+
+.wtq-search {
+  position: relative;
+}
+
+.wtq-search-icon {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 15px;
+  margin-block: 6px;
+  color: hsl(var(--dark));
 }
