@@ -21,6 +21,7 @@ const { title, keywords, description, OGImage, heading } = Astro.props as Props
         <button class="wtq-nav-menu wtq-focusable"><Icon name="sidebar" />sidebar</button>
       </div>
       <main id="main-content">
+      <div id="search-content"></div>
         <h1 class="wtq-main-heading">{heading ?? title}</h1>
         <slot />
       </main>

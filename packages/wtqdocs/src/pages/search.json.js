@@ -8,7 +8,7 @@ async function getPosts() {
       title: post.data.title,
       date: post.data.pubDate,
       body: post.body,
-      link: post.data.link,
+      link: `/blog/${post.data.link}`,
     }))
 }
 
@@ -16,7 +16,8 @@ async function getDocs() {
   const docs = await getCollection('docs')
   return docs.map((doc) => ({
     title: doc.data.title,
-    link: doc.data.link,
+    body: doc.body,
+    link: `/docs/${doc.data.link}`,
   }))
 }
 
