@@ -6,8 +6,6 @@ async function getPosts() {
     .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
     .map((post) => ({
       title: post.data.title,
-      date: post.data.pubDate,
-      body: post.body,
       link: `/blog/${post.data.link}`,
     }))
 }
@@ -16,7 +14,6 @@ async function getDocs() {
   const docs = await getCollection('docs')
   return docs.map((doc) => ({
     title: doc.data.title,
-    body: doc.body,
     link: `/docs/${doc.data.link}`,
   }))
 }

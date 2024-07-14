@@ -4,7 +4,21 @@
 </div>
 
 <script>
-  document.getElementById('search')?.addEventListener('input', () => {
-    import("./search-logic")
-  })
+import FullTextSearch from './full-text-search';
+
+const searchInput = document.getElementById('search') as HTMLInputElement;
+
+searchInput?.addEventListener('input', async () => {
+
+  const data = await (await fetch("/search.json")).json()
+  const keysToSearch = ['title', "link"];
+
+  const fullTextSearch = new FullTextSearch([...data.posts, ...data.docs], keysToSearch);
+
+  const query = searchInput.value.trim();
+  const results = fullTextSearch.search(query);
+
+  console.log("search: ", ...results)
+});
+
 </script>
