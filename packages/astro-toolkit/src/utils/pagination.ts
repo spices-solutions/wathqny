@@ -1,7 +1,7 @@
 function usePagination(
   current: number,
   total: number,
-  voidFormat: number | undefined = undefined,
+  voidFormat: string | undefined | null = null,
 ) {
   let center: number[] = [] // Initialize center as an empty array
 
@@ -28,7 +28,8 @@ function usePagination(
   const result = [arr[0]] // Start with the first element
 
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== arr[i - 1] + 1 && voidFormat) {
+    if (arr[i] !== arr[i - 1] + 1) {
+      // @ts-expect-error Argument of type 'string | null' is not assignable to parameter of type 'number'.Type 'null' is not assignable to type 'number'.ts(2345)
       result.push(voidFormat) // Add dots if the current number is not consecutive
     }
     result.push(arr[i]) // Add the current number

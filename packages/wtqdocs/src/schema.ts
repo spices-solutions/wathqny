@@ -1,7 +1,8 @@
-import { reference, z } from 'astro:content'
+import type { SchemaContext } from 'astro:content'
 import { slugify } from 'astro-toolkit/utils'
+import { z } from 'astro/zod'
 
-export const docSchema = ({ image }) =>
+export const docSchema = ({ image }: SchemaContext) =>
   z
     .object({
       title: z.string().max(60, "it can't be more than 60 characters").min(3),
@@ -16,7 +17,7 @@ export const docSchema = ({ image }) =>
       keywords: z.union([z.string(), z.array(z.string())]).optional(),
       category: z.string(),
       position: z.number().optional(),
-      authors: reference('authors').optional(),
+      authors: z.string().optional(),
       draft: z.boolean().default(false),
     })
     .strict()
@@ -25,7 +26,7 @@ export const docSchema = ({ image }) =>
       link: data.href ?? `${data.category}/${slugify(data.title)}`,
     }))
 
-export const blogSchema = ({ image }) =>
+export const blogSchema = ({ image }: SchemaContext) =>
   z
     .object({
       title: z.string().max(60, "it can't be more than 60 characters").min(3),
@@ -38,8 +39,7 @@ export const blogSchema = ({ image }) =>
         .object({ src: z.union([image(), z.string().url()]), alt: z.string() })
         .optional(),
       keywords: z.union([z.string(), z.array(z.string())]).optional(),
-      position: z.number().optional(),
-      authors: reference('authors').optional(),
+      authors: z.string().optional(),
       pubDate: z.date().transform((str: Date) => new Date(str)),
       draft: z.boolean().default(false),
     })
@@ -49,7 +49,7 @@ export const blogSchema = ({ image }) =>
       link: data.href ?? `/${slugify(data.title)}`,
     }))
 
-export function authorSchema({ image }: { image: any }) {
+export function authorSchema({ image }: SchemaContext) {
   z.object({
     name: z.string(),
     bio: z.string().optional(),

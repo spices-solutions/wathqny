@@ -1,0 +1,34 @@
+<div class="wtq-search">
+  <input type="text" aria-label="Search" autocomplete="off" id="search">
+  <ul class="wtq-search-content" aria-haspopup="dialog"></ul>
+  <svg class="wtq-search-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M232.49 215.51L185 168a92.12 92.12 0 1 0-17 17l47.53 47.54a12 12 0 0 0 17-17ZM44 112a68 68 0 1 1 68 68a68.07 68.07 0 0 1-68-68"/></svg>
+</div>
+
+<script>
+import FullTextSearch from './full-text-search';
+
+const searchInput = document.getElementById('search') as HTMLInputElement;
+const searchInputContent = document.querySelector('.wtq-search-content');
+
+const data = await (await fetch("/search.json")).json()
+searchInput?.addEventListener('input', async () => {
+
+  const keysToSearch = ['title', "link"];
+
+  const fullTextSearch = new FullTextSearch([...data.posts, ...data.docs], keysToSearch);
+
+  const query = searchInput.value;
+  const results = fullTextSearch.search(query);
+  searchInputContent.innerHTML = ""
+  results.forEach((result)=> {
+    console.log(result)
+    searchInputContent.innerHTML += `
+    <li>
+      <a class="wtq-focusable" href=${result.link}>
+        <span class="wtq-title-search">${result.title}</span>
+      </a>
+    </li>
+    `
+  })
+});
+</script>
