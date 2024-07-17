@@ -5,6 +5,7 @@ import type { WathqnyConfig as WathqnyConfigType } from '../../types/config'
 
 // @ts-ignore
 import untypedWathqnyConfig from '/wathqny.config'
+import Search from '../Search.astro'
 
 const WathqnyConfig: WathqnyConfigType = untypedWathqnyConfig
 
@@ -37,6 +38,9 @@ const { logo, siteName, navbar } = WathqnyConfig
         )
       })
     }
+      <li class="wtq-toggle-wrapper">
+        <Search />
+      </li>
     <li class="wtq-toggle-wrapper">
       <button
         class="theme-switcher wtq-focusable"

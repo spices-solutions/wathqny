@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "title": "وثقني ؟",
+      "link": "/blog/what_is_wathqny"
+    }
+  ],
+  "docs": [
+    {
+      "title": "codeblocks",
+      "link": "/docs/getting-started/codeblocks"
+    },
+    {
+      "title": "components",
+      "link": "/docs/getting-started/components"
+    },
+    {
+      "title": "markdown",
+      "link": "/docs/getting-started/markdown"
+    },
+    {
+      "title": "overview",
+      "link": "/docs/getting-started/overview"
+    },
+    {
+      "title": "performance",
+      "link": "/docs/getting-started/performance"
+    }
+  ]
+}

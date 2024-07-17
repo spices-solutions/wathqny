@@ -29,6 +29,7 @@
     },
     "./plugin": "./src/integration.ts",
     "./layout/home": "./src/pages/home.astro",
+    "./page/search.json": "./src/pages/search.json.js",
     "./page/rss.xml": "./src/pages/rss.xml.js",
     "./page/robot.txt": "./src/pages/robot.txt.ts",
     "./page/docs": "./src/pages/docs.astro",
