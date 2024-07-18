@@ -1,3 +1,4 @@
+;(() => {
 const sidebar = document.querySelector('.wtq-sidebar') as HTMLElement
 const sidebarOverlay = document.querySelector(
   '.wtq-sidebar-overlay',
@@ -47,3 +48,4 @@ categoryItems?.forEach((categoryItem) => {
     categoryCollapse?.classList.toggle('wtq-active')
   })
 })
+})()

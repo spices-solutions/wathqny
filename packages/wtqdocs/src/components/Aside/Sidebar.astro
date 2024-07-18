@@ -79,4 +79,6 @@ const currentUrl = `/${
   <CollapseButton />
 </aside>
 
-<script src="./sidebar.ts"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", setTimeout(()=> import("./sidebar"),300))
+</script>
