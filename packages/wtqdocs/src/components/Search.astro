@@ -5,30 +5,7 @@
 </div>
 
 <script>
-import FullTextSearch from './full-text-search';
-
-const searchInput = document.getElementById('search') as HTMLInputElement;
-const searchInputContent = document.querySelector('.wtq-search-content');
-
-const data = await (await fetch("/search.json")).json()
-searchInput?.addEventListener('input', async () => {
-
-  const keysToSearch = ['title', "link"];
-
-  const fullTextSearch = new FullTextSearch([...data.posts, ...data.docs], keysToSearch);
-
-  const query = searchInput.value;
-  const results = fullTextSearch.search(query);
-  searchInputContent.innerHTML = ""
-  results.forEach((result)=> {
-    console.log(result)
-    searchInputContent.innerHTML += `
-    <li>
-      <a class="wtq-focusable" href=${result.link}>
-        <span class="wtq-title-search">${result.title}</span>
-      </a>
-    </li>
-    `
-  })
+window.search?.addEventListener('input', () => {
+  import("./search-logic")
 });
 </script>
