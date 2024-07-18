@@ -51,5 +51,7 @@ const { logo, siteName, navbar } = WathqnyConfig
       </button>
     </li>
   </ul>
-  <script src="./navbar.ts"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", setTimeout(()=> import("./navbar"),300))
+  </script>
 </nav>
