@@ -124,7 +124,6 @@
 .has-focused .line:not(.focused) {
   filter: blur(.090rem);
   opacity: 0.5;
-  transition: all 300ms;
 }
 
 .has-focused:hover .line:not(.focused) {

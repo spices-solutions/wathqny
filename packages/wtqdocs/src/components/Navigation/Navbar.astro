@@ -28,7 +28,7 @@ const { logo, siteName, navbar } = WathqnyConfig
     aria-label="hamburger-menu"
     class="wtq-toggle"
   ></button>
-  <ul class="wtq-links">
+  <ul class="wtq-links wtq-motion">
     {
       navbar?.items.map((item) => {
         return (
@@ -38,9 +38,9 @@ const { logo, siteName, navbar } = WathqnyConfig
         )
       })
     }
-      <li class="wtq-toggle-wrapper">
-        <Search />
-      </li>
+    <li class="wtq-toggle-wrapper">
+      <Search />
+    </li>
     <li class="wtq-toggle-wrapper">
       <button
         class="theme-switcher wtq-focusable"
