@@ -25,7 +25,7 @@
       width: 50px;
       overflow: hidden;
       flex-direction: row;
-      .collapse-button {
+      .wtq-collapse-button {
         transform: scale(-1);
         padding: 5px 0.3rem;  
       }
@@ -40,10 +40,10 @@
     white-space: nowrap;
   }
 
-  .sidebar-category {
+  .wtq-sidebar-category {
     overflow-y: auto; 
     margin-top: 15px;
-    .category-toggle {
+    .wtq-category-toggle {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -53,31 +53,31 @@
 
       color: hsl(var(--darkest));
 
-      .arrow-icon {
+      .wtq-arrow-icon {
         transform: rotate(90deg);
         width: 24px;
         height: 24px;
       }
       
     }
-    .wtq-active  .category-toggle{
-      .arrow-icon {
+    .wtq-active  .wtq-category-toggle{
+      .wtq-arrow-icon {
         transform: rotate(-90deg);
       }
     }
 
-    .category-collapse  {
+    .wtq-category-collapse  {
       display: grid;
       will-change: grid-template-rows;
       grid-template-rows: 0fr;
       &.wtq-active {
         grid-template-rows: 1fr;
       }
-      .collapse-item {
+      .wtq-collapse-item {
         will-change: overflow;
         overflow: hidden;
         padding-inline-start: 0.6rem;
-        .collapse_item--link {
+        .wtq-collapse_item--link {
           display: block;
 
           padding: var(--collapse-item-padding);
@@ -90,7 +90,7 @@
       }
     }
 
-    :is(.category-collapse, .category-toggle) {
+    :is(.wtq-category-collapse, .wtq-category-toggle) {
       user-select: none;
 
       font-size: 0.875rem;
@@ -102,7 +102,7 @@
     }
   }
 
-  .collapse-button {
+  .wtq-collapse-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +128,7 @@
     height: 100vh;
 
     background-color: hsl(var(--white), 1);
-    .collapse-button {
+    .wtq-collapse-button {
       display: none;
     }
 
