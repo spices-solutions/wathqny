@@ -1,7 +1,9 @@
+@import "./base/default";
 @import "./components/navbar";
 @import "./components/breadcrumbs";
 @import "./components/sidebar";
 @import "./components/avatar";
+@import "./pages/code";
 @import "utils/utils";
 
 %sr-only {
