@@ -18,7 +18,11 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": ["spices", "docs", "wathqny"],
+  "keywords": [
+    "spices",
+    "docs",
+    "wathqny"
+  ],
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -54,6 +58,7 @@
     "@shikijs/transformers": "^1.10.3",
     "@vite-pwa/assets-generator": "^0.2.4",
     "@vite-pwa/astro": "^0.4.0",
+    "@zokki/astro-minify": "^1.0.5",
     "astro": "^4.11.5",
     "astro-auto-import": "^0.4.2",
     "astro-compressor": "^0.4.1",

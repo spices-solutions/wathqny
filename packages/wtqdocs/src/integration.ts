@@ -16,7 +16,7 @@ import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
 import icon from 'astro-icon'
 import metaTags from 'astro-meta-tags'
-import min from 'astro-min'
+import { minify } from '@zokki/astro-minify';
 import purgecss from 'astro-purgecss'
 import type { WathqnyConfig } from './types/config'
 
@@ -105,11 +105,8 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       gzip: true,
       brotli: false,
     }),
-    min({
-      do_not_minify_doctype: true,
-      keep_html_and_head_opening_tags: true,
-      minify_css: true,
-      minify_js: true,
+    minify({
+      logAllFiles: false
     }),
   ]
 }

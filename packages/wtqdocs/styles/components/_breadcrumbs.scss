@@ -1,9 +1,7 @@
 .wtq-breadcrumbs {
-  user-select: none;
-
   display: flex;
   align-items: center;
-
+  user-select: none;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 0;
@@ -19,9 +17,9 @@
 
   .wtq-breadcrumb {
     display: flex;
-    gap: 5px;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     white-space: nowrap;
     padding: 6px 10px;
 
