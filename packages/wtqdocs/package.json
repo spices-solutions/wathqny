@@ -18,11 +18,7 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": [
-    "spices",
-    "docs",
-    "wathqny"
-  ],
+  "keywords": ["spices", "docs", "wathqny"],
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -31,7 +27,7 @@
     "./layout/home": "./src/pages/home.astro",
     "./page/search.json": "./src/pages/search.json.js",
     "./page/rss.xml": "./src/pages/rss.xml.js",
-    "./page/robot.txt": "./src/pages/robot.txt.ts",
+    "./page/robots.txt": "./src/pages/robots.txt.ts",
     "./page/docs": "./src/pages/docs.astro",
     "./page/docs/categories": "./src/pages/docs/[...categories].astro",
     "./page/docs/documents": "./src/pages/docs/[...documents].astro",

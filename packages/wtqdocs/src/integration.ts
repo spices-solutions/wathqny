@@ -38,7 +38,7 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
   return [
     customRouting({
       'search.json': 'wtqdocs/page/search.json',
-      'robot.txt': 'wtqdocs/page/robot.txt',
+      'robots.txt': 'wtqdocs/page/robots.txt',
       'rss.xml': 'wtqdocs/page/rss.xml',
       docs: 'wtqdocs/page/docs',
       'docs/[...categories]': 'wtqdocs/page/docs/categories',
