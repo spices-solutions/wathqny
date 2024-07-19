@@ -30,6 +30,7 @@ const { frontmatter } = Astro.props
         frontmatter.logo && (
           <Image
             class="logo"
+            loading="eager"
             alt={WathqnyConfig.OGImage.alt}
             height={frontmatter.logo.height}
             width={frontmatter.logo.width}
