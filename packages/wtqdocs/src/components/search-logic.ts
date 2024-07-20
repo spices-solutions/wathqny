@@ -10,7 +10,6 @@ const fetchData = async (url: string): Promise<SearchData> => {
   const response = await fetch(url)
   return response.json()
 }
-
 ;(async () => {
   const data = await fetchData('/search.json')
   const searchInputContent = document.querySelector(
@@ -31,7 +30,7 @@ const fetchData = async (url: string): Promise<SearchData> => {
     results.forEach((result: { title: string; link: string }) => {
       searchInputContent.innerHTML += `
         <li>
-          <a class="wtq-focusable" href=${result.link}>
+          <a class="wtq-focusable wtq-rounded" href=${result.link}>
             <span class="wtq-title-search">${result.title}</span>
           </a>
         </li>

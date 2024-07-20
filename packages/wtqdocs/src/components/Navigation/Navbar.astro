@@ -12,8 +12,8 @@ const WathqnyConfig: WathqnyConfigType = untypedWathqnyConfig
 const { logo, siteName, navbar } = WathqnyConfig
 ---
 
-<nav class="wtq-navbar" role="navigation">
-  <a href="/" class="wtq-brand">
+<nav class="wtq-navbar wtq-flex-center" role="navigation">
+  <a href="/" class="wtq-brand wtq-flex-center">
     <Image
       alt="fruitUI logo, an beautiful orange with a gradient background"
       width={40}
@@ -28,7 +28,7 @@ const { logo, siteName, navbar } = WathqnyConfig
     aria-label="hamburger-menu"
     class="wtq-toggle"
   ></button>
-  <ul class="wtq-links">
+  <ul class="wtq-links wtq-flex-center wtq-motion">
     {
       navbar?.items.map((item) => {
         return (
@@ -38,9 +38,9 @@ const { logo, siteName, navbar } = WathqnyConfig
         )
       })
     }
-      <li class="wtq-toggle-wrapper">
-        <Search />
-      </li>
+    <li class="wtq-toggle-wrapper">
+      <Search />
+    </li>
     <li class="wtq-toggle-wrapper">
       <button
         class="theme-switcher wtq-focusable"

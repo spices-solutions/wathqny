@@ -1,7 +1,5 @@
 import type { WathqnyConfig } from 'wtqdocs'
 
-import CodeStyles from 'wtqdocs/styles/block?url'
-import DocsStyles from 'wtqdocs/styles/docs?url'
 import ThemeStyles from './src/theme.scss?url'
 
 const Config: WathqnyConfig = {
@@ -48,14 +46,6 @@ const Config: WathqnyConfig = {
   css: [
     {
       href: ThemeStyles,
-      rel: 'stylesheet',
-    },
-    {
-      href: DocsStyles,
-      rel: 'stylesheet',
-    },
-    {
-      href: CodeStyles,
       rel: 'stylesheet',
     },
   ],
