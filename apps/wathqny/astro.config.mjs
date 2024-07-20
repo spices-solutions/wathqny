@@ -10,6 +10,13 @@ export default defineConfig({
     defaultLocale: 'en',
     locales: ['en'],
   },
+  vite: {
+    build: {
+      modulePreload: {
+        polyfill: false
+      }
+    }
+  },
   image: {
     service: passthroughImageService(),
   },

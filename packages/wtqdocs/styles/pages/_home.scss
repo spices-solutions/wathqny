@@ -1,8 +1,6 @@
 .wtq-btn {
   box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.1882352941);
-  border-radius: 12px;
   font-size: 1rem;
-  transition: all 0.1s ease-in;
   padding: 10px 25px;
   line-height: 1;
 }   
@@ -29,61 +27,57 @@
 }
 
 #main-content {
-  display: flex;
-  align-items: center;
   justify-content: center;
 
   width: 100%;
   height: 100vh;
+}
 
-  .hero {
-    display: flex;
+.wtq-hero {
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.wtq-title {
+  max-width: 17ch;
+  margin: 0;
+  padding-block: 5px;
+
+  font-size: clamp(1.5rem, 15vw, 4rem);
+  font-weight: 900;
+  color: transparent;
+  letter-spacing: -0.5px;
+
+  background: linear-gradient(
+    9deg,
+    hsl(var(--darkest)) 53%,
+    hsl(var(--medium)) 100%
+  );
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.wtq-logo {
+  max-width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+
+.wtq-subtitle {
+  max-width: var(--subtitle-width);
+  margin-bottom: 24px;
+  text-wrap: balance;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: hsl(var(--dark));
+}
+.wtq-get-started {
+  display: flex;
+  gap: 1rem;
+  @media screen and (width <= 560px) { 
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    .title {
-      max-width: 17ch;
-      margin: 0;
-      padding-block: 5px;
-
-      font-size: clamp(1.5rem, 15vw, 4rem);
-      font-weight: 900;
-      color: transparent;
-      letter-spacing: -0.5px;
-
-      background: linear-gradient(
-        9deg,
-        hsl(var(--darkest)) 53%,
-        hsl(var(--medium)) 100%
-      );
-      background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-    }
-
-    .logo {
-      max-width: 100%;
-      height: auto;
-      padding: 1rem;
-    }
-
-    .subtitle {
-      max-width: var(--subtitle-width);
-      margin-bottom: 24px;
-      text-wrap: balance;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 500;
-      color: hsl(var(--dark));
-    }
-    .get-started {
-      display: flex;
-      gap: 1rem;
-      @media screen and (width <= 560px) { 
-        flex-direction: column;
-      }
-    }
   }
 }

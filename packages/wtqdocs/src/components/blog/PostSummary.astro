@@ -28,7 +28,7 @@ const { title, body, date, image, link, index } = Astro.props
     </span>
     <p class="wtq-post-content">{`${body.slice(0, 200)}...`}</p>
     <Image
-      class="wtq-cover"
+      class="wtq-cover wtq-rounded" 
       width={640}
       height={360}
       loading={index === 0 ? "eager" : "lazy"}
