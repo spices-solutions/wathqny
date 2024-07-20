@@ -12,6 +12,11 @@
   box-shadow: 0 10px 9px -8px rgb(0 0 0 / 10%);
 }
 
+.wtq-flex-center {
+  display: flex;
+  align-items: center;
+}
+
 .wtq-motion {
   transition-property: all;
   transition-duration: 400ms;

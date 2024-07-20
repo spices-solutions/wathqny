@@ -45,18 +45,16 @@
 }
 
 .wtq-navigation-container {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .wtq-nav-menu {
   display: none;
   @media screen and (width <= 868px) {
     display: flex;
+    align-items: center;
     background-color: transparent;
     gap: 0.5rem;
-    align-items: center;
     padding: 6px 10px;
     font-size: 0.8rem;
     border: 0;
