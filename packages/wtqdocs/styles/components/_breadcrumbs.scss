@@ -8,14 +8,7 @@
   color: hsl(var(--dark));
   list-style: none;
 
-  li {
-    display: flex;
-    align-items: center;
-  }
-
   .wtq-breadcrumb {
-    display: flex;
-    align-items: center;
     justify-content: center;
     gap: 5px;
     white-space: nowrap;
@@ -30,10 +23,5 @@
     li {
       display: none;
     }
-
-    .wtq-base-breadcrumb {
-        display: flex;
-        align-items: center;
-      }
     }
 }

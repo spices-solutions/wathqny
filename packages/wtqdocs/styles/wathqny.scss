@@ -51,8 +51,6 @@
 .wtq-nav-menu {
   display: none;
   @media screen and (width <= 868px) {
-    display: flex;
-    align-items: center;
     background-color: transparent;
     gap: 0.5rem;
     padding: 6px 10px;
