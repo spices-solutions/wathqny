@@ -37,14 +37,15 @@ const {
     dark: 'material-theme-darker',
   },
 } = Astro.props as Props
-
+// 'astro-code',
 const shiki = await createHighlighter({
   themes: [themes.light, themes.dark],
   langs: [lang],
 })
 
 const codeOutput = codeToHtml(code, {
-  cssVariablePrefix: 'astro-code',
+  // name: 'astro-code',
+
   lang: lang as string,
   themes: {
     light: themes.light,

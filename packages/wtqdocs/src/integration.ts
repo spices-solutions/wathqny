@@ -52,7 +52,7 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       imports: [
         {
           'astro:assets': ['Image'],
-          wtqdocs: ['BrowserBlock', 'Code'],
+          wtqdocs: ['BrowserBlock', 'Code', "Callout"],
         },
       ],
     }),

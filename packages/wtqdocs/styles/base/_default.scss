@@ -227,12 +227,10 @@ b, strong {
 blockquote {
   display: flex;
   gap: 0.5rem;
-  margin: 1rem;
-
-  &::before {
-    content: "";
-    border-inline-start: solid 4px hsl(var(--medium));
-  }
+  margin: 1rem 0;
+  quotes: "\201C""\201D""\2018""\2019";
+  border-inline-start: solid 4px hsl(var(--medium));
+  padding-inline-start: 10px;
 }
 
 a {

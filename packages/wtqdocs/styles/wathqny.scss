@@ -4,7 +4,6 @@
 @import "./components/sidebar";
 @import "./components/avatar";
 @import "./pages/code";
-@import "utils/utils";
 
 #skip {
   position: absolute;
@@ -42,21 +41,6 @@
   max-width: 1400px;
   margin-inline: auto;
   padding-inline: 15px;
-}
-
-.wtq-navigation-container {
-  justify-content: space-between;
-}
-
-.wtq-nav-menu {
-  display: none;
-  @media screen and (width <= 868px) {
-    background-color: transparent;
-    gap: 0.5rem;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-    border: 0;
-  }
 }
 
 .wtq-main-heading {
@@ -110,3 +94,47 @@
     padding: 0.9rem !important;
   }
 }
+
+.wtq-callout {
+  margin-block: 20px;
+  padding: 10px;
+  border: 1px solid;
+  gap: 10px;
+  > p {
+    margin: 0;
+  }
+  &.info {
+    background-color: #bae6fd;
+    border-color: #7dd3fc;
+    .dark & {
+      background-color: #163c69d4;
+      border-color: #4a84ccd4;
+    }
+  }
+  &.tip {
+    background-color: #c3fed2;
+    border-color: #47fda5;
+    .dark & {
+      background-color: #0b4f25a1;
+      border-color: #27bb6aa1;
+    }
+  }
+  &.warning {
+    background-color: #fef9c3;
+    border-color: #fde047;
+    .dark & {
+      background-color: #55420f;
+      border-color: #b3982c;
+    }
+  }
+  &.danger {
+    background-color: #fdd5d5;
+    border-color: #fca5a5;
+    .dark & {
+      background-color: #450a0a; 
+      border-color: #942828;
+    }
+  }
+}
+
+@import "utils/utils";
