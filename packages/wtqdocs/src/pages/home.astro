@@ -23,7 +23,7 @@ const { frontmatter } = Astro.props
 <BaseLayout>
   <section >
     <main id="main-content" class="wtq-flex-center">
-      <div class="wtq-hero wtq-flex-center wtq-rounded">
+      <div class="wtq-hero wtq-flex-center">
         
       {frontmatter.title && <h1 class="wtq-title">{frontmatter.title}</h1>}
       {
@@ -51,7 +51,7 @@ const { frontmatter } = Astro.props
                 data-astro-prefetch
                 href={button.href}
                 class:list={[
-                  "wtq-btn",
+                  "wtq-btn wtq-rounded",
                   { "wtq-alt": button.type === "alt" },
                   { "wtq-theme-color": button.type === "primary" },
                 ]}
