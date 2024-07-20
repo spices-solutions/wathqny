@@ -1,6 +1,6 @@
 ---
-import LinkItem from './LinkItem.astro'
 import CategoryToggle from './CategoryToggle.astro'
+import LinkItem from './LinkItem.astro'
 
 interface Props {
   href?: string
@@ -11,10 +11,10 @@ interface Props {
 const { name, href, isActive } = Astro.props
 ---
 
-<li role="tab" class="category_collapse--wrapper" class:list={{ 'wtq-active': isActive }}>
+<li role="tab" class="wtq-category_collapse--wrapper" class:list={{ 'wtq-active': isActive }}>
   <CategoryToggle name={name} />
-  <ul class="category-collapse" class:list={{ 'wtq-active': isActive }}>
-    <li class="collapse-item">
+  <ul class="wtq-category-collapse wtq-rounded wtq-motion" class:list={{ 'wtq-active': isActive }}>
+    <li class="wtq-collapse-item">
       {href ? <LinkItem href={href} name={name} /> : <slot /> }
     </li>
   </ul>

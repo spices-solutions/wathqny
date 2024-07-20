@@ -1,6 +1,5 @@
 .wtq-sidebar-overlay {
   opacity: 0;
-  transition: opacity ease 400ms;
   background-color: #00000035;
 }
 
@@ -21,15 +20,33 @@
   width: 300px;
   padding: 5px;
   border-inline-end: solid 1px hsl(var(--darkest), 0.1);
-  transition: width 400ms ease;
+  @media screen and (width <= 868px) {
+    --collapse-item-padding: 8px 1rem;
+
+    position: absolute;
+    z-index: 1;
+    transform: translateX(-100%);
+    width: 70%;
+    height: 100vh;
+
+    background-color: hsl(var(--white), 1);
+    .wtq-collapse-button {
+      display: none;
+    }
+
+    &.wtq-show {
+      transform: translateX(0%);
+    }
+  }
+
   @media screen and (width >= 868px) {
     &.wtq-aside-collapse {
       width: 50px;
       overflow: hidden;
       flex-direction: row;
-      .collapse-button {
+      .wtq-collapse-button {
         transform: scale(-1);
-        padding: 5px 0.3rem;  
+        padding: 5px 0.3rem;
       }
       ul {
         display: none;
@@ -41,106 +58,76 @@
     list-style: none;
     white-space: nowrap;
   }
+}
 
-  .sidebar-category {
-    overflow-y: auto; 
-    margin-top: 15px;
-    .category-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+.wtq-sidebar-category {
+  overflow-y: auto;
+  margin-top: 15px;
+}
 
-      width: 100%;
-      padding: var(--collapse-item-padding);
+.wtq-category-toggle {
+  justify-content: space-between;
 
-      color: hsl(var(--darkest));
+  width: 100%;
+  padding: var(--collapse-item-padding);
 
-      .arrow-icon {
-        transform: rotate(90deg);
-        width: 24px;
-        height: 24px;
-        transition: transform ease 300ms;
-      }
-      
-    }
-    .wtq-active  .category-toggle{
-      .arrow-icon {
-        transform: rotate(-90deg);
-      }
-    }
+  color: hsl(var(--darkest));
 
-    .category-collapse  {
-      transition: all cubic-bezier(0.79, 0.14, 0.15, 0.86) 500ms;
-      display: grid;
-      will-change: grid-template-rows;
-      grid-template-rows: 0fr;
-      &.wtq-active {
-        grid-template-rows: 1fr;
-      }
-      .collapse-item {
-        will-change: overflow;
-        overflow: hidden;
-        padding-inline-start: 0.6rem;
-        .collapse_item--link {
-          display: block;
-
-          padding: var(--collapse-item-padding);
-
-          font-weight: 400;
-          color: hsl(var(--dark));
-
-          border-radius: 8px;
-        }
-      }
-    }
-
-    :is(.category-collapse, .category-toggle) {
-      user-select: none;
-
-      font-size: 0.875rem;
-      font-weight: 600;
-
-      background-color: transparent;
-      border: 0;
-      border-radius: 8px;
-    }
-  }
-
-  .collapse-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px 0.6rem;
-
-    background-color: transparent;
-    border: 0;
-    border-radius: 8px;
+  .wtq-arrow-icon {
+    transform: rotate(90deg);
+    width: 24px;
+    height: 24px;
   }
 }
 
-@media screen and (width <= 868px) {
-  .wtq-sidebar {
-    --collapse-item-padding: 8px 1rem;
-
-    position: absolute;
-    z-index: 1;
-    transform: translateX(-100%);
-    width: 70%;
-    height: 100vh;
-
-    background-color: hsl(var(--white), 1);
-
-    transition: transform 400ms cubic-bezier(0.33, 1, 0.68, 1);
-    
-    .collapse-button {
-      display: none;
-    }
-
-    &.wtq-show {
-      transform: translateX(0%);
-    }
+.wtq-active {
+  .wtq-arrow-icon {
+    transform: rotate(-90deg);
   }
+}
+
+.wtq-category-collapse {
+  display: grid;
+  will-change: grid-template-rows;
+  grid-template-rows: 0fr;
+  &.wtq-active {
+    grid-template-rows: 1fr;
+  }
+}
+
+.wtq-collapse-item {
+  will-change: overflow;
+  overflow: hidden;
+  padding-inline-start: 0.6rem;
+}
+
+.wtq-collapse_item--link {
+  display: block;
+
+  padding: var(--collapse-item-padding);
+
+  font-weight: 400;
+  color: hsl(var(--dark));
+}
+
+.wtq-category-collapse,
+.wtq-category-toggle {
+  user-select: none;
+
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  background-color: transparent;
+  border: 0;
+}
+
+.wtq-collapse-button {
+  justify-content: center;
+
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px 0.6rem;
+
+  background-color: transparent;
+  border: 0;
 }

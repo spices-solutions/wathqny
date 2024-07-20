@@ -16,7 +16,7 @@ import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
 import icon from 'astro-icon'
 import metaTags from 'astro-meta-tags'
-import min from 'astro-min'
+import { minify } from '@zokki/astro-minify';
 import purgecss from 'astro-purgecss'
 import type { WathqnyConfig } from './types/config'
 
@@ -38,7 +38,7 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
   return [
     customRouting({
       'search.json': 'wtqdocs/page/search.json',
-      'robot.txt': 'wtqdocs/page/robot.txt',
+      'robots.txt': 'wtqdocs/page/robots.txt',
       'rss.xml': 'wtqdocs/page/rss.xml',
       docs: 'wtqdocs/page/docs',
       'docs/[...categories]': 'wtqdocs/page/docs/categories',
@@ -105,11 +105,8 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       gzip: true,
       brotli: false,
     }),
-    min({
-      do_not_minify_doctype: true,
-      keep_html_and_head_opening_tags: true,
-      minify_css: true,
-      minify_js: true,
+    minify({
+      logAllFiles: false
     }),
   ]
 }

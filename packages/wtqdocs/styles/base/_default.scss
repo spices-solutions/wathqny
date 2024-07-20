@@ -31,6 +31,7 @@ $font-face: "" !default;
   --font-md: #{$font-md};
   --font-sm: #{$font-sm};
   --font-xs: #{$font-xs};
+  --radius: 8px;
 
   &.light {
     --darkest: #{$accent-900};
@@ -134,7 +135,7 @@ code, kbd, samp, pre {
 pre {
   margin-block: 1.2rem;
   padding: 15px 20px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   box-shadow: 0 6px 20px -5px #00000025;
   border: 1px solid #dedee5;
 

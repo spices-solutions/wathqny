@@ -22,14 +22,15 @@ const { frontmatter } = Astro.props
 
 <BaseLayout>
   <section >
-    <main id="main-content">
-      <div class="hero">
+    <main id="main-content" class="wtq-flex-center">
+      <div class="wtq-hero wtq-flex-center">
         
-      {frontmatter.title && <h1 class="title">{frontmatter.title}</h1>}
+      {frontmatter.title && <h1 class="wtq-title">{frontmatter.title}</h1>}
       {
         frontmatter.logo && (
           <Image
-            class="logo"
+            class="wtq-logo"
+            loading="eager"
             alt={WathqnyConfig.OGImage.alt}
             height={frontmatter.logo.height}
             width={frontmatter.logo.width}
@@ -38,11 +39,11 @@ const { frontmatter } = Astro.props
         )
       }
 
-      <h2 class="subtitle">
+      <h2 class="wtq-subtitle">
         {frontmatter.subtitle}
       </h2>
 
-      <div class="get-started">
+      <div class="wtq-get-started">
         {
           frontmatter.buttons.map((button) => {
             return (
@@ -50,7 +51,7 @@ const { frontmatter } = Astro.props
                 data-astro-prefetch
                 href={button.href}
                 class:list={[
-                  "wtq-btn",
+                  "wtq-btn wtq-rounded",
                   { "wtq-alt": button.type === "alt" },
                   { "wtq-theme-color": button.type === "primary" },
                 ]}

@@ -7,16 +7,16 @@ const { length, currentPage, firstUrl, prevUrl, nextUrl } = Astro.props
 const pagination = usePagination(currentPage, length)
 ---
 
-<nav aria-label="Blog pages" class="wtq-pagination">
-  <a href={prevUrl} class:list={["pagination__link", { disabled: prevUrl }]}>
-    <Icon class="first-arrow" name="arrow" />
+<nav aria-label="Blog pages" class="wtq-pagination wtq-flex-center">
+  <a href={prevUrl} class:list={["wtq-pagination__link wtq-flex-center", { disabled: prevUrl }]}>
+    <Icon class="wtq-first-arrow" name="arrow" />
   </a>
   {
     pagination.map((page) => (
       page ?
       <a
         class:list={[
-          "pagination__link",
+          "wtq-pagination__link wtq-flex-center",
           { disabled: 1 == page },
           { active: page === currentPage },
         ]}
@@ -25,14 +25,14 @@ const pagination = usePagination(currentPage, length)
         {page}
       </a> : <span
         class:list={[
-          "pagination__link",
+          "wtq-pagination__link wtq-flex-center",
         ]}
       >
         ...
       </span>
     ))
   }
-  <a href={nextUrl} class:list={["pagination__link", { disabled: nextUrl }]}>
+  <a href={nextUrl} class:list={["wtq-pagination__link wtq-flex-center", { disabled: nextUrl }]}>
     <Icon name="arrow" />
   </a>
 </nav>

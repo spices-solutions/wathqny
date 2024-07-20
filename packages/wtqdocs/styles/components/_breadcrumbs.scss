@@ -1,9 +1,5 @@
 .wtq-breadcrumbs {
   user-select: none;
-
-  display: flex;
-  align-items: center;
-
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 0;
@@ -12,32 +8,18 @@
   color: hsl(var(--dark));
   list-style: none;
 
-  li {
-    display: flex;
-    align-items: center;
-  }
-
   .wtq-breadcrumb {
-    display: flex;
-    gap: 5px;
-    align-items: center;
     justify-content: center;
+    gap: 5px;
     white-space: nowrap;
     padding: 6px 10px;
 
     font-size: 16px;
-
-    border-radius: 8px;
   }
 
-  @media screen and (width <=768px) {
+  @media screen and (width <= 868px) {
     li {
       display: none;
     }
-
-    .base-breadcrumb {
-        display: flex;
-        align-items: center;
-      }
     }
 }
