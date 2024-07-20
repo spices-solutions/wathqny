@@ -14,7 +14,6 @@
   padding-bottom: 0;
 
   border: 1px solid #dedee5;
-  border-radius: 10px;
   box-shadow:
     0 10px 25px -5px rgb(0 0 0 / 5%),
     0 8px 10px -6px rgb(0 0 0 / 10%);
@@ -116,7 +115,7 @@
 
 .highlighted-word {
   border: 1px solid #77787f28;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 2px;
   background-color: #77787f28;
 }

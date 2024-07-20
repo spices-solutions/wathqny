@@ -12,6 +12,10 @@
   box-shadow: 0 10px 9px -8px rgb(0 0 0 / 10%);
 }
 
+.wtq-rounded {
+  border-radius: var(--radius);
+}
+
 .wtq-flex-center {
   display: flex;
   align-items: center;

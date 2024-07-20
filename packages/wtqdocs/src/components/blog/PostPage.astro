@@ -1,11 +1,11 @@
 ---
 import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
 import WathqnyConfig from '/wathqny.config'
 import type { LayoutInterface } from '../../types/components'
 import BlogLayout from '../Layout/BlogLayout.astro'
 import Breadcrumbs from '../Navigation/breadcrumbs.astro'
 import AuthorProfile from './AuthorProfile.astro'
-import type { CollectionEntry } from 'astro:content'
 
 export interface Props extends LayoutInterface {
   postMetaData: CollectionEntry<'blog'>
@@ -30,7 +30,7 @@ const { title, keywords, description, OGImage } = postMetaData
       />
       <figure>
         <Image
-          class="wtq-cover"
+          class="wtq-cover wtq-rounded"
           width={960}
           height={540}
           loading="eager"

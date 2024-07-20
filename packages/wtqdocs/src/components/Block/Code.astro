@@ -44,7 +44,7 @@ const shiki = await createHighlighter({
 })
 
 const codeOutput = codeToHtml(code, {
-  cssVariablePrefix: "astro-code",
+  cssVariablePrefix: 'astro-code',
   lang: lang as string,
   themes: {
     light: themes.light,
@@ -78,7 +78,7 @@ const bgDark = shiki.getTheme(themes.dark).bg
   }
 </style>
 
-<div class="wtq-app-block wtq-code-block">
+<div class="wtq-app-block wtq-code-block wtq-rounded">
   <div class="head">
     <span class="dot"></span>
     <span class="dot"></span>

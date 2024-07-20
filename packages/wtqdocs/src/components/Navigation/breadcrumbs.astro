@@ -21,7 +21,7 @@ currentURL = currentURL.filter((url) => url !== '')
     <a
     data-astro-prefetch
       href="/"
-      class="wtq-breadcrumb wtq-flex-center wtq-focusable"
+      class="wtq-breadcrumb wtq-rounded wtq-flex-center wtq-focusable"
       aria-label="Go to the homepage"
       itemprop="item"
     >
@@ -42,7 +42,7 @@ currentURL = currentURL.filter((url) => url !== '')
         <a
           data-astro-prefetch
           href={`/${currentURL.slice(0, index + 1).join('/')}`}
-          class="wtq-breadcrumb wtq-focusable"
+          class="wtq-breadcrumb wtq-rounded wtq-flex-center wtq-focusable"
           itemprop="item"
         >
           <span itemprop="name">{unslugify(url)}</span>

@@ -108,7 +108,7 @@
       height: 3px;
 
       background-color: currentcolor;
-      border-radius: 10px;
+      border-radius: var(--radius);
 
       transition: inherit;
     }

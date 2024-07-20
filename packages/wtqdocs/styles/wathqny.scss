@@ -19,7 +19,7 @@
     padding: 10px 15px;
     background-color: white;
     border: 1px solid hsl(var(--light));
-    border-radius: 10px;
+    border-radius: var(--radius);
     box-shadow: 0 10px 9px -8px rgb(0 0 0 / 10%);
 
     .dark & {
@@ -56,7 +56,6 @@
     padding: 6px 10px;
     font-size: 0.8rem;
     border: 0;
-    border-radius: 8px;
   }
 }
 
@@ -84,13 +83,11 @@
       border: 1px solid hsl(var(--light));
       padding: 5px;
       margin-top: 4px;
-      border-radius: 8px;
     }
   }
 }
 
 #search {
-  border-radius: 8px;
   border: 1px solid hsl(var(--light));
   padding: 6px 30px;
   outline: none;
@@ -111,6 +108,5 @@
     display: inline-block;
     width: 100%;
     padding: 0.9rem !important;
-    border-radius: 8px;
   }
 }
