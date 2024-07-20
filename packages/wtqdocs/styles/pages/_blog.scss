@@ -24,13 +24,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .pagination__link {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .first-arrow {
-      transform: scaleX(-1);
-    }
-  }
+}
+
+.wtq-pagination__link {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wtq-first-arrow {
+  transform: scaleX(-1);
 }
