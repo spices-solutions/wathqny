@@ -44,6 +44,7 @@ const shiki = await createHighlighter({
 })
 
 const codeOutput = codeToHtml(code, {
+  cssVariablePrefix: "astro-code",
   lang: lang as string,
   themes: {
     light: themes.light,
