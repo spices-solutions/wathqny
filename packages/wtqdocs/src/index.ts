@@ -1,5 +1,6 @@
 export type { Props as HeadType } from './components/Head.astro'
 export { default as Head } from './components/Head.astro'
+export { default as Callout } from './components/common/Callout.astro'
 export { default as Navbar } from './components/Navigation/Navbar.astro'
 export { default as SkipLink } from './components/Navigation/SkipLink.astro'
 export { default as BaseLayout } from './components/Layout/BaseLayout.astro'

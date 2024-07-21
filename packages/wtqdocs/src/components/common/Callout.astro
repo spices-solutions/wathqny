@@ -1,0 +1,21 @@
+---
+interface Props {
+  type: 'info' | 'tip' | 'warning'  | 'danger'
+}
+
+const { type } = Astro.props as Props
+
+const icon = {
+  info: '📔',
+  tip: '💡',
+  warning: '⚠️',
+  danger: '❌',
+}
+---
+
+<div aria-label="callout" role="alert" class:list={["wtq-callout wtq-flex-center wtq-rounded", type]}>
+  <span>
+    {icon[type]}
+  </span>
+  <slot />
+</div>

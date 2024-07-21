@@ -1,7 +1,6 @@
 .wtq-breadcrumbs {
   user-select: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-block: 20px;
   padding: 0;
 
   font-weight: 300;
@@ -18,8 +17,25 @@
   }
 
   @media screen and (width <= 868px) {
-    li {
+    li:not(.wtq-base-breadcrumb) {
       display: none;
     }
-    }
+  }
+}
+
+.wtq-navigation-container {
+  justify-content: space-between;
+}
+
+.wtq-nav-menu {
+  display: none;
+  @media screen and (width <= 868px) {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    gap: 0.5rem;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    border: 0;
+  }
 }

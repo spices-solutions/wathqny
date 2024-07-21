@@ -23,6 +23,9 @@
     "docs",
     "wathqny"
   ],
+  "scripts": {
+    "start": "node ./src/cli/index.js"
+  },
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -41,8 +44,8 @@
     "./page/404": "./src/pages/404.astro",
     "./schema": "./src/schema.ts",
     "./blog": "./src/blog.ts",
+    "./styles": "./styles/wathqny.scss",
     "./styles/home": "./styles/pages/_home.scss",
-    "./styles/docs": "./styles/wathqny.scss",
     "./styles/blog": "./styles/pages/_blog.scss",
     "./styles/categories": "./styles/pages/_categories.scss",
     "./styles/block": "./styles/pages/_code.scss",
