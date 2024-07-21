@@ -14,17 +14,14 @@ const { title, keywords, description, OGImage, heading } = Astro.props as Props
 
 <BaseLayout {title} {keywords} {description} {OGImage}>
   <SidebarRefine />
-  <div class="wtq-content">
-    <div class="wtq-container">
-      <div class="wtq-navigation-container wtq-flex-center">
-        <Breadcrumbs />
-        <button class="wtq-nav-menu wtq-rounded wtq-focusable"><Icon name="sidebar" />sidebar</button>
-      </div>
-      <main id="main-content">
-      <div id="search-content"></div>
-        <h1 class="wtq-main-heading">{heading ?? title}</h1>
-        <slot />
-      </main>
+  <div class="wtq-container">
+    <div class="wtq-navigation-container wtq-flex-center">
+      <Breadcrumbs />
+      <button class="wtq-nav-menu wtq-rounded wtq-focusable"><Icon name="sidebar" />sidebar</button>
     </div>
+    <main id="main-content">
+      <h1 class="wtq-main-heading">{heading ?? title}</h1>
+      <slot />
+    </main>
   </div>
 </BaseLayout>

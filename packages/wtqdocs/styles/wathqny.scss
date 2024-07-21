@@ -37,21 +37,16 @@
 }
 
 .wtq-container {
-  width: 90%;
-  max-width: 1400px;
+  max-width: 100%;
   margin-inline: auto;
-  padding-inline: 15px;
+  padding-inline: 20px;
 }
+
 
 .wtq-main-heading {
-  margin-top: 10px !important;
-  margin-bottom: 10px;
+  margin-block: 10px;
   text-transform: capitalize;
-}
-
-.wtq-content {
-  width: 100%;
-  padding-bottom: 40px;
+  word-break: break-all;
 }
 
 .wtq-search {
