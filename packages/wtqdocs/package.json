@@ -23,6 +23,9 @@
     "docs",
     "wathqny"
   ],
+  "scripts": {
+    "start": "node ./src/cli/index.js"
+  },
   "exports": {
     ".": {
       "import": "./src/index.ts"
