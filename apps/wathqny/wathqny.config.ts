@@ -1,6 +1,6 @@
 import type { WathqnyConfig } from 'wtqdocs'
 
-import ThemeStyles from './src/theme.scss?url'
+import ThemeStyles from 'wtqdocs/styles?url'
 
 const Config: WathqnyConfig = {
   logo: '/icon.svg',

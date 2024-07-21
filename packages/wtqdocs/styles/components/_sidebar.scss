@@ -17,8 +17,9 @@
   height: 100vh;
   position: sticky;
   inset: 0;
-  width: 300px;
+  width: 250px;
   padding: 5px;
+  flex-shrink: 1;
   border-inline-end: solid 1px hsl(var(--darkest), 0.1);
   @media screen and (width <= 868px) {
     --collapse-item-padding: 8px 1rem;
