@@ -27,7 +27,7 @@ const METADESCRIPTION = description ?? WathqnyConfig.description
 const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
 
 const fontStyle = `
-  <style is:global>
+  <style>
     @font-face {
       font-family: wtqfont;
       font-weight: 100 900;
@@ -43,8 +43,7 @@ const fontStyle = `
   description={METADESCRIPTION}
   keywords={METAKEYWORDS}
   OGImage={{ src: METAIMAGE, alt: METAIMAGEALT }}
-  GSVtoken="PVw1xk8LSGGe9WA1CzziS4zL1GXshAvdNn9iksdbmWw"
-  robots="index, follow"
+  GSVToken={WathqnyConfig.GSVToken}
   sitemap
   extend={{
     link: [

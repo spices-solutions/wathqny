@@ -7,8 +7,8 @@ const {
   description,
   OGImage,
   sitemap,
-  GSVtoken,
-  robots,
+  GSVToken,
+  robots = 'index, follow',
   extend,
 } = Astro.props as Props
 
@@ -60,6 +60,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   <meta name="twitter:description" content={METADESCRIPTION} />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <meta name="google-site-verification" content={GSVtoken} />
+  <meta name="google-site-verification" content={GSVToken} />
   <slot />
 <head>

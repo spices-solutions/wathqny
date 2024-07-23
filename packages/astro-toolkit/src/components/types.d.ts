@@ -16,13 +16,16 @@ export type Props = {
     alt: string | undefined
   }
   keywords?: string | string[] | undefined
+  GSVToken?: string
   sitemap?: boolean
   /**
    * google-site-verification token
    */
-  GSVtoken: string
+  GSVToken: string
+  /**
+   * @default "index, follow"
+   */
   robots: string
-  vitePWA: boolean
   extend?: {
     link?: Partial<Link>[]
     meta?: Partial<Meta>[]

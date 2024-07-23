@@ -2,6 +2,7 @@ type WathqnyConfig = {
   logo: string
   siteName?: string
   description?: string
+  GSVToken?: string
   keywords?: string[]
   sidebar?: {
     label: string
