@@ -1,10 +1,11 @@
 ---
-import { Icon } from 'astro-icon/components'
+import Svg from '@cxa/astro-inline-svg'
+import DoubleArrowSvg from '../../assets/icons/double-arrow.svg?raw'
 ---
 
 <button
   aria-label="expand sidebar toggle"
   class="wtq-collapse-button wtq-rounded wtq-flex-center wtq-focusable"
 >
-  <Icon name="double-arrow" /></button
+  <Svg raw={DoubleArrowSvg} /></button
 >
