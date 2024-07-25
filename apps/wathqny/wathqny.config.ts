@@ -31,6 +31,10 @@ const Config: WathqnyConfig = {
       label: 'Getting started',
       id: 'getting-started',
     },
+    {
+      label: 'test',
+      id: 'test',
+    },
   ],
   navbar: {
     items: [

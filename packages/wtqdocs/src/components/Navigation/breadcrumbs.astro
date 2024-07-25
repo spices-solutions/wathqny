@@ -41,8 +41,13 @@ currentURL = currentURL.filter((url) => url !== '')
         itemscope
         itemtype="https://schema.org/ListItem"
       >
-        
-          <Svg class="wtq-arrow-icon" height={20} width={20} raw={arrowSvg} />
+      {
+        index === 0 ? (
+          <Svg define:symbol="arrow-svg" height={20} width={20} class="wtq-arrow-icon"  raw={arrowSvg} /> 
+        ) : (
+          <Svg use:symbol="arrow-svg" height={20} width={20} class="wtq-arrow-icon"  raw={arrowSvg} /> 
+        )
+      }
         <a
           data-astro-prefetch
           href={`/${currentURL.slice(0, index + 1).join('/')}`}
