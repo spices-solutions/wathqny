@@ -1,6 +1,8 @@
 ---
-import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
+import Svg from '@cxa/astro-inline-svg'
+import MoonSvg from '../../assets/icons/moon.svg?raw'
+import SunSvg from '../../assets/icons/sun.svg?raw'
 import type { WathqnyConfig as WathqnyConfigType } from '../../types/config'
 
 // @ts-ignore
@@ -46,8 +48,9 @@ const { logo, siteName, navbar } = WathqnyConfig
         class="theme-switcher wtq-focusable"
         aria-label="dark mode toggler"
       >
-        <Icon name="moon" class="dark-mode-moon" />
-        <Icon name="sun" class="dark-mode-sun" />
+        <Svg class="dark-mode-moon"  raw={MoonSvg} />
+        <Svg class="dark-mode-sun"  raw={SunSvg} />
+      
       </button>
     </li>
   </ul>

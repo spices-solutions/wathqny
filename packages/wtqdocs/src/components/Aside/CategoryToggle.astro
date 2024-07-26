@@ -1,14 +1,16 @@
 ---
-import { Icon } from 'astro-icon/components'
+import Svg from '@cxa/astro-inline-svg'
+import arrowSvg from '../../assets/icons/arrow.svg?raw'
 
 interface Props {
   name: string
+  key: number
 }
 
-const { name } = Astro.props as Props
+const { name, key } = Astro.props as Props
 ---
 
 <button class="wtq-focusable wtq-flex-center wtq-rounded wtq-category-toggle">
   {name}
-  <Icon class="wtq-arrow-icon wtq-motion" name="arrow" />
+  <Svg use:symbol="arrow-svg" class="wtq-arrow-icon wtq-motion"  raw={arrowSvg} /> 
 </button>
