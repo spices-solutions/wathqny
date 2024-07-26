@@ -48,16 +48,7 @@ const Config: WathqnyConfig = {
       },
     ],
   },
-  css: [
-    {
-      href: "/injected.css",
-      rel: 'stylesheet',
-    },
-    {
-      href: ThemeStyles,
-      rel: 'stylesheet',
-    },
-  ],
+  css: ['/injected.css', ThemeStyles],
   font: '/font/GeistVF.woff2',
 }
 
