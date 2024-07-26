@@ -1,5 +1,8 @@
 ---
-import { Icon } from 'astro-icon/components'
+import Svg from '@cxa/astro-inline-svg'
+import arrowSvg from '../../assets/icons/arrow.svg?raw'
+import HomeSvg from '../../assets/icons/home.svg?raw'
+
 import { unslugify } from 'astro-toolkit/utils'
 let currentURL: string[] = Astro.url.pathname.split('/')
 
@@ -19,13 +22,13 @@ currentURL = currentURL.filter((url) => url !== '')
     itemtype="https://schema.org/ListItem"
   >
     <a
-    data-astro-prefetch
+      data-astro-prefetch
       href="/"
       class="wtq-breadcrumb wtq-rounded wtq-flex-center wtq-focusable"
       aria-label="Go to the homepage"
       itemprop="item"
     >
-      <Icon name="home" />
+      <Svg raw={HomeSvg} />
       <span itemprop="name">Home</span>
     </a>
     <meta itemprop="position" content="1" />
@@ -38,7 +41,13 @@ currentURL = currentURL.filter((url) => url !== '')
         itemscope
         itemtype="https://schema.org/ListItem"
       >
-        <Icon class="arrow-icon" name="arrow" />
+      {
+        index === 0 ? (
+          <Svg define:symbol="arrow-svg" height={20} width={20} class="wtq-arrow-icon"  raw={arrowSvg} /> 
+        ) : (
+          <Svg use:symbol="arrow-svg" height={20} width={20} class="wtq-arrow-icon"  raw={arrowSvg} /> 
+        )
+      }
         <a
           data-astro-prefetch
           href={`/${currentURL.slice(0, index + 1).join('/')}`}

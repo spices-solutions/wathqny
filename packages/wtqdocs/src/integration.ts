@@ -14,7 +14,6 @@ import {
 import AstroPWA from '@vite-pwa/astro'
 import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
-import icon from 'astro-icon'
 import metaTags from 'astro-meta-tags'
 import { minify } from '@zokki/astro-minify';
 import purgecss from 'astro-purgecss'
@@ -65,9 +64,6 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
         },
         transformers: [...shikiBaseTransformers()],
       },
-    }),
-    icon({
-      iconDir: 'src/assets/icons',
     }),
     sitemap(),
     purgecss(),
