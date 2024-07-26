@@ -32,6 +32,7 @@
     },
     "./plugin": "./src/integration.ts",
     "./layout/home": "./src/pages/home.astro",
+    "./page/injected.css": "./src/pages/assets/injected-styles.css.ts",
     "./page/search.json": "./src/pages/search.json.js",
     "./page/rss.xml": "./src/pages/rss.xml.js",
     "./page/robots.txt": "./src/pages/robots.txt.ts",

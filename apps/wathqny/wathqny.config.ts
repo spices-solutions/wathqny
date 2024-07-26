@@ -50,6 +50,10 @@ const Config: WathqnyConfig = {
   },
   css: [
     {
+      href: "/injected.css",
+      rel: 'stylesheet',
+    },
+    {
       href: ThemeStyles,
       rel: 'stylesheet',
     },
