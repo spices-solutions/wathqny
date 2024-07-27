@@ -30,4 +30,8 @@ export default defineConfig({
     },
   },
   integrations: [...wathqnyPlugin(WathqnyConfig)],
+  experimental: {
+    contentCollectionCache: true,
+    directRenderScript: true,
+  }
 })
