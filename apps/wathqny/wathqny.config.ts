@@ -49,7 +49,7 @@ const Config: WathqnyConfig = {
     ],
   },
   css: ['/injected.css', ThemeStyles],
-  font: '/font/GeistVF.woff2',
+  // font: '/font/GeistVF.woff2',
 }
 
 export default Config

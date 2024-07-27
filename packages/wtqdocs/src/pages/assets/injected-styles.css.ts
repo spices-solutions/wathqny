@@ -6,17 +6,30 @@ import type { WathqnyConfig as WathqnyConfigType } from '../../types/config'
 import untypedWathqnyConfig from '/wathqny.config'
 const WathqnyConfig: WathqnyConfigType = untypedWathqnyConfig
 
-const Styles = `
-@font-face {
-  font-family: wtqfont;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("${WathqnyConfig.font}") format("woff2");
-}
-
+const Styles = WathqnyConfig.font
+  ? `
+  @font-face {
+    font-family: wtqfont;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("${WathqnyConfig.font}") format("woff2");
+  }
 body {
   font-family: wtqfont, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+
+`
+
+  : `
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.wtq-brand {
+  align-items: normal !important;
 }
 `
 
