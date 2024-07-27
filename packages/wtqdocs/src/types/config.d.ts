@@ -18,7 +18,7 @@ type WathqnyConfig = {
     onload?: string
     media?: string
     as?: string
-  }[]
+  }[] | string[]
   navbar?: {
     items: { href?: string; label?: string }[]
   }

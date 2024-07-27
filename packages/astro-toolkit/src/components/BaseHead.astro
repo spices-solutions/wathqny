@@ -30,7 +30,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
   {
     extend?.link?.map((linkTag) => (
-      <link {...linkTag} />
+      typeof linkTag == 'object' ? <link {...linkTag} /> : <link rel="stylesheet" href={linkTag} />
     ))
   }
 
