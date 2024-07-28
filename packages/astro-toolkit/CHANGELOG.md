@@ -1,5 +1,11 @@
 # astro-toolkit
 
+## 0.2.8
+
+### Patch Changes
+
+- f90c2e2: new schema based, docing head component
+
 ## 0.2.0
 
 ### Minor Changes
