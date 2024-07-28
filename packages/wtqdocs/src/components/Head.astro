@@ -4,7 +4,7 @@ import { pwaAssetsHead } from 'virtual:pwa-assets/head'
 // @ts-ignore
 import { pwaInfo } from 'virtual:pwa-info'
 
-import { BaseHead } from 'astro-toolkit'
+import { BaseHead } from 'astro-toolkit/seo'
 
 import type { WathqnyConfig as WathqnyConfigType } from '../types/config'
 
@@ -33,9 +33,10 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
   keywords={METAKEYWORDS}
   OGImage={{ src: METAIMAGE, alt: METAIMAGEALT }}
   GSVToken={WathqnyConfig.GSVToken}
-  sitemap
   extend={{
     link: [
+      // @ts-expect-error Type '{ href: string; rel?: string; onload?: string; media?: string; as?: string; }[] | undefined' must have a '[Symbol.iterator]()' method that returns an iterator.ts(2488)
+      ...WathqnyConfig.css,
       {
         href: WathqnyConfig.font,
         rel: 'preload',
@@ -43,8 +44,6 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
         type: 'font/woff2',
         crossorigin: 'anonymous',
       },
-      // @ts-expect-error Type '{ href: string; rel?: string; onload?: string; media?: string; as?: string; }[] | undefined' must have a '[Symbol.iterator]()' method that returns an iterator.ts(2488)
-      ...WathqnyConfig.css
     ],
   }}
 >
