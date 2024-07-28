@@ -20,6 +20,7 @@
     "code",
     "wathqny",
     "kit",
+    "toolkit",
     "astro-toolkit",
     "wtqdocs",
     "astro",
@@ -30,6 +31,9 @@
   "exports": {
     ".": {
       "import": "./src/index.ts"
+    },
+    "./schema": {
+      "import": "./src/schema.ts"
     },
     "./flow": {
       "import": "./src/flow.ts"
