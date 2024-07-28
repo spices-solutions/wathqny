@@ -54,17 +54,17 @@
   },
   "module": "./src/index.ts",
   "dependencies": {
-    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/mdx": "^3.1.3",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
     "@cxa/astro-inline-svg": "^0.4.0",
-    "@inox-tools/custom-routing": "^0.3.2",
+    "@inox-tools/custom-routing": "^0.3.3",
     "@rehype-pretty/transformers": "^0.13.2",
-    "@shikijs/transformers": "^1.10.3",
+    "@shikijs/transformers": "^1.12.0",
     "@vite-pwa/assets-generator": "^0.2.4",
     "@vite-pwa/astro": "^0.4.0",
     "@zokki/astro-minify": "^1.0.5",
-    "astro": "^4.11.5",
+    "astro": "^4.12.2",
     "astro-auto-import": "^0.4.2",
     "astro-compressor": "^0.4.1",
     "astro-meta-tags": "^0.3.0",
@@ -73,10 +73,10 @@
     "astro-toolkit": "workspace:*",
     "cross-spawn": "^7.0.3",
     "purgecss": "^6.0.0",
-    "shiki": "^1.10.3"
+    "shiki": "^1.12.0"
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.9.0",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   }
 }
