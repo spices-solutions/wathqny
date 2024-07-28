@@ -1,12 +1,12 @@
 ---
-import type { Props } from './types'
+import type { Props } from '../components/types'
 
 const {
   title,
   keywords,
   description,
   OGImage,
-  sitemap,
+  sitemap = "/sitemap-index.xml",
   GSVToken,
   robots = 'index, follow',
   extend,
@@ -40,7 +40,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     ))
   }
 
-  {sitemap && <link rel="sitemap" href="/sitemap-index.xml" />}
+  {sitemap && <link rel="sitemap" href={sitemap as string} />}
 
   <meta name="keywords" content={METAKEYWORDS as string} />
   <meta name="description" content={METADESCRIPTION} />
