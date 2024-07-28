@@ -3,16 +3,16 @@ import { z } from 'astro/zod'
 import { slugify } from './utils'
 
 export const s = {
-  authorSchema: z
-    .object({
-      name: z.string(),
-      bio: z.string().optional(),
-      email: z.string().email().optional(),
-      role: z.string().optional(),
-      profile: z.string().url(),
-    })
-    .strict()
-    .optional(),
+  // authorSchema: z
+  //   .object({
+  //     name: z.string(),
+  //     bio: z.string().optional(),
+  //     email: z.string().email().optional(),
+  //     role: z.string().optional(),
+  //     profile: z.string().url(),
+  //   })
+  //   .strict()
+  //   .optional(),
   title: z.string().max(60, "Title can't exceed 60 characters").min(3),
   description: z
     .string()
@@ -35,7 +35,7 @@ export function docSchema({ image }: SchemaContext) {
       image: s.OGImage({ image }),
       keywords: s.keywords,
       draft: s.draft,
-      authors: s.authorSchema,
+      authors: z.string().optional(),
       category: z.string(),
       position: z.number().optional(),
     })
@@ -55,7 +55,7 @@ export function blogSchema({ image }: SchemaContext) {
       image: s.OGImage({ image }),
       keywords: s.keywords,
       draft: s.draft,
-      authors: s.authorSchema,
+      authors: z.string().optional(),
       pubDate: z.date().transform((str: Date) => new Date(str)),
     })
     .strict()
