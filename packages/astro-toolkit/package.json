@@ -1,7 +1,7 @@
 {
   "name": "astro-toolkit",
   "type": "module",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "A collection of Astro tools, components, and utilities to streamline your development process.",
   "license": "MIT",
   "publishConfig": {

@@ -1,5 +1,12 @@
 # docs
 
+## 0.2.9
+
+### Patch Changes
+
+- Updated dependencies [9b95af3]
+  - wtqdocs@0.2.9
+
 ## 0.2.8
 
 ### Patch Changes

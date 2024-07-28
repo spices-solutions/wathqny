@@ -1,5 +1,13 @@
 # wtqdocs
 
+## 0.2.9
+
+### Patch Changes
+
+- 9b95af3: ci publish
+- Updated dependencies [9b95af3]
+  - astro-toolkit@0.2.9
+
 ## 0.2.8
 
 ### Patch Changes
