@@ -1,5 +1,12 @@
 # docs
 
+## 0.2.8
+
+### Patch Changes
+
+- Updated dependencies [f90c2e2]
+  - wtqdocs@0.2.8
+
 ## 0.0.7
 
 ### Patch Changes
