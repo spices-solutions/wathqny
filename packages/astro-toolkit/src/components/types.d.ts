@@ -16,9 +16,7 @@ export type Props = {
     alt: string | undefined
   }
   keywords?: string | string[] | undefined
-  /**
-   * @default "/sitemap-index.xml"
-   */
+  GSVToken?: string
   sitemap?: boolean
   /**
    * google-site-verification token
