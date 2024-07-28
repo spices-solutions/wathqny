@@ -1,5 +1,13 @@
 # wtqdocs
 
+## 0.2.8
+
+### Patch Changes
+
+- f90c2e2: new schema based, docing head component
+- Updated dependencies [f90c2e2]
+  - astro-toolkit@0.2.8
+
 ## 0.2.0
 
 ### Minor Changes
