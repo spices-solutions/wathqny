@@ -6,6 +6,18 @@
       "cache": false,
       "persistent": true
     },
+    "lint": {
+      "cache": true
+    },
+    "lint:fix": {
+      "cache": true
+    },
+    "build:pkg": {
+      "cache": true
+    },
+    "release": {
+      "cache": true
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]

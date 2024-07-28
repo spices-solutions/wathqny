@@ -29,8 +29,8 @@
     "components"
   ],
   "exports": {
-    "./seo": {
-      "import": "./src/seo/index.ts"
+    ".": {
+      "import": "./src/index.ts"
     },
     "./schema": {
       "import": "./src/schema.ts"
