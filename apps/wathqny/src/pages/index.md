@@ -3,7 +3,7 @@ layout: "wtqdocs/layout/home"
 logo: 
   src: "/treadmark.webp"
   width: 500
-  height: 300
+  height: 278
 subtitle: wathqny a fast, easy and accessible Astro powered documentation site framework
 buttons:
   - label: Getting started
