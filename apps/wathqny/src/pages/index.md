@@ -17,7 +17,7 @@ buttons:
 <style>
   :root {
     --subtitle-width: 27ch;
-    --accent-color: #08c136;
+    --accent-color: #21873a;
     --accent-color-dark: #148730
   }
 </style>
