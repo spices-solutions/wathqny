@@ -50,8 +50,8 @@ currentURL = currentURL.filter((url) => url !== '')
       }
         <a
           
-          href={`/${currentURL.slice(0, index + 1).join('/')}`}
-          class="wtq-breadcrumb wtq-rounded wtq-flex-center wtq-focusable"
+          href={ index == currentURL.length - 1  ? "javascript:void(0);" :`/${currentURL.slice(0, index + 1).join('/')}`}
+          class:list={["wtq-breadcrumb wtq-rounded wtq-flex-center wtq-focusable", { "wtq-highlight": index == currentURL.length - 1 }]}
           itemprop="item"
         >
           <span itemprop="name">{unslugify(url)}</span>

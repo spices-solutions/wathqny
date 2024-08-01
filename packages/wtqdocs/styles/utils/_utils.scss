@@ -27,6 +27,11 @@
   transition-timing-function: ease;
 }
 
+.wtq-highlight {
+  background-color: hsl(var(--medium), 0.1);
+  color: hsl(var(--darkest));
+}
+
 .wtq-motion-slow {
   transition-duration: 600ms;
 }
