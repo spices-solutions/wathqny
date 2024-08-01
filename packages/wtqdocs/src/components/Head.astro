@@ -8,10 +8,10 @@ import { BaseHead } from 'astro-toolkit/seo'
 
 import type { WathqnyConfig as WathqnyConfigType } from '../types/config'
 
+import { ViewTransitions } from 'astro:transitions'
 // @ts-ignore
 import untypedWathqnyConfig from '/wathqny.config'
 import type { LayoutInterface } from '../types/components'
-import { ViewTransitions } from 'astro:transitions'
 
 const WathqnyConfig: WathqnyConfigType = untypedWathqnyConfig
 
@@ -54,18 +54,17 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
   <meta name="color-scheme" content="dark light" />
 
   <script src="./pwa.ts"></script>
-  <script is:inline>
-    const root = document.documentElement;
+  <script is:inline data-astro-rerun>
+    (() => {
+      const root = document.documentElement;
 
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
+      localStorage.theme === "dark" ||(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
       root?.classList.replace("light", "dark");
     } else {
       root?.classList.replace("dark", "light");
     }
+    })()
   </script>
   <meta name="generator" content="wathqny 1.0 Astro powerd" />
   <ViewTransitions />

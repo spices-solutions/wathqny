@@ -1,4 +1,6 @@
-;(() => {
+import { action } from "astro-toolkit/actions"
+
+action(()=> {
   const sidebar = document.querySelector('.wtq-sidebar') as HTMLElement
   const sidebarOverlay = document.querySelector(
     '.wtq-sidebar-overlay',
@@ -48,4 +50,4 @@
       categoryCollapse?.classList.toggle('wtq-active')
     })
   })
-})()
+})

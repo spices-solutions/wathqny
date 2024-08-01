@@ -28,7 +28,7 @@ const { logo, siteName, navbar } = WathqnyConfig
   <button
     tabindex="0"
     aria-label="hamburger-menu"
-    class="wtq-toggle wtq-nav-lazy-action"
+    class="wtq-toggle"
   ></button>
   <ul class="wtq-links  wtq-flex-center wtq-motion">
     {
@@ -43,7 +43,7 @@ const { logo, siteName, navbar } = WathqnyConfig
     <li class="wtq-toggle-wrapper">
       <Search />
     </li>
-    <li class="wtq-toggle-wrapper wtq-nav-lazy-action">
+    <li class="wtq-toggle-wrapper">
       <button
         class="theme-switcher wtq-focusable"
         aria-label="dark mode toggler"
@@ -54,8 +54,12 @@ const { logo, siteName, navbar } = WathqnyConfig
       </button>
     </li>
   </ul>
-  <script >
-    document.querySelector(".wtq-toggle").addEventListener("click", () => import("./navbar-toggle"))
-    document.querySelector(".theme-switcher").addEventListener("click", () => import("./navbar-darkmode"))
+  <script>
+    import { action } from "astro-toolkit/actions"
+
+    action(() => {
+      document.querySelector(".theme-switcher").addEventListener("click", () => import("./navbar-darkmode"))
+      document.querySelector(".wtq-toggle").addEventListener("click", () => import("./navbar-toggle"))
+    })
   </script>
 </nav>
