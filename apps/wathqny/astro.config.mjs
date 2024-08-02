@@ -1,5 +1,5 @@
 import { defineConfig, passthroughImageService } from 'astro/config'
-import { shikiBaseTransformers, wathqnyPlugin } from 'wtqdocs/plugin'
+import { shikiBaseTransformers, wathqnyPlugin,  viteCompression} from 'wtqdocs/plugin'
 import WathqnyConfig from './wathqny.config'
 
 // https://astro.build/config
@@ -9,13 +9,6 @@ export default defineConfig({
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
-  },
-  vite: {
-    build: {
-      modulePreload: {
-        polyfill: false
-      }
-    }
   },
   image: {
     service: passthroughImageService(),
