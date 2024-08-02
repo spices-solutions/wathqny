@@ -4,6 +4,7 @@ import BaseLayout from '../components/Layout/BaseLayout.astro'
 import 'wtqdocs/styles/home'
 import { Image } from 'astro:assets'
 import WathqnyConfig from '/wathqny.config'
+import Dynamic from 'astro-toolkit/experimental/Dynamic'
 
 type Props = MarkdownLayoutProps<{
   title?: string
@@ -18,6 +19,9 @@ type Props = MarkdownLayoutProps<{
 }>
 
 const { frontmatter } = Astro.props
+
+const tag = frontmatter.title ? "h1" : "h2";
+const className = frontmatter.title && frontmatter.subtitle ? "wtq-title" : "wtq-subtitle";
 ---
 
 <BaseLayout>
@@ -25,7 +29,6 @@ const { frontmatter } = Astro.props
     <main id="main-content" class="wtq-flex-center">
       <div class="wtq-hero wtq-flex-center">
         
-      {frontmatter.title && <h1 class="wtq-title">{frontmatter.title}</h1>}
       {
         frontmatter.logo && (
           <Image
@@ -38,9 +41,9 @@ const { frontmatter } = Astro.props
         )
       }
 
-      <h2 class="wtq-subtitle">
-        {frontmatter.subtitle}
-      </h2>
+      {frontmatter.title && <Dynamic tag={tag} class={className}>{frontmatter.title}</Dynamic>}
+
+      {frontmatter.subtitle && <Dynamic tag={tag} class={className}>{frontmatter.subtitle}</Dynamic>}
 
       <div class="wtq-get-started">
         {
