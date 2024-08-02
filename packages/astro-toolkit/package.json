@@ -35,9 +35,6 @@
     "./schema": {
       "import": "./src/schema.ts"
     },
-    "./schema": {
-      "import": "./src/schema.ts"
-    },
     "./flow": {
       "import": "./src/flow.ts"
     },
@@ -46,6 +43,9 @@
     },
     "./actions": {
       "import": "./src/actions.ts"
+    },
+    "./experimental/Dynamic": {
+      "import": "./src/components/experimental/Dynamic.astro"
     }
   },
   "devDependencies": {
