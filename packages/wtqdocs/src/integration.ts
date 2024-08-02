@@ -93,12 +93,12 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
     //   },
     // }),
     metaTags(),
+    minify({
+      logAllFiles: false,
+    }),
     compressor({
       gzip: true,
       brotli: false,
-    }),
-    minify({
-      logAllFiles: false,
     }),
   ]
 }
