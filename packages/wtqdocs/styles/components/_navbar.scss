@@ -48,9 +48,6 @@
 }
 .wtq-brand {
   gap: 6px;
-  padding: 3px 5px;
-
-  font-size: 1rem;
 
   img {
     aspect-ratio: 1/1
@@ -87,7 +84,7 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    align-items: end;
+    align-items: center;
     justify-content: center;
 
     width: 40px;
@@ -108,18 +105,12 @@
 
       background-color: currentcolor;
       border-radius: var(--radius);
-
-      transition: inherit;
-    }
-
-    &:hover::after {
-      width: 20px;
     }
   }
   .wtq-links {
     display: flex;
-    gap: 2rem;
     position: absolute;
+    gap: 2rem;
     top: 50px;
     left: 0;
     border-top: 1px solid hsl(var(--lightest));
@@ -130,11 +121,11 @@
   .wtq-links {
     width: 100%;
     margin: 0;
-    background-color: hsl(var(--white));
     padding: 1.5rem;
-    height: calc(100vh - 50px);
     flex-direction: column;
-    transform: translateX(100%);
+    background-color: hsl(var(--white));
+    height: calc(100vh - 50px);
+    transform: translateX(-100%);
   }
   .wtq-links.wtq-active-links {
     transform: translateY(0);

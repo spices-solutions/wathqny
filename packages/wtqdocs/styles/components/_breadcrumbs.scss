@@ -9,11 +9,10 @@
 
   .wtq-breadcrumb {
     justify-content: center;
-    gap: 5px;
     white-space: nowrap;
     padding: 6px 10px;
-
     font-size: 16px;
+    gap: 5px;
   }
 
   @media screen and (width <= 868px) {
