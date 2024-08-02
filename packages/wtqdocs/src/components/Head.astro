@@ -1,14 +1,13 @@
 ---
-// @ts-ignore
-import { pwaAssetsHead } from 'virtual:pwa-assets/head'
-// @ts-ignore
-import { pwaInfo } from 'virtual:pwa-info'
+// // @ts-ignore
+// import { pwaAssetsHead } from 'virtual:pwa-assets/head'
+// // @ts-ignore
+// import { pwaInfo } from 'virtual:pwa-info'
 
 import { BaseHead } from 'astro-toolkit/seo'
 
 import type { WathqnyConfig as WathqnyConfigType } from '../types/config'
 
-import { ViewTransitions } from 'astro:transitions'
 // @ts-ignore
 import untypedWathqnyConfig from '/wathqny.config'
 import type { LayoutInterface } from '../types/components'
@@ -54,8 +53,7 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
   <meta name="color-scheme" content="dark light" />
 
   <!-- <script src="./pwa.ts"></script> -->
-  <script is:inline data-astro-rerun>
-    (() => {
+  <script is:inline>
       const root = document.documentElement;
 
     if (
@@ -64,9 +62,7 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
     } else {
       root?.classList.replace("dark", "light");
     }
-    })()
   </script>
   <meta name="generator" content="wathqny 1.0 Astro powerd" />
-  <!-- <ViewTransitions /> -->
   <slot />
 </BaseHead>
