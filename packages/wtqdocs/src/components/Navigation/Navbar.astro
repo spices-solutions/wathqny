@@ -55,11 +55,7 @@ const { logo, siteName, navbar } = WathqnyConfig
     </li>
   </ul>
   <script>
-    import { action } from "astro-toolkit/actions"
-
-    action(() => {
       document.querySelector(".theme-switcher").addEventListener("click", () => import("./navbar-darkmode"))
       document.querySelector(".wtq-toggle").addEventListener("click", () => import("./navbar-toggle"))
-    })
   </script>
 </nav>

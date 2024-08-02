@@ -1,4 +1,4 @@
-function darkMode() {
+document.querySelector('.theme-switcher')?.addEventListener('click', () => {
   const root = document.documentElement
   if (root?.classList.contains('dark')) {
     root?.classList.replace('dark', 'light')
@@ -7,10 +7,4 @@ function darkMode() {
     root?.classList.replace('light', 'dark')
     localStorage.setItem('theme', 'dark')
   }
-}
-
-document.querySelector('.theme-switcher')?.addEventListener('click', () => {
-  darkMode()
 })
-
-darkMode()
