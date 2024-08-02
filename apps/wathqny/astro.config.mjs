@@ -1,5 +1,5 @@
 import { defineConfig, passthroughImageService } from 'astro/config'
-import { shikiBaseTransformers, wathqnyPlugin,  viteCompression} from 'wtqdocs/plugin'
+import { shikiBaseTransformers, wathqnyPlugin} from 'wtqdocs/plugin'
 import WathqnyConfig from './wathqny.config'
 
 // https://astro.build/config

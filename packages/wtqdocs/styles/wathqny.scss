@@ -134,3 +134,18 @@
 }
 
 @import "utils/utils";
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(10px) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.wtq-container {
+  animation: slideTop .5s cubic-bezier(0.16, 1, 0.3, 1);
+}
