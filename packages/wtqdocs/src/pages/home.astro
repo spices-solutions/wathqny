@@ -25,6 +25,7 @@ const className = frontmatter.title && frontmatter.subtitle ? "wtq-title" : "wtq
 ---
 
 <BaseLayout>
+  <link rel="preload" as="image" href={frontmatter?.logo?.src}>
   <section >
     <main id="main-content" class="wtq-flex-center">
       <div class="wtq-hero wtq-flex-center">
