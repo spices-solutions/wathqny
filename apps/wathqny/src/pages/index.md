@@ -3,7 +3,7 @@ layout: "wtqdocs/layout/home"
 logo: 
   src: "/treadmark.webp"
   width: 500
-  height: 300
+  height: 278
 subtitle: wathqny a fast, easy and accessible Astro powered documentation site framework
 buttons:
   - label: Getting started
@@ -17,7 +17,7 @@ buttons:
 <style>
   :root {
     --subtitle-width: 27ch;
-    --accent-color: #08c136;
+    --accent-color: #21873a;
     --accent-color-dark: #148730
   }
 </style>

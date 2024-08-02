@@ -35,6 +35,9 @@
     "./schema": {
       "import": "./src/schema.ts"
     },
+    "./schema": {
+      "import": "./src/schema.ts"
+    },
     "./flow": {
       "import": "./src/flow.ts"
     },

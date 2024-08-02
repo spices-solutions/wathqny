@@ -73,11 +73,8 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
         directoryAndTrailingSlashHandler: true,
       },
       registerType: 'autoUpdate',
-      devOptions: {
-        enabled: false,
-      },
       pwaAssets: {
-        config: true,
+        image: "public/icon.svg",
       },
       workbox: {
         clientsClaim: true,
