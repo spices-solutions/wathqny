@@ -51,7 +51,7 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
   {pwaAssetsHead.links.map((link: astroHTML.JSX.IntrinsicAttributes & astroHTML.JSX.LinkHTMLAttributes) => <link {...link} />)}
   {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />} -->
   <meta name="color-scheme" content="dark light" />
-
+  <link rel="icon" type="image/x-icon" href="/icon.svg">
   <!-- <script src="./pwa.ts"></script> -->
   <script is:inline>
       const root = document.documentElement;
