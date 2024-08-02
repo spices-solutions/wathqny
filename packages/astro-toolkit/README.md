@@ -2,6 +2,125 @@
 
 A collection of Astro tools, components, and utilities to streamline your development process.
 
+## SEO
+
+### Head Component
+
+The `BaseHead` component in Astro Toolkit simplifies the process of adding essential SEO tags to your HTML's `<head>` section. This includes OpenGraph, Twitter cards, canonical URLs, and more, saving you from manually configuring these tags for each page.
+
+#### Usage
+
+To use the `BaseHead` component, import it from `astro-toolkit/seo` and customize the SEO tags:
+
+```jsx
+---
+import { BaseHead } from 'astro-toolkit/seo'
+---
+
+<BaseHead
+  title="Your Page Title"
+  description="Your page description"
+  keywords={["keyword1", "keyword2", "astro-toolkit"]}
+  OGImage={{ src: "/path/to/og-image.png", alt: "Image description" }}
+  GSVToken="your-google-site-verification-token"
+  extend={{
+    link: [
+      "./path/to/stylesheet.css",
+      {
+        href: "./path/to/another-stylesheet.css",
+        rel: "stylesheet"
+      },
+      {
+        href: "/path/to/font.woff2",
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    ],
+  }}
+/>
+```
+
+<details>
+  <summary>HTML Output Example</summary>
+
+  ```html
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="./path/to/stylesheet.css">
+    <link href="./path/to/another-stylesheet.css" rel="stylesheet">
+    <link href="/path/to/font.woff2" rel="preload" as="font" type="font/woff2" crossorigin="anonymous">
+    <meta name="keywords" content="keyword1,keyword2,astro-toolkit">
+    <meta name="description" content="Your page description">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/page-url/">
+    <meta property="og:description" content="Your page description">
+    <meta property="og:image" content="/path/to/og-image.png">
+    <meta property="og:image:alt" content="Image description">
+    <meta property="og:title" content="Your Page Title">
+    <meta property="og:site_name" content="Your Site Name">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/page-url/">
+    <meta name="twitter:title" content="Your Page Title">
+    <meta name="twitter:image" content="/path/to/og-image.png">
+    <meta name="twitter:image:alt" content="Image description">
+    <meta name="twitter:description" content="Your page description">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="google-site-verification" content="your-google-site-verification-token">
+  </head>
+  ```
+  
+</details>
+
+### Benefits
+
+Using the `BaseHead` component saves you from manually configuring:
+- OpenGraph tags for better social media sharing
+- Twitter card tags to optimize content sharing on Twitter
+- Canonical URLs to avoid duplicate content issues
+- Google Site Verification tags
+- Customizable link and meta tags through the `extend` property
+
+### Extending Head Component with Slots
+
+You can add additional actions inside the `<head>` section using slots within the `BaseHead` component.
+
+```jsx
+<BaseHead ... >
+  <script is:inline>
+    console.log("This script runs inline")
+  </script>
+</BaseHead>
+```
+
+<details>
+  <summary>Type Interface</summary>
+  
+  ```ts
+  type Props = {
+    title?: string
+    description?: string
+    OGImage?: {
+      src: string
+      alt: string
+    }
+    keywords?: string | string[]
+    sitemap?: boolean
+    GSVToken: string
+    robots: string
+    extend?: {
+      link?: Partial<Link>[]
+      meta?: Partial<Meta>[]
+    }
+  }
+  ```
+
+</details>
+
+
 ## Utils
 
 ### formatDate
@@ -108,16 +227,6 @@ To install Astro Toolkit, run the following command in your project directory:
 
 ```bash
 npm install astro-toolkit
-```
-
-### Importing
-
-You can import specific utilities, components, and actions as needed:
-
-```ts
-import { formatDate, slugify, unslugify } from 'astro-toolkit/utils'
-import { For } from 'astro-toolkit/flow'
-import { action } from 'astro-toolkit/actions'
 ```
 
 ### Contribution

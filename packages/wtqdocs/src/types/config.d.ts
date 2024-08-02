@@ -22,7 +22,7 @@ type WathqnyConfig = {
   navbar?: {
     items: { href?: string; label?: string }[]
   }
-  font: '/font/GeistVF.woff2' | '/font/RubikVF.woff2' | string
+  font?: '/font/GeistVF.woff2' | '/font/RubikVF.woff2' | string
 }
 
 export type { WathqnyConfig }

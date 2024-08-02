@@ -18,7 +18,7 @@ type Props = {
 const { title, body, date, image, link, index } = Astro.props
 ---
 
-<a data-astro-prefetch href={`/blog/${link}/`}>
+<a  href={`/blog/${link}/`}>
   <article class="wtq-card wtq-shadow">
     <h1 class="wtq-card-title">{title}</h1>
     <span class="wtq-card-subtitle">

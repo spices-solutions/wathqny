@@ -17,6 +17,9 @@ export type Props = {
   }
   keywords?: string | string[] | undefined
   GSVToken?: string
+  /**
+   * @default "/sitemap-index.xml"
+   */
   sitemap?: boolean
   /**
    * google-site-verification token

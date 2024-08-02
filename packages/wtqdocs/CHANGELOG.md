@@ -1,5 +1,21 @@
 # wtqdocs
 
+## 0.2.10
+
+### Patch Changes
+
+- 16938de: fix miss head files
+- Updated dependencies [16938de]
+  - astro-toolkit@0.2.10
+
+## 0.2.9
+
+### Patch Changes
+
+- 9b95af3: ci publish
+- Updated dependencies [9b95af3]
+  - astro-toolkit@0.2.9
+
 ## 0.2.8
 
 ### Patch Changes

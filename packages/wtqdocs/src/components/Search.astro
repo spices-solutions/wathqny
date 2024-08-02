@@ -5,7 +5,9 @@
 </div>
 
 <script>
-window.search?.addEventListener('input', () => {
-  import("./search-logic")
-});
+  import { action } from "astro-toolkit/actions"
+
+  action(()=> window.search?.addEventListener('input', () => {
+    import("./search-logic")
+  }))
 </script>
