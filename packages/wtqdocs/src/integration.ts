@@ -74,7 +74,7 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       },
       registerType: 'autoUpdate',
       pwaAssets: {
-        config: true,
+        image: "public/icon.svg",
       },
       workbox: {
         clientsClaim: true,
