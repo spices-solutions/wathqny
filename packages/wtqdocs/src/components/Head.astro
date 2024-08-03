@@ -63,6 +63,43 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
       root?.classList.replace("dark", "light");
     }
   </script>
+    <script>
+      // Function to set speculation rules
+      function setSpeculationRules() {
+        // Define the speculation rules
+        const rules = {
+          prefetch: [],
+          prerender: []
+        };
+  
+        document.querySelectorAll('.prefetch-link').forEach(link => {
+          const href = link.getAttribute('href');
+          
+          link.addEventListener('mouseenter', () => {
+            // Prefetch and prerender the page after 200ms hover
+            setTimeout(() => {
+              rules.prefetch.push({ source: href });
+              rules.prerender.push({ source: href });
+              // Apply the speculation rules
+              document.adoptedStyleSheets = [...document.adoptedStyleSheets, new CSSStyleSheet()];
+              document.speculationRules = rules;
+            }, 200);
+          });
+  
+          link.addEventListener('mouseleave', () => {
+            // Clear the rules if the link is no longer hovered
+            setTimeout(() => {
+              rules.prefetch = rules.prefetch.filter(rule => rule.source !== href);
+              rules.prerender = rules.prerender.filter(rule => rule.source !== href);
+              document.speculationRules = rules;
+            }, 200);
+          });
+        });
+      }
+  
+      // Set speculation rules on page load
+      window.addEventListener('load', setSpeculationRules);
+    </script>
   <meta name="generator" content="wathqny 1.0 Astro powerd" />
   <slot />
 </BaseHead>
