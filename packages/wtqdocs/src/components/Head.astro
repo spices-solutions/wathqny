@@ -5,6 +5,7 @@
 // import { pwaInfo } from 'virtual:pwa-info'
 
 import { BaseHead } from 'astro-toolkit/seo'
+import { Prefetch } from 'astro-toolkit/perf'
 
 import type { WathqnyConfig as WathqnyConfigType } from '../types/config'
 
@@ -54,7 +55,7 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
   <link rel="icon" type="image/x-icon" href="/icon.svg">
   <!-- <script src="./pwa.ts"></script> -->
   <script is:inline>
-      const root = document.documentElement;
+    const root = document.documentElement;
 
     if (
       localStorage.theme === "dark" ||(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
@@ -63,16 +64,7 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
       root?.classList.replace("dark", "light");
     }
   </script>
-  <script type="speculationrules">
-  {
-    "prerender": [{
-      "where": {
-        "href_matches": "/*"
-      },
-      "eagerness": "moderate"
-    }]
-  }
-  </script>
+  <Prefetch />
   <meta name="generator" content="wathqny 1.0 Astro powerd" />
   <slot />
 </BaseHead>

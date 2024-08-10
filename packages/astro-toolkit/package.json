@@ -32,6 +32,9 @@
     "./seo": {
       "import": "./src/seo/index.ts"
     },
+    "./perf": {
+      "import": "./src/components/perf/index.ts"
+    },
     "./schema": {
       "import": "./src/schema.ts"
     },
