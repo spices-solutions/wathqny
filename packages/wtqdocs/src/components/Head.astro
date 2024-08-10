@@ -63,6 +63,16 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
       root?.classList.replace("dark", "light");
     }
   </script>
+  <script type="speculationrules">
+  {
+    "prerender": [{
+      "where": {
+        "href_matches": "/*"
+      },
+      "eagerness": "moderate"
+    }]
+  }
+  </script>
   <meta name="generator" content="wathqny 1.0 Astro powerd" />
   <slot />
 </BaseHead>
