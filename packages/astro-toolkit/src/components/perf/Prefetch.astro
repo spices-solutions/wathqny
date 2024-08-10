@@ -1,0 +1,43 @@
+---
+---
+
+<script>
+  const cache = new Set<string>();
+
+  const prefetchLink = (url: string) => {
+    if (cache.has(url)) return; // Skip if already prefetched
+
+    fetch(url, { method: 'GET', mode: 'no-cors' })
+      .then(response => {
+        if (response.ok) {
+          cache.add(url);
+          // Only prefetch linked resources that haven't been cached
+          return response.text().then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const resources = Array.from(doc.querySelectorAll('link[rel="stylesheet"], script[src], img[src], svg image[src]'));
+
+            resources.forEach(resource => {
+              const src = resource.getAttribute('href') || resource.getAttribute('src');
+              if (src && !cache.has(src)) {
+                fetch(src, { method: 'HEAD', mode: 'no-cors' }).then(() => cache.add(src));
+              }
+            });
+          });
+        }
+      })
+      .catch(error => console.error(`Prefetch failed for ${url}:`, error));
+  };
+
+  document.querySelectorAll('a[href]').forEach((link: HTMLAnchorElement) => {
+    let timer: NodeJS.Timeout | null = null;
+
+    link.addEventListener('mouseover', () => {
+      timer = setTimeout(() => prefetchLink(link.href), 200);
+    });
+
+    link.addEventListener('mouseout', () => {
+      if (timer) clearTimeout(timer);
+    });
+  });
+</script>
