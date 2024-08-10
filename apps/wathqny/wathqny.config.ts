@@ -5,7 +5,7 @@ import ThemeStyles from 'wtqdocs/styles?url'
 const Config: WathqnyConfig = {
   logo: '/icon.svg',
   siteName: 'wathqny',
-  GSVToken: 'PVw1xk8LSGGe9WA1CzziS4zL1GXshAvdNn9iksdbmWw',
+  GSVToken: 'uscYyrV8FUN5a4JacVB4TIl0dpHe9lJNGQevQRoLCr4',
   OGImage: {
     src: '/og.png',
     alt: "Logo of wathqny, featuring Arabic text in green that translates to 'wathqny' with a tagline below in black text that reads 'Where Arab Technology Shines'.",

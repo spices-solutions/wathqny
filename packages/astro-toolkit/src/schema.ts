@@ -1,6 +1,6 @@
-import type { SchemaContext } from 'astro:content'
-import { z } from 'astro/zod'
-import { slugify } from './utils'
+import type { SchemaContext } from "astro:content";
+import { z } from "astro/zod";
+import { slugify } from "./utils";
 
 export const s = {
   // authorSchema: z
@@ -20,11 +20,12 @@ export const s = {
     .min(10),
   draft: z.boolean().default(false),
   keywords: z.union([z.string(), z.array(z.string())]).optional(),
+  pubDate: z.date().transform((str: Date) => new Date(str)),
   OGImage: ({ image }: SchemaContext) =>
     z
       .object({ src: z.union([image(), z.string().url()]), alt: z.string() })
       .optional(),
-}
+};
 
 export function docSchema({ image }: SchemaContext) {
   return z
@@ -43,7 +44,7 @@ export function docSchema({ image }: SchemaContext) {
     .transform((data) => ({
       ...data,
       link: `${data.href ?? `${data.category}/${slugify(data.title)}`}`,
-    }))
+    }));
 }
 
 export function blogSchema({ image }: SchemaContext) {
@@ -51,16 +52,16 @@ export function blogSchema({ image }: SchemaContext) {
     .object({
       title: s.title,
       description: s.description,
-      href: z.string().optional(),
       image: s.OGImage({ image }),
       keywords: s.keywords,
       draft: s.draft,
+      pubDate: s.pubDate,
+      href: z.string().optional(),
       authors: z.string().optional(),
-      pubDate: z.date().transform((str: Date) => new Date(str)),
     })
     .strict()
     .transform((data) => ({
       ...data,
       link: data.href ?? `/${slugify(data.title)}`,
-    }))
+    }));
 }
