@@ -1,11 +1,11 @@
 ---
-// // @ts-ignore
-// import { pwaAssetsHead } from 'virtual:pwa-assets/head'
-// // @ts-ignore
-// import { pwaInfo } from 'virtual:pwa-info'
+// @ts-ignore
+import { pwaAssetsHead } from 'virtual:pwa-assets/head'
+// @ts-ignore
+import { pwaInfo } from 'virtual:pwa-info'
 
 import { BaseHead } from 'astro-toolkit/seo'
-import { Prefetch } from 'astro-toolkit/perf'
+import { PrefetchNative } from 'astro-toolkit/perf'
 
 import type { WathqnyConfig as WathqnyConfigType } from '../types/config'
 
@@ -48,12 +48,12 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
     ],
   }}
 >
-  <!-- {pwaAssetsHead.themeColor && <meta name="theme-color" content={pwaAssetsHead.themeColor.content} />}
+  {pwaAssetsHead.themeColor && <meta name="theme-color" content={pwaAssetsHead.themeColor.content} />}
   {pwaAssetsHead.links.map((link: astroHTML.JSX.IntrinsicAttributes & astroHTML.JSX.LinkHTMLAttributes) => <link {...link} />)}
-  {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />} -->
+  {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+  <script src="./pwa.ts"></script>
   <meta name="color-scheme" content="dark light" />
   <link rel="icon" type="image/x-icon" href="/icon.svg">
-  <!-- <script src="./pwa.ts"></script> -->
   <script is:inline>
     const root = document.documentElement;
 
@@ -64,7 +64,7 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
       root?.classList.replace("dark", "light");
     }
   </script>
-  <Prefetch />
+  <PrefetchNative />
   <meta name="generator" content="wathqny 1.0 Astro powerd" />
   <slot />
 </BaseHead>
