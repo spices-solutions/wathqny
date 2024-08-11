@@ -1,2 +1,9 @@
-export { default as Prefetch } from './Prefetch.astro'
-export { default as PrefetchNative } from './PrefetchNative.astro'
+// import Prefetch from './Prefetch.astro'
+import PrefetchNative,{ type Props as PropsPrefetchNative } from './PrefetchNative.astro'
+
+export {
+  // Prefetch,
+  PrefetchNative
+}
+
+export type { PropsPrefetchNative }

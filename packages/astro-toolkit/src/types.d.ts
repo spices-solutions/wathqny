@@ -28,7 +28,7 @@ export type Props = {
   /**
    * @default "index, follow"
    */
-  robots: string
+  robots?: string
   extend?: {
     link?: Partial<Link>[]
     meta?: Partial<Meta>[]

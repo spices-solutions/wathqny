@@ -9,9 +9,6 @@ buttons:
   - label: Getting started
     type: primary
     href: /docs/getting-started/overview
-  - label: components
-    type: alt
-    href: /docs/components
 ---
 
 <style>

@@ -79,7 +79,8 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
       workbox: {
         clientsClaim: true,
         skipWaiting: true,
-        navigateFallback: null,
+        navigateFallback: "/404",
+        globPatterns: ['**/*.{js,css,ico,png,svg}']
       },
       manifest: {
         name: Wathqny.siteName,
