@@ -17,7 +17,7 @@ fs.mkdirSync(projectDir, { recursive: true });
 const templateDir = path.resolve(__dirname, '../template/');
 fs.cpSync(templateDir, projectDir, { recursive: true });
 
-const projectPackageJso n = JSON.parse(fs.readFileSync(path.join(projectDir, 'package.json'), { encoding: "utf-8" }))
+const projectPackageJson = JSON.parse(fs.readFileSync(path.join(projectDir, 'package.json'), { encoding: "utf-8" }))
 
 projectPackageJson.name = projectName;
 
