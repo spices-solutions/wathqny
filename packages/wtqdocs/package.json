@@ -5,9 +5,6 @@
   "description": "a ",
   "license": "MIT",
   "homepage": "http://wathqny.pages.dev",
-  "bin": {
-    "wathqny": "./src/cli/index.js"
-  },
   "publishConfig": {
     "access": "public"
   },
@@ -23,9 +20,6 @@
     "docs",
     "wathqny"
   ],
-  "scripts": {
-    "start": "node ./src/cli/index.js"
-  },
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -71,7 +65,6 @@
     "astro-min": "^1.3.1",
     "astro-purgecss": "^4.1.1",
     "astro-toolkit": "workspace:*",
-    "cross-spawn": "^7.0.3",
     "purgecss": "^6.0.0",
     "shiki": "^1.12.0",
     "sharp": "0.32.6",
