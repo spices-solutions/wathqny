@@ -1,43 +1,39 @@
 ---
-import {
-  Image,
-  type LocalImageProps,
-  type RemoteImageProps,
-} from 'astro:assets'
-import { getEntry } from 'astro:content'
+import { Image } from 'astro:assets'
 
-export interface Props {
-  authors: {
-    image: string | LocalImageProps | RemoteImageProps
-    name: string
-    role: string
+async function getUserData(username: string) {
+  const url = `https://api.github.com/users/${username}`
+
+  try {
+    const response = await fetch(url)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    return null // Return null in case of an error
   }
 }
+// Example usage
 
 const { authors } = Astro.props
-
-let authorData: Props
-
-try {
-  authorData = await getEntry('authors', authors?.id)
-} catch (error) {}
 ---
-
+<div class="wtq-avatar-contanier wtq-flex-center">
 {
-  authorData && (
-    <div class="wtq-avatar-contanier wtq-flex-center">
-      <Image
-        class="wtq-avatar"
-        width={48}
-        height={48}
-        loading="eager"
-        src={authorData?.data.profile}
-        alt="user"
-      />
-      <div>
-        <p class="wtq-avatar-name">{authorData?.data.name}</p>
-        <p class="wtq-avatar-role">{authorData?.data.role}</p>
-      </div>
-    </div>
+  authors?.map((author: string) => (
+    getUserData(author).then((data) => (
+        <a href={data.html_url} title={data.name}>
+          <Image
+            class="wtq-avatar"
+            width={48}
+            height={48}
+            loading="eager"
+            src={data?.avatar_url}
+            alt="user"
+          />
+        </a>
+    )
   )
+)) 
+
 }
+</div>
