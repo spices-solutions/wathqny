@@ -12,7 +12,7 @@ export default defineConfig({
   },
   image: {
     service: passthroughImageService(),
-    domains: ["api.github.com"],
+    domains: ["api.github.com", "avatars.githubusercontent.com"],
   },
   markdown: {
     shikiConfig: {
