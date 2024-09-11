@@ -1,6 +1,6 @@
 ---
 layout: "wtqdocs/layout/home"
-logo: s
+logo: 
   src: "/trademark.webp"
   width: 500
   height: 278
