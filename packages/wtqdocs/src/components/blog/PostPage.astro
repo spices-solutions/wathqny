@@ -13,6 +13,7 @@ export interface Props extends LayoutInterface {
 
 const { postMetaData } = Astro.props as Props
 
+
 const { authors } = postMetaData.data
 
 const { Content } = await postMetaData.render()
@@ -26,9 +27,10 @@ const { title, keywords, description, OGImage } = postMetaData
     <span class="wtq-post-head wtq-flex-center">
       <h1 class="wtq-main-heading">{title}</h1>
       <AuthorProfile
-        authors={authors}
+        {authors}
       />
       <figure>
+        <link rel="preload" as="image" href={OGImage?.src ?? WathqnyConfig.OGImage?.src}>
         <Image
           class="wtq-cover wtq-rounded"
           width={960}

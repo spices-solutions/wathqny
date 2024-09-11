@@ -1,7 +1,7 @@
 ---
 layout: "wtqdocs/layout/home"
-logo: s
-  src: "/trademark.webp"
+logo: 
+  src: "/treadmark.webp"
   width: 500
   height: 278
 title: wathqny a fast, easy and accessible Astro powered documentation site framework

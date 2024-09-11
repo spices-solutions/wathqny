@@ -64,6 +64,8 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
 
+  packages/create-wathqny: {}
+
   packages/wtqdocs:
     dependencies:
       '@astrojs/mdx':
@@ -117,9 +119,6 @@ importers:
       astro-toolkit:
         specifier: workspace:*
         version: link:../astro-toolkit
-      cross-spawn:
-        specifier: ^7.0.3
-        version: 7.0.3
       purgecss:
         specifier: ^6.0.0
         version: 6.0.0
