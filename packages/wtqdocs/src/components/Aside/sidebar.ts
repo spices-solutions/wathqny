@@ -10,15 +10,21 @@ const sidebarCollapseBtn = sidebar.querySelector(
 
 const toggle = document.querySelector('.wtq-nav-menu') as HTMLElement
 
-toggle?.addEventListener('click', () => {
-  sidebar.classList.toggle('wtq-show')
-  sidebarOverlay.classList.toggle('wtq-show')
-})
+function sidebarShrinkAndLock() {
+  if (sidebar?.classList.contains('wtq-show')) {
+    sidebar?.classList.remove('wtq-show')
+    document.body.style.overflow = ''
+    sidebarOverlay.classList.remove('wtq-show')
+  } else {
+    document.body.style.overflow = 'hidden'
+    sidebar?.classList.add('wtq-show')
+    sidebarOverlay.classList.add('wtq-show')
+  }
+}
 
-sidebarOverlay?.addEventListener('click', () => {
-  sidebar.classList.remove('wtq-show')
-  sidebarOverlay.classList.remove('wtq-show')
-})
+toggle?.addEventListener('click', sidebarShrinkAndLock)
+
+sidebarOverlay?.addEventListener('click', sidebarShrinkAndLock)
 
 sidebarCollapseBtn?.addEventListener('click', () => {
   sidebar.classList.toggle('wtq-aside-collapse')

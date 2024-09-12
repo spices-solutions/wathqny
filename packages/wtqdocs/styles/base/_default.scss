@@ -95,7 +95,7 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   color: hsl(var(--darkest));
-
+  word-break: break-word; 
   background-color: hsl(var(--white));
 }
 
@@ -135,11 +135,14 @@ img, picture, video, svg {
   height: auto;
 }
 
+figure {
+  margin: 0;
+}
+
 figure figcaption {
   margin-top: 1rem;
   font-style: italic;
   color: hsl(var(--dark), 0.8);
-  word-break: break-all;
   text-align: center;
 }
 
