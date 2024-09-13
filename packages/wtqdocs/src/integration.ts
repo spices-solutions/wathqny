@@ -80,7 +80,7 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
         clientsClaim: true,
         skipWaiting: true,
         navigateFallback: "/404",
-        globPatterns: ['**/*.{js,css,ico,png,svg}']
+        globPatterns: undefined
       },
       manifest: {
         name: Wathqny.siteName,
