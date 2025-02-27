@@ -5,7 +5,8 @@
 </div>
 
 <script>
-  window.search?.addEventListener('click', () => {
+  const searchInput = document.getElementById('search');
+  searchInput?.addEventListener('input', () => {
     import("./search-logic")
-  })
+  });
 </script>
