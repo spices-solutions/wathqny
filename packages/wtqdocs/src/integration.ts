@@ -63,7 +63,7 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
           light: 'material-theme-lighter',
           dark: 'material-theme-darker',
         },
-        transformers: [...shikiBaseTransformers()],
+        transformers: shikiBaseTransformers() as any,
       },
     }),
     sitemap(),
@@ -94,12 +94,12 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
     //   },
     // }),
     metaTags(),
-    // minify({
-    //   logAllFiles: false,
-    // }),
-    // compressor({
-    //   gzip: true,
-    //   brotli: false,
-    // }),
+    minify({
+      logAllFiles: false,
+    }),
+    compressor({
+      gzip: true,
+      brotli: false,
+    }),
   ]
 }
