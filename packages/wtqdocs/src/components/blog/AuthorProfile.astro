@@ -1,26 +1,27 @@
 ---
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
 
 async function getUserData(username: string) {
-  const url = `https://api.github.com/users/${username}`
+  const url = `https://api.github.com/users/${username}`;
 
   try {
-    const response = await fetch(url)
-    const data = await response.json()
-    return data
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error('Error fetching data:', error)
-    return null // Return null in case of an error
+    console.error("Error fetching data:", error);
+    return null; // Return null in case of an error
   }
 }
 // Example usage
 
-const { authors } = Astro.props
+const { authors } = Astro.props;
 ---
+
 <div class="wtq-avatar-contanier wtq-flex-center">
-{
-  authors?.map((author: string) => (
-    getUserData(author).then((data) => (
+  {
+    authors?.map((author: string) =>
+      getUserData(author).then((data) => (
         <a href={data.html_url} title={data.name}>
           <Image
             class="wtq-avatar"
@@ -31,9 +32,7 @@ const { authors } = Astro.props
             alt="user"
           />
         </a>
+      )),
     )
-  )
-)) 
-
-}
+  }
 </div>
