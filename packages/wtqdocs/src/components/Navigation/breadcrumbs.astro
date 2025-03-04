@@ -1,12 +1,11 @@
 ---
-import Svg from '@cxa/astro-inline-svg'
-import arrowSvg from '../../assets/icons/arrow.svg?raw'
-import HomeSvg from '../../assets/icons/home.svg?raw'
+import ArrowSvg from "../../assets/icons/arrow.svg";
+import HomeSvg from "../../assets/icons/home.svg";
 
-import { unslugify } from 'astro-toolkit/utils'
-let currentURL: string[] = Astro.url.pathname.split('/')
+import { unslugify } from "astro-toolkit/utils";
+let currentURL: string[] = Astro.url.pathname.split("/");
 
-currentURL = currentURL.filter((url) => url !== '')
+currentURL = currentURL.filter((url) => url !== "");
 ---
 
 <ul
@@ -22,13 +21,12 @@ currentURL = currentURL.filter((url) => url !== '')
     itemtype="https://schema.org/ListItem"
   >
     <a
-      
       href="/"
       class="wtq-breadcrumb wtq-rounded wtq-flex-center wtq-focusable"
       aria-label="Go to the homepage"
       itemprop="item"
     >
-      <Svg raw={HomeSvg} />
+      <HomeSvg />
       <span itemprop="name">Home</span>
     </a>
     <meta itemprop="position" content="1" />
@@ -36,31 +34,35 @@ currentURL = currentURL.filter((url) => url !== '')
   {
     currentURL.map((url, index) => (
       <li
-        class:list={[{ 'wtq-base-breadcrumb': index == currentURL.length - 1 }, "wtq-flex-center"]}
+        class:list={[
+          { "wtq-base-breadcrumb": index == currentURL.length - 1 },
+          "wtq-flex-center",
+        ]}
         itemprop="itemListElement"
         itemscope
         itemtype="https://schema.org/ListItem"
       >
-      {
-        index === 0 ? (
-          <Svg define:symbol="arrow-svg" height={20} width={20} class="wtq-arrow-icon"  raw={arrowSvg} /> 
+        {index === 0 ? (
+          <ArrowSvg size={24} class="wtq-arrow-icon" />
         ) : (
-          <Svg use:symbol="arrow-svg" height={20} width={20} class="wtq-arrow-icon"  raw={arrowSvg} /> 
-        )
-      }
-      {
-        index == currentURL.length - 1 ?  
-          <span class={"wtq-breadcrumb wtq-rounded wtq-flex-center wtq-highlight"} itemprop="name">{unslugify(url)}</span>
-        : (
-        <a
-          href={`/${currentURL.slice(0, index + 1).join('/')}`}
-          class="wtq-breadcrumb wtq-rounded wtq-flex-center wtq-focusable"
-          itemprop="item"
-        >
-          <span itemprop="name">{unslugify(url)}</span>
-        </a>
-        )
-      }
+          <ArrowSvg size={24} class="wtq-arrow-icon" />
+        )}
+        {index == currentURL.length - 1 ? (
+          <span
+            class={"wtq-breadcrumb wtq-rounded wtq-flex-center wtq-highlight"}
+            itemprop="name"
+          >
+            {unslugify(url)}
+          </span>
+        ) : (
+          <a
+            href={`/${currentURL.slice(0, index + 1).join("/")}`}
+            class="wtq-breadcrumb wtq-rounded wtq-flex-center wtq-focusable"
+            itemprop="item"
+          >
+            <span itemprop="name">{unslugify(url)}</span>
+          </a>
+        )}
 
         <meta itemprop="position" content={`${index + 2}`} />
       </li>

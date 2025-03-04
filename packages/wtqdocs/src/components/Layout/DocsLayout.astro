@@ -1,10 +1,9 @@
 ---
-import Svg from '@cxa/astro-inline-svg'
 import type { LayoutInterface } from '../../types/components'
 import SidebarRefine from '../Aside/Sidebar.astro'
 import Breadcrumbs from '../Navigation/breadcrumbs.astro'
 import BaseLayout from './BaseLayout.astro'
-import SidebarSvg from '../../assets/icons/sidebar.svg?raw'
+import SidebarSvg from '../../assets/icons/sidebar.svg'
 import AuthorProfile from '../blog/AuthorProfile.astro'
 
 export interface Props extends LayoutInterface {
@@ -20,7 +19,7 @@ const { title, keywords, description, OGImage, heading, authors } = Astro.props 
   <div class="wtq-container">
     <div class="wtq-navigation-container wtq-flex-center">
       <Breadcrumbs />
-      <button class="wtq-nav-menu wtq-rounded wtq-focusable"><Svg raw={SidebarSvg} /> </button>
+      <button class="wtq-nav-menu wtq-rounded wtq-focusable"><SidebarSvg  /> </button>
     </div>
     <main id="main-content">
       <h1 class="wtq-main-heading">{heading ?? title}</h1>

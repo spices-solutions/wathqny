@@ -16,11 +16,3 @@ export function resumability(callback: CallableFunction, ref: HTMLElement, event
   callback()
 }
 
-// resumability(()=> import("./search-logic"), document.getElementById('search'), "click")
-
-export function importScriptDynamically(path: string) {
-  return import(path).catch((err) => {
-    new Error(err)
-  })
-}
-

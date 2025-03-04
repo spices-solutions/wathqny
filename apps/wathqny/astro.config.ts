@@ -14,6 +14,9 @@ export default defineConfig({
     service: passthroughImageService(),
     domains: ["api.github.com", "avatars.githubusercontent.com"],
   },
+  experimental: {
+    svg: true,
+  },
   markdown: {
     shikiConfig: {
       themes: {
