@@ -18,7 +18,7 @@ async function getUserData(username: string) {
 const { authors } = Astro.props;
 ---
 
-<div class="wtq-avatar-contanier wtq-flex-center">
+<div class="wtq-avatar-container wtq-flex-center">
   {
     authors?.map((author: string) =>
       getUserData(author).then((data) => (
