@@ -14,7 +14,7 @@
   "dependencies": {
     "@vite-pwa/assets-generator": "^0.2.6",
     "@vite-pwa/astro": "^0.4.3",
-    "astro": "^4.16.18",
+    "astro": "^5.4.2",
     "sass": "^1.85.1",
     "sharp": "0.32.6",
     "sharp-ico": "^0.1.5",
