@@ -1,0 +1,66 @@
+.wtq-focusable {
+  &:hover,
+  &:focus-visible {
+    color: var(--darkest) !important;
+    background-color: hsl(var(--medium), 0.1) !important;
+    outline: none !important;
+    cursor: pointer;
+  }
+}
+
+.wtq-shadow {
+  box-shadow: 0 10px 9px -8px rgb(0 0 0 / 10%);
+}
+
+.wtq-rounded {
+  border-radius: var(--radius);
+}
+
+.wtq-flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.wtq-motion {
+  transition-property: all;
+  transition-duration: 400ms;
+  transition-timing-function: ease;
+}
+
+.wtq-highlight {
+  background-color: hsl(var(--medium), 0.1);
+  color: hsl(var(--darkest));
+}
+
+.wtq-motion-slow {
+  transition-duration: 600ms;
+}
+
+.wtq-motion-fast {
+  transition-duration: 200ms;
+}
+
+.wtq-motion-ease {
+  transition-timing-function: ease;
+}
+
+.wtq-motion-ease-in {
+  transition-timing-function: ease-in;
+}
+
+.wtq-motion-ease-out {
+  transition-timing-function: ease-out;
+}
+
+.wtq-motion-ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.wtq-motion-cubic {
+  transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.wtq-motion-outSine {
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+

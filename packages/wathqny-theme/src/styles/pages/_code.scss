@@ -1,0 +1,138 @@
+.wtq-browser-block {
+  background-color: #fdfdfd;
+}
+
+.wtq-browser-block .component-wrapper {
+  padding-block: 20px;
+}
+
+.wtq-app-block {
+  direction: ltr;
+
+  margin-block: 20px 50px;
+  padding: 20px;
+  padding-bottom: 0;
+
+  border: 1px solid #dedee5;
+  box-shadow:
+    0 10px 25px -5px rgb(0 0 0 / 5%),
+    0 8px 10px -6px rgb(0 0 0 / 10%);
+}
+
+.wtq-code-block {
+  overflow-x: auto;
+  background: var(--bg);
+}
+
+.wtq-code-block .rehype-pretty-copy {
+  top: -10px;
+  inset-inline-end: -20px;
+}
+
+.wtq-code-block pre {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.dark .wtq-code-block {
+  border-color: #37373781;
+}
+
+.wtq-app-block .head {
+  display: flex;
+  gap: 10px;
+}
+
+.wtq-app-block .dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.wtq-app-block .dot:first-of-type {
+  background-color: #ed6b60;
+}
+
+.wtq-app-block .dot:nth-of-type(2) {
+  background-color: #f5be4f;
+}
+
+.wtq-app-block .dot:last-of-type {
+  background-color: #62c554;
+}
+
+.rehype-pretty-copy {
+  top: 5px;
+  border: none;
+  background-color: unset;
+}
+
+.dark .astro-code {
+  background-color: var(--shiki-dark-bg) !important;
+}
+
+.dark .astro-code span {
+  font-weight: var(--shiki-dark-font-weight) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  color: var(--shiki-dark) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+.line.diff {
+  display: inline-block;
+  width: 100%;
+  padding: 2px;
+}
+
+.line.diff.remove  {
+  opacity: 0.7;
+  background-color: #f43f5e29;
+}
+
+.line.diff.remove:before  {
+  content: '-';
+  color:#cb7676;
+  padding-inline: 5px;
+}
+
+.line.diff.add {
+  background-color: #10b98129;
+}
+
+.line.diff.add:before  {
+  padding-inline: 5px;
+  content: '+';
+  color:#3dd68c;
+}
+
+.line.line.highlighted {
+  display: inline-block;
+  width: 100%;
+  padding: 3px;
+  background-color: #77787f28;
+}
+
+.highlighted-word {
+  border: 1px solid #77787f28;
+  border-radius: var(--radius);
+  padding: 2px;
+  background-color: #77787f28;
+}
+
+.has-focused .line:not(.focused) {
+  filter: blur(.090rem);
+  opacity: 0.5;
+}
+
+.has-focused:hover .line:not(.focused) {
+  filter: blur(0);
+}
+
+.line.highlighted.warning {
+  background-color: #eab30829;
+}
+
+.line.highlighted.error {
+  background-color: #f43f5e29;
+}

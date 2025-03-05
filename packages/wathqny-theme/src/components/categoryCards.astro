@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content'
+
+const docs = await getCollection('docs')
+
+const category = Astro.url.pathname.split('/')[2]
+
+const filteredDocs = docs.filter(
+  (doc: { data: { category: string | undefined } }) => {
+    return doc.data.category === category
+  },
+)
+
+filteredDocs.sort(
+  (a: { data: { position: number } }, b: { data: { position: number } }) =>
+    a.data.position > b.data.position ? 1 : -1,
+)
+---
+
+<div class="wtq-card-container-category">
+  {
+    filteredDocs.map(
+      (doc: {
+        data: {
+          category: string
+          href: string
+          title: string
+          description: string
+          link: string
+        }
+      }) => {
+        return (
+          <a href={`/docs/${doc.data.link}`}   class="wtq-card wtq-shadow">
+            <h2 class="wtq-card-title">{doc.data.title}</h2>
+            <h3 class="wtq-card-subtitle">{doc.data.description}</h3>
+          </a>
+        )
+      },
+    )
+  }
+</div>

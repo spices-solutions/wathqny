@@ -1,0 +1,41 @@
+---
+import { usePagination } from "astro-toolkit/utils";
+import ArrowSvg from "../../assets/icons/arrow.svg";
+
+const { length, currentPage, firstUrl, prevUrl, nextUrl } = Astro.props;
+
+const pagination = usePagination(currentPage, length);
+---
+
+<nav aria-label="Blog pages" class="wtq-pagination wtq-flex-center">
+  <a
+    href={prevUrl}
+    class:list={["wtq-pagination__link wtq-flex-center", { disabled: prevUrl }]}
+  >
+    <ArrowSvg class="wtq-first-arrow" size={24} />
+  </a>
+  {
+    pagination.map((page) =>
+      page ? (
+        <a
+          class:list={[
+            "wtq-pagination__link wtq-flex-center",
+            { disabled: 1 == page },
+            { active: page === currentPage },
+          ]}
+          href={1 == page ? firstUrl : `${firstUrl}/${page}`}
+        >
+          {page}
+        </a>
+      ) : (
+        <span class:list={["wtq-pagination__link wtq-flex-center"]}>...</span>
+      ),
+    )
+  }
+  <a
+    href={nextUrl}
+    class:list={["wtq-pagination__link wtq-flex-center", { disabled: nextUrl }]}
+  >
+    <ArrowSvg size={24} />
+  </a>
+</nav>

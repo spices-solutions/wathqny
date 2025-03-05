@@ -69,6 +69,9 @@ importers:
       astro:
         specifier: ^5.4.2
         version: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
+      astro-toolkit:
+        specifier: workspace:*
+        version: link:../../packages/astro-toolkit
       sass:
         specifier: ^1.85.1
         version: 1.85.1
@@ -105,10 +108,16 @@ importers:
       astro-theme-provider:
         specifier: ^0.7.1
         version: 0.7.1(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0))
+      sass:
+        specifier: ^1.85.1
+        version: 1.85.1
     devDependencies:
       astro:
         specifier: ^5.2.5
         version: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
+      astro-toolkit:
+        specifier: workspace:*
+        version: link:../astro-toolkit
 
   packages/wtqdocs:
     dependencies:

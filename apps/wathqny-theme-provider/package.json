@@ -21,6 +21,7 @@
     "sharp-ico": "^0.1.5",
     "workbox-window": "^7.3.0",
     "wathqny-theme": "workspace:*",
+    "astro-toolkit": "workspace:*",
     "wtqdocs": "workspace:*"
   }
 }
