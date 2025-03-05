@@ -2,7 +2,7 @@
   "name": "wtqdocs",
   "type": "module",
   "version": "0.2.10",
-  "description": "a ",
+  "description": "My awesome Astro theme created using `astro-theme-provider`!",
   "license": "MIT",
   "homepage": "http://wathqny.pages.dev",
   "publishConfig": {
@@ -16,62 +16,24 @@
     "url": "https://github.com/spices-solutions/"
   },
   "keywords": [
-    "spices",
-    "docs",
-    "wathqny"
+    "astro",
+    "withastro",
+    "astro-integration"
   ],
   "exports": {
     ".": {
-      "import": "./src/index.ts"
+      "import": "./index.ts"
     },
-    "./plugin": "./src/integration.ts",
-    "./layout/home": "./src/pages/home.astro",
-    "./page/injected.css": "./src/pages/assets/injected-styles.css.ts",
-    "./page/search.json": "./src/pages/search.json.js",
-    "./page/rss.xml": "./src/pages/rss.xml.js",
-    "./page/robots.txt": "./src/pages/robots.txt.ts",
-    "./page/docs": "./src/pages/docs.astro",
-    "./page/docs/categories": "./src/pages/docs/[...categories].astro",
-    "./page/docs/documents": "./src/pages/docs/[...documents].astro",
-    "./page/blog": "./src/pages/blog.astro",
-    "./page/blog/pages": "./src/pages/blog/[...page].astro",
-    "./page/blog/posts": "./src/pages/blog/[...posts].astro",
-    "./page/404": "./src/pages/404.astro",
-    "./schema": "./src/schema.ts",
-    "./blog": "./src/blog.ts",
-    "./styles": "./styles/wathqny.scss",
-    "./styles/home": "./styles/pages/_home.scss",
-    "./styles/blog": "./styles/pages/_blog.scss",
-    "./styles/categories": "./styles/pages/_categories.scss",
-    "./styles/block": "./styles/pages/_code.scss",
-    "./actions": "./src/actions.ts"
+    "./styles": "./styles/wathqny.scss"
   },
-  "module": "./src/index.ts",
-  "dependencies": {
-    "@astrojs/mdx": "^4.1.0",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
-    "@inox-tools/custom-routing": "^0.3.3",
-    "@rehype-pretty/transformers": "^0.13.2",
-    "@shikijs/transformers": "^3.1.0",
-    "@shikijs/types": "^3.1.0",
-    "@vite-pwa/assets-generator": "^0.2.6",
-    "@vite-pwa/astro": "^0.5.0",
-    "@zokki/astro-minify": "^1.1.0",
-    "astro": "^5.4.2",
-    "astro-auto-import": "^0.4.4",
-    "astro-compressor": "^0.4.1",
-    "astro-meta-tags": "^0.3.1",
-    "astro-min": "^1.3.1",
-    "astro-purgecss": "^5.2.1",
-    "astro-toolkit": "workspace:*",
-    "purgecss": "^6.0.0",
-    "sharp": "0.32.6",
-    "sharp-ico": "^0.1.5",
-    "shiki": "^3.1.0"
-  },
+  "module": "./index.ts",
+
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.10.4",
-    "typescript": "^5.8.2"
+    "astro": "^5.4.2",
+    "astro-toolkit": "workspace:*"
+  },
+  "dependencies": {
+    "astro-theme-provider": "^0.7.1",
+    "sass": "^1.85.1"
   }
 }

@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
-import WathqnyConfig from '/wathqny.config'
+import config from 'wathqny:config'
 import type { LayoutInterface } from '../../types/components'
 import BlogLayout from '../Layout/BlogLayout.astro'
 import Breadcrumbs from '../Navigation/breadcrumbs.astro'
@@ -30,17 +30,17 @@ const { title, keywords, description, OGImage } = postMetaData
         {authors}
       />
       <figure>
-        <link rel="preload" as="image" href={OGImage?.src ?? WathqnyConfig.OGImage?.src}>
+        <link rel="preload" as="image" href={OGImage?.src ?? config.OGImage?.src}>
         <Image
           class="wtq-cover wtq-rounded"
           width={960}
           height={540}
           loading="eager"
-          src={OGImage?.src ?? WathqnyConfig.OGImage?.src}
-          alt={OGImage?.alt ?? WathqnyConfig.OGImage?.alt}
+          src={OGImage?.src ?? config.OGImage?.src}
+          alt={OGImage?.alt ?? config.OGImage?.alt}
         />
         <figcaption>
-          {OGImage?.alt ?? WathqnyConfig.OGImage?.alt}
+          {OGImage?.alt ?? config.OGImage?.alt}
         </figcaption>
       </figure>
     </span>

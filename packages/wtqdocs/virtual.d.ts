@@ -1,0 +1,1 @@
+/// <reference path=".././../apps/wathqny/node_modules/.astro/types.d.ts" />

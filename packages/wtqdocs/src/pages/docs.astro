@@ -1,10 +1,8 @@
 ---
 import type { MarkdownLayoutProps } from 'astro'
-import WathqnyConfig from '/wathqny.config'
 import DocsLayout from '../components/Layout/DocsLayout.astro'
 import 'wtqdocs/styles/categories'
-
-const { sidebar } = WathqnyConfig
+import config from 'wathqny:config'
 
 type Props = MarkdownLayoutProps<{
   title: string
@@ -16,7 +14,7 @@ type Props = MarkdownLayoutProps<{
 <DocsLayout title={"docs"} heading={"categories" ?? "docs"}>
   <div class="wtq-card-container-category">
     {
-      sidebar?.map((doc) => {
+      config?.sidebar?.map((doc) => {
         return (
           <a href={`/docs/${doc.id}/`} class="wtq-card wtq-shadow">
               <h2 class="wtq-card-title">{doc.label}</h2>

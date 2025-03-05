@@ -1,18 +1,14 @@
 import type { APIRoute } from 'astro'
 
-import type { WathqnyConfig as WathqnyConfigType } from '../../types/config'
+import config from 'wathqny:config'
 
-// @ts-ignore
-import untypedWathqnyConfig from '/wathqny.config'
-const WathqnyConfig: WathqnyConfigType = untypedWathqnyConfig
-
-const Styles = WathqnyConfig.font
+const Styles = config.font
   ? `
   @font-face {
     font-family: wtqfont;
     font-weight: 100 900;
     font-display: swap;
-    src: url("${WathqnyConfig.font}") format("woff2");
+    src: url("${config.font}") format("woff2");
   }
 
   body {

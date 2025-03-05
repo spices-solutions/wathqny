@@ -2,18 +2,12 @@
 import { getCollection } from 'astro:content'
 import { For } from 'astro-toolkit/flow'
 import { slugify } from 'astro-toolkit/utils'
-import type { WathqnyConfig as WathqnyConfigType } from '../../types/config'
 import Category from './Category.astro'
 import CollapseButton from './CollapseButton.astro'
 
-// @ts-ignore
-import untypedWathqnyConfig from '/wathqny.config'
+import config from 'wathqny:config'
 
 import LinkItem from './LinkItem.astro'
-
-const WathqnyConfig: WathqnyConfigType = untypedWathqnyConfig
-
-const { sidebar } = WathqnyConfig
 
 const docs = await getCollection('docs')
 
@@ -33,7 +27,7 @@ const currentUrl = `/${
 <div class="wtq-sidebar-overlay" aria-hidden></div>
 <aside class="wtq-sidebar wtq-motion">
   <ul class="wtq-sidebar-category" role="tablist">
-    <For each={sidebar}>
+    <For each={config.sidebar}>
       {
         (item: { label: string, id: any }, index) => (
           <Category

@@ -6,26 +6,21 @@
 
 import { BaseHead } from 'astro-toolkit/seo'
 import { PrefetchNative } from 'astro-toolkit/perf'
+import config from 'wathqny:config'
 
-import type { WathqnyConfig as WathqnyConfigType } from '../types/config'
-
-// @ts-ignore
-import untypedWathqnyConfig from '/wathqny.config'
-import type { LayoutInterface } from '../types/components'
-
-const WathqnyConfig: WathqnyConfigType = untypedWathqnyConfig
+import type { LayoutInterface } from './types/components'
 
 export interface Props extends LayoutInterface {}
 
 const { title, keywords, description, OGImage } = Astro.props as Props
 
 const METATITLE = title
-  ? `${title} - ${WathqnyConfig.siteName}`
-  : WathqnyConfig.siteName
-const METAIMAGE = OGImage?.src ?? WathqnyConfig.OGImage?.src
-const METAIMAGEALT = OGImage?.alt ?? WathqnyConfig.OGImage?.alt
-const METADESCRIPTION = description ?? WathqnyConfig.description
-const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
+  ? `${title} - ${config.siteName}`
+  : config.siteName
+const METAIMAGE = OGImage?.src ?? config.OGImage?.src
+const METAIMAGEALT = OGImage?.alt ?? config.OGImage?.alt
+const METADESCRIPTION = description ?? config.description
+const METAKEYWORDS = keywords ?? [...(config.keywords || [])]
 ---
 
 <BaseHead
@@ -33,18 +28,17 @@ const METAKEYWORDS = keywords ?? [...(WathqnyConfig.keywords || [])]
   description={METADESCRIPTION}
   keywords={METAKEYWORDS}
   OGImage={{ src: METAIMAGE, alt: METAIMAGEALT }}
-  GSVToken={WathqnyConfig.GSVToken}
+  GSVToken={config.GSVToken}
   extend={{
     link: [
       {
-        href: WathqnyConfig.font,
+        href: config.font,
         rel: 'preload',
         as: 'font',
         type: 'font/woff2',
         crossorigin: 'anonymous',
       },
-      // @ts-expect-error Type '{ href: string; rel?: string; onload?: string; media?: string; as?: string; }[] | undefined' must have a '[Symbol.iterator]()' method that returns an iterator.ts(2488)
-      ...WathqnyConfig.css
+      ...config?.css
     ],
   }}
 >

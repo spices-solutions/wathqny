@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import { formatDate } from 'astro-toolkit/utils'
-import WathqnyConfig from '/wathqny.config'
+import config from 'wathqny:config'
 
 type Props = {
   link: string
@@ -32,8 +32,8 @@ const { title, body, date, image, link, index } = Astro.props
       width={640}
       height={360}
       loading={index === 0 ? "eager" : "lazy"}
-      src={image?.src ?? WathqnyConfig.OGImage?.src }
-      alt={image?.alt ?? WathqnyConfig.OGImage?.alt }
+      src={image?.src ?? config.OGImage?.src }
+      alt={image?.alt ?? config.OGImage?.alt }
     />
   </article>
 </a>

@@ -1,10 +1,10 @@
 ---
 import type { MarkdownLayoutProps } from 'astro'
 import BaseLayout from '../components/Layout/BaseLayout.astro'
-import 'wtqdocs/styles/home'
+import '../styles/pages/home.scss'
 import { Image } from 'astro:assets'
-import WathqnyConfig from '/wathqny.config'
 import Dynamic from 'astro-toolkit/experimental/Dynamic'
+import config from 'wathqny:config'
 
 type Props = MarkdownLayoutProps<{
   title?: string
@@ -34,10 +34,10 @@ const className = frontmatter.title && frontmatter.subtitle ? "wtq-title" : "wtq
         frontmatter.logo && (
           <Image
             loading="eager"
-            alt={WathqnyConfig.OGImage.alt}
-            height={frontmatter.logo.height}
-            width={frontmatter.logo.width}
-            src={frontmatter.logo.src}
+            alt={config.OGImage.alt}
+            height={config.logo.height}
+            width={config.logo.width}
+            src={config.logo.src}
           />
         )
       }

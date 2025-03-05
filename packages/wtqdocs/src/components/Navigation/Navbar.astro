@@ -2,15 +2,12 @@
 import { Image } from 'astro:assets'
 import MoonSvg from '../../assets/icons/moon.svg'
 import SunSvg from '../../assets/icons/sun.svg'
-import type { WathqnyConfig as WathqnyConfigType } from '../../types/config'
+import config from 'wathqny:config'
 
-// @ts-ignore
-import untypedWathqnyConfig from '/wathqny.config'
 import Search from '../Search.astro'
 
-const WathqnyConfig: WathqnyConfigType = untypedWathqnyConfig
 
-const { logo, siteName, navbar } = WathqnyConfig
+const { logo, siteName, navbar } = config
 ---
 
 <nav class="wtq-navbar wtq-flex-center" role="navigation">
