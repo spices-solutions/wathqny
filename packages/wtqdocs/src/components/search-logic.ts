@@ -27,7 +27,7 @@ searchInput.addEventListener('input', () => {
   const query = searchInput.value
   const results = fullTextSearch.search(query)
   searchInputContent.innerHTML = ''
-  results.forEach((result: { title: string; link: string }) => {
+  for (const result of results) {
     searchInputContent.innerHTML += `
         <li>
           <a class="wtq-focusable wtq-rounded" href=${result.link}>
@@ -35,5 +35,5 @@ searchInput.addEventListener('input', () => {
           </a>
         </li>
       `
-  })
+  }
 })

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import { For } from 'astro-toolkit/flow'
-import { BlogLayout } from '../blog'
+import BlogLayout from '../components/Layout/BlogLayout.astro'
 import PostSummary from '../components/blog/PostSummary.astro'
 
 const blog = await getCollection('blog')
@@ -10,7 +10,7 @@ const blog = await getCollection('blog')
 <BlogLayout>
   <div class="wtq-post-container">
     <For each={blog}>
-      {(post, index)=> (
+      {(post: { data: { title: string; image: { src: string; alt: string }; link: string; pubDate: Date }; body: string }, index: number)=> (
         <PostSummary
           index={index}
           title={post.data.title} 
