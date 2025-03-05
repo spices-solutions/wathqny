@@ -18,8 +18,9 @@ import compressor from 'astro-compressor'
 import metaTags from 'astro-meta-tags'
 import purgecss from 'astro-purgecss'
 import type { WathqnyConfig } from './types/config'
+import type { ShikiTransformer } from 'shiki'
 
-export const shikiBaseTransformers = () => [
+export const shikiBaseTransformers: ShikiTransformer[] = [
   transformerNotationDiff(),
   transformerNotationFocus(),
   transformerMetaHighlight(),
@@ -63,7 +64,7 @@ export function wathqnyPlugin(Wathqny: WathqnyConfig) {
           light: 'material-theme-lighter',
           dark: 'material-theme-darker',
         },
-        transformers: shikiBaseTransformers() as any,
+        transformers: shikiBaseTransformers,
       },
     }),
     sitemap(),

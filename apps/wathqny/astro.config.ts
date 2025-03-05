@@ -23,7 +23,7 @@ export default defineConfig({
         light: "material-theme-lighter",
         dark: "material-theme-darker",
       },
-      transformers: shikiBaseTransformers() as any,
+      transformers: shikiBaseTransformers,
     },
   },
   integrations: [...wathqnyPlugin(WathqnyConfig)],
