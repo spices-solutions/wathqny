@@ -20,7 +20,7 @@
     "sass": "^1.85.1",
     "sharp": "0.32.6",
     "sharp-ico": "^0.1.5",
-    "wtqdocs": "workspace:*",
-    "workbox-window": "^7.3.0"
+    "workbox-window": "^7.3.0",
+    "wtqdocs": "workspace:*"
   }
 }

@@ -20,8 +20,9 @@ type Props = MarkdownLayoutProps<{
 
 const { frontmatter } = Astro.props
 
-const tag = frontmatter.title ? "h1" : "h2";
-const className = frontmatter.title && frontmatter.subtitle ? "wtq-title" : "wtq-subtitle";
+const tag = frontmatter.title ? 'h1' : 'h2'
+const className =
+  frontmatter.title && frontmatter.subtitle ? 'wtq-title' : 'wtq-subtitle'
 ---
 
 <BaseLayout>

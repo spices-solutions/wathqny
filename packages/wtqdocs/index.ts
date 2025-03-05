@@ -1,8 +1,74 @@
 import defineTheme from 'astro-theme-provider'
 import { z } from 'astro/zod'
 
+import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
+import { customRouting } from '@inox-tools/custom-routing'
+import { transformerCopyButton } from '@rehype-pretty/transformers'
+import {
+  transformerMetaHighlight,
+  transformerMetaWordHighlight,
+  transformerNotationDiff,
+  transformerNotationErrorLevel,
+  transformerNotationFocus,
+  transformerNotationHighlight,
+  transformerNotationWordHighlight,
+} from '@shikijs/transformers'
+import AstroPWA from '@vite-pwa/astro'
+import { minify } from '@zokki/astro-minify'
+import AutoImport from 'astro-auto-import'
+import compressor from 'astro-compressor'
+import metaTags from 'astro-meta-tags'
+import purgecss from 'astro-purgecss'
+import type { ShikiTransformer } from 'shiki'
+
+export const shikiBaseTransformers: ShikiTransformer[] = [
+  transformerNotationDiff(),
+  transformerNotationFocus(),
+  transformerMetaHighlight(),
+  transformerNotationWordHighlight(),
+  transformerNotationErrorLevel(),
+  transformerNotationHighlight(),
+  transformerMetaWordHighlight(),
+  transformerCopyButton({
+    visibility: 'always',
+    feedbackDuration: 3_000,
+  }),
+]
+
 export default defineTheme({
   name: 'wathqny',
+  integrations: [
+    AutoImport({
+      imports: [
+        {
+          'astro:assets': ['Image'],
+          wtqdocs: ['BrowserBlock', 'Code', 'Callout'],
+        },
+      ],
+    }),
+    mdx({
+      optimize: true,
+      shikiConfig: {
+        themes: {
+          light: 'material-theme-lighter',
+          dark: 'material-theme-darker',
+        },
+        transformers: shikiBaseTransformers as any,
+      },
+    }),
+    sitemap(),
+    purgecss(),
+
+    metaTags(),
+    minify({
+      logAllFiles: false,
+    }),
+    compressor({
+      gzip: true,
+      brotli: false,
+    }),
+  ],
   schema: z.object({
     logo: z.string(),
     siteName: z.string().optional(),
@@ -56,8 +122,6 @@ export default defineTheme({
       .optional(),
   }),
 })
-
-
 
 export type { Props as HeadType } from './src/components/Head.astro'
 export { default as Head } from './src/components/Head.astro'

@@ -1,5 +1,5 @@
+import { shikiBaseTransformers } from 'wtqdocs/plugin'
 import { defineConfig, passthroughImageService } from 'astro/config'
-
 import Wathqny from 'wtqdocs'
 // import ThemeStyles from 'wathqny-theme/styles?url'
 
@@ -18,21 +18,21 @@ export default defineConfig({
   experimental: {
     svg: true,
   },
-  // markdown: {
-  //   shikiConfig: {
-  //     themes: {
-  //       light: 'material-theme-lighter',
-  //       dark: 'material-theme-darker',
-  //     },
-  //     transformers: shikiBaseTransformers,
-  //   },
-  // },
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'material-theme-lighter',
+        dark: 'material-theme-darker',
+      },
+        transformers: shikiBaseTransformers as any,
+    },
+  },
   integrations: [
     Wathqny({
       config: {
         logo: '/icon.svg',
 
-        // siteName: 'wathqny',
+        siteName: 'wathqny',
         GSVToken: 'uscYyrV8FUN5a4JacVB4TIl0dpHe9lJNGQevQRoLCr4',
         OGImage: {
           src: '/og.png',

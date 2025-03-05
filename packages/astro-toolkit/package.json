@@ -15,6 +15,12 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/wathqny/issues"
   },
+  "files": [
+    "./src/components/*",
+    "./src/seo/*",
+    "./src/utils/*",
+    "./src/*"
+  ],
   "keywords": [
     "spices",
     "code",

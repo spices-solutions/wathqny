@@ -1,26 +1,19 @@
 ---
-// // @ts-ignore
-// import { pwaAssetsHead } from 'virtual:pwa-assets/head'
-// // @ts-ignore
-// import { pwaInfo } from 'virtual:pwa-info'
+import config from "wathqny:config";
+import { PrefetchNative } from "astro-toolkit/perf";
+import { BaseHead } from "astro-toolkit/seo";
 
-import { BaseHead } from 'astro-toolkit/seo'
-import { PrefetchNative } from 'astro-toolkit/perf'
-import config from 'wathqny:config'
-
-import type { LayoutInterface } from './types/components'
+import type { LayoutInterface } from "./types/components";
 
 export interface Props extends LayoutInterface {}
 
-const { title, keywords, description, OGImage } = Astro.props as Props
+const { title, keywords, description, OGImage } = Astro.props as Props;
 
-const METATITLE = title
-  ? `${title} - ${config.siteName}`
-  : config.siteName
-const METAIMAGE = OGImage?.src ?? config.OGImage?.src
-const METAIMAGEALT = OGImage?.alt ?? config.OGImage?.alt
-const METADESCRIPTION = description ?? config.description
-const METAKEYWORDS = keywords ?? [...(config.keywords || [])]
+const METATITLE = title ? `${title} - ${config?.siteName}` : config.siteName;
+const METAIMAGE = OGImage?.src ?? config?.OGImage?.src;
+const METAIMAGEALT = OGImage?.alt ?? config?.OGImage?.alt;
+const METADESCRIPTION = description ?? config?.description;
+const METAKEYWORDS = keywords ?? [...(config?.keywords || [])];
 ---
 
 <BaseHead
@@ -28,28 +21,30 @@ const METAKEYWORDS = keywords ?? [...(config.keywords || [])]
   description={METADESCRIPTION}
   keywords={METAKEYWORDS}
   OGImage={{ src: METAIMAGE, alt: METAIMAGEALT }}
-  GSVToken={config.GSVToken}
+  GSVToken={config?.GSVToken}
   extend={{
     link: [
       {
-        href: config.font,
-        rel: 'preload',
-        as: 'font',
-        type: 'font/woff2',
-        crossorigin: 'anonymous',
+        href: config?.font,
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: "anonymous",
       },
-      ...config?.css
+      ...config?.css,
     ],
   }}
 >
-
   <meta name="color-scheme" content="dark light" />
-  <link rel="icon" type="image/x-icon" href="/icon.svg">
+  <link rel="icon" type="image/x-icon" href="/icon.svg" />
   <script is:inline>
     const root = document.documentElement;
 
     if (
-      localStorage.theme === "dark" ||(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
       root?.classList.replace("light", "dark");
     } else {
       root?.classList.replace("dark", "light");
