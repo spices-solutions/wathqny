@@ -55,6 +55,39 @@ importers:
         specifier: workspace:*
         version: link:../../packages/wtqdocs
 
+  apps/wathqny-theme-provider:
+    dependencies:
+      '@shikijs/types':
+        specifier: 3.1.0
+        version: 3.1.0
+      '@vite-pwa/assets-generator':
+        specifier: ^0.2.6
+        version: 0.2.6
+      '@vite-pwa/astro':
+        specifier: ^0.5.0
+        version: 0.5.0(@vite-pwa/assets-generator@0.2.6)(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0))(vite-plugin-pwa@0.20.0(@vite-pwa/assets-generator@0.2.6)(vite@6.2.0(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(sass@1.85.1)(terser@5.39.0)(yaml@2.7.0))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.3.0))
+      astro:
+        specifier: ^5.4.2
+        version: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
+      sass:
+        specifier: ^1.85.1
+        version: 1.85.1
+      sharp:
+        specifier: 0.32.6
+        version: 0.32.6
+      sharp-ico:
+        specifier: ^0.1.5
+        version: 0.1.5
+      wathqny-theme:
+        specifier: workspace:*
+        version: link:../../packages/wathqny-theme
+      workbox-window:
+        specifier: ^7.3.0
+        version: 7.3.0
+      wtqdocs:
+        specifier: workspace:*
+        version: link:../../packages/wtqdocs
+
   packages/astro-toolkit:
     devDependencies:
       '@astrojs/ts-plugin':
@@ -67,7 +100,15 @@ importers:
         specifier: ^5.8.2
         version: 5.8.2
 
-  packages/create-wathqny: {}
+  packages/wathqny-theme:
+    dependencies:
+      astro-theme-provider:
+        specifier: ^0.7.1
+        version: 0.7.1(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0))
+    devDependencies:
+      astro:
+        specifier: ^5.2.5
+        version: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
 
   packages/wtqdocs:
     dependencies:
@@ -1631,6 +1672,10 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
+  ast-types@0.16.1:
+    resolution: {integrity: sha512-6t10qk83GOG8p0vKmaCr8eiilZwO171AvbROMtvvNiwrTly62t+7XkA8RdIIVbpMhCASAsxgAzdRSwh6nw/5Dg==}
+    engines: {node: '>=4'}
+
   astring@1.9.0:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
@@ -1644,6 +1689,11 @@ packages:
   astro-compressor@0.4.1:
     resolution: {integrity: sha512-IAgYAlxYRMolaptsFB9quH7RxX4eUeC4UfULCPhT+ILcg7m1kbaxuyUKqGg9Hh+KZ+FNPPDAz7DqUfl+HDWhQg==}
 
+  astro-integration-kit@0.18.0:
+    resolution: {integrity: sha512-Z0QW5IQjosuKQDEGYYkvUX6EhEtrmE4/oViqWz23QveV8U7AuyFsTdg00WRNPevWZl/5a4lLUeDpv4bCRynRRg==}
+    peerDependencies:
+      astro: ^4.12.0 || ^5.0.0
+
   astro-meta-tags@0.3.1:
     resolution: {integrity: sha512-6g/SfAVTV7BsGlfWU+s/Kvo6atyn9DpfI7Dq3fE/ck3ppfg30aoeT2Uxu7UH4yla3QXAUWaJIher7fGjewf0ew==}
     peerDependencies:
@@ -1654,11 +1704,30 @@ packages:
     peerDependencies:
       astro: '*'
 
+  astro-pages@0.3.1:
+    resolution: {integrity: sha512-gDp2+JRhTzbNDjeTAP3rgG4i85eLO2z2fuhXJcFxdlkd6A5bpoLDNv1OPZP6K+Sd8sZvGK9wF8hL2icWTZdGqQ==}
+    peerDependencies:
+      astro: '>=3'
+
+  astro-public@0.1.1:
+    resolution: {integrity: sha512-uYJSqzd+zgfjxxUFhtU/erEWeeUuMxJ6NvKJvGCEKiT/AqbIkbBsuVrqX545/mOz+7uOFVSfZQ6jBuEvhssrCQ==}
+    peerDependencies:
+      astro: ^4.4.0||^5
+
   astro-purgecss@5.2.1:
     resolution: {integrity: sha512-AufigItyvFMqQLov0H0Z8kFt+B5wg8E5RwuwNjt87zQr3fBqvs0uMidM5TN8vDVaLByG449PczLxJvFTs7HYng==}
     peerDependencies:
       astro: ^5.0.0
       purgecss: ^7.0.0
+
+  astro-theme-provider@0.7.1:
+    resolution: {integrity: sha512-OycxB0nYc80n9eWtggcFcNJNsx+2A3yi4ZZU4sLJUTeye4XHoDYdOmiK2o2O9WesvXaOjFLsd5rFYArDHiucOQ==}
+    peerDependencies:
+      '@astrojs/db': '>=0.8.0'
+      astro: '>=3'
+    peerDependenciesMeta:
+      '@astrojs/db':
+        optional: true
 
   astro@5.4.2:
     resolution: {integrity: sha512-9Z3fAniIRJaK/o43OroZA1wHUIU+qHiOR9ovlVT/2XQaN25QRXScIsKWlFp0G/zrx5OuuoJ+QnaoHHW061u26A==}
@@ -1789,6 +1858,10 @@ packages:
   call-bound@1.0.4:
     resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
     engines: {node: '>= 0.4'}
+
+  callsites@4.2.0:
+    resolution: {integrity: sha512-kfzR4zzQtAE9PC7CzZsjl3aBNbXWuXiSeOCdLcPpBfGW8YuCqQHcRPFDbr/BPVmd3EEPVpuFzLyuT/cUhPr4OQ==}
+    engines: {node: '>=12.20'}
 
   camelcase@8.0.0:
     resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
@@ -3206,6 +3279,9 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
 
+  pathe@1.1.2:
+    resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
+
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
 
@@ -3318,6 +3394,10 @@ packages:
   readdirp@4.1.2:
     resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
     engines: {node: '>= 14.18.0'}
+
+  recast@0.23.11:
+    resolution: {integrity: sha512-YTUo+Flmw4ZXiWfQKGcwwc11KnoRAYgzAE2E7mXKCjSviTKShtxBsN6YUUBB2gtaBzKzeKunxhUwNHQuRryhWA==}
+    engines: {node: '>= 4'}
 
   recma-build-jsx@1.0.0:
     resolution: {integrity: sha512-8GtdyqaBcDfva+GUKDr3nev3VpKAhup1+RvkMvUxURHpW7QyIvk9F5wz7Vzo06CEMSilw6uArgRqhpiUcWp8ew==}
@@ -3740,6 +3820,9 @@ packages:
 
   text-decoder@1.2.3:
     resolution: {integrity: sha512-3/o9z3X0X0fTupwsYvR03pJ/DjWuqqrfwBgTQzdWDiQSm9KitAyz/9WqsT2JQW7KV2m+bC2ol/zqpW37NHxLaA==}
+
+  tiny-invariant@1.3.3:
+    resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
 
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
@@ -5999,6 +6082,10 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
+  ast-types@0.16.1:
+    dependencies:
+      tslib: 2.8.1
+
   astring@1.9.0: {}
 
   astro-auto-import@0.4.4(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@2.79.2)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)):
@@ -6008,6 +6095,12 @@ snapshots:
       astro: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@2.79.2)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
 
   astro-compressor@0.4.1: {}
+
+  astro-integration-kit@0.18.0(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)):
+    dependencies:
+      astro: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
+      pathe: 1.1.2
+      recast: 0.23.11
 
   astro-meta-tags@0.3.1(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@2.79.2)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)):
     dependencies:
@@ -6019,10 +6112,28 @@ snapshots:
       astro: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@2.79.2)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
       svgo: 3.3.2
 
+  astro-pages@0.3.1(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)):
+    dependencies:
+      astro: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
+      fast-glob: 3.3.3
+
+  astro-public@0.1.1(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)):
+    dependencies:
+      astro: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
+
   astro-purgecss@5.2.1(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@2.79.2)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0))(purgecss@6.0.0):
     dependencies:
       astro: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@2.79.2)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
       purgecss: 6.0.0
+
+  astro-theme-provider@0.7.1(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)):
+    dependencies:
+      astro: 5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
+      astro-integration-kit: 0.18.0(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0))
+      astro-pages: 0.3.1(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0))
+      astro-public: 0.1.1(astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@4.34.9)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0))
+      callsites: 4.2.0
+      fast-glob: 3.3.3
 
   astro@5.4.2(@types/node@20.14.9)(jiti@1.21.7)(lightningcss@1.29.1)(rollup@2.79.2)(sass@1.85.1)(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0):
     dependencies:
@@ -6359,6 +6470,8 @@ snapshots:
     dependencies:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
+
+  callsites@4.2.0: {}
 
   camelcase@8.0.0: {}
 
@@ -8138,6 +8251,8 @@ snapshots:
 
   path-type@4.0.0: {}
 
+  pathe@1.1.2: {}
+
   pathe@2.0.3: {}
 
   pathval@2.0.0: {}
@@ -8250,6 +8365,14 @@ snapshots:
       util-deprecate: 1.0.2
 
   readdirp@4.1.2: {}
+
+  recast@0.23.11:
+    dependencies:
+      ast-types: 0.16.1
+      esprima: 4.0.1
+      source-map: 0.6.1
+      tiny-invariant: 1.3.3
+      tslib: 2.8.1
 
   recma-build-jsx@1.0.0:
     dependencies:
@@ -8906,6 +9029,8 @@ snapshots:
     dependencies:
       b4a: 1.6.7
 
+  tiny-invariant@1.3.3: {}
+
   tinybench@2.9.0: {}
 
   tinyexec@0.3.2: {}
@@ -8943,8 +9068,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.2
 
-  tslib@2.8.1:
-    optional: true
+  tslib@2.8.1: {}
 
   tunnel-agent@0.6.0:
     dependencies:
