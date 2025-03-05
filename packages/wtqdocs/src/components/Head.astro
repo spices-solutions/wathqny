@@ -42,10 +42,7 @@ const METAKEYWORDS = keywords ?? [...(config.keywords || [])]
     ],
   }}
 >
-  <!-- {pwaAssetsHead.themeColor && <meta name="theme-color" content={pwaAssetsHead.themeColor.content} />}
-  {pwaAssetsHead.links.map((link: astroHTML.JSX.IntrinsicAttributes & astroHTML.JSX.LinkHTMLAttributes) => <link {...link} />)}
-  {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />} -->
-  <!-- <script src="./pwa.ts"></script> -->
+
   <meta name="color-scheme" content="dark light" />
   <link rel="icon" type="image/x-icon" href="/icon.svg">
   <script is:inline>
@@ -58,7 +55,6 @@ const METAKEYWORDS = keywords ?? [...(config.keywords || [])]
       root?.classList.replace("dark", "light");
     }
   </script>
-  <!-- <PrefetchNative /> -->
-  <meta name="generator" content="wathqny 1.0 Astro powerd" />
+  <meta name="generator" content="wathqny 1.0 Astro powered" />
   <slot />
 </BaseHead>

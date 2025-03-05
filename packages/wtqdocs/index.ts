@@ -56,3 +56,20 @@ export default defineTheme({
       .optional(),
   }),
 })
+
+
+
+export type { Props as HeadType } from './src/components/Head.astro'
+export { default as Head } from './src/components/Head.astro'
+export { default as Callout } from './src/components/common/Callout.astro'
+export { default as Navbar } from './src/components/Navigation/Navbar.astro'
+export { default as SkipLink } from './src/components/Navigation/SkipLink.astro'
+export { default as BaseLayout } from './src/components/Layout/BaseLayout.astro'
+export { default as DocsLayout } from './src/components/Layout/DocsLayout.astro'
+export { default as BlogLayout } from './src/components/Layout/BlogLayout.astro'
+export { default as Breadcrumbs } from './src/components/Navigation/breadcrumbs.astro'
+export { default as CategoryCards } from './src/components/categoryCards.astro'
+
+export { default as Code } from './src/components/Block/Code.astro'
+export type { Props as CodeType } from './src/components/Block/Code.astro'
+export { default as BrowserBlock } from './src/components/Block/BrowserBlock.astro'

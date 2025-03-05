@@ -24,7 +24,27 @@
     ".": {
       "import": "./index.ts"
     },
-    "./styles": "./styles/wathqny.scss"
+    "./plugin": "./src/integration.ts",
+    "./layout/home": "./src/pages/home.astro",
+    "./page/injected.css": "./src/pages/assets/injected-styles.css.ts",
+    "./page/search.json": "./src/pages/search.json.js",
+    "./page/rss.xml": "./src/pages/rss.xml.js",
+    "./page/robots.txt": "./src/pages/robots.txt.ts",
+    "./page/docs": "./src/pages/docs.astro",
+    "./page/docs/categories": "./src/pages/docs/[...categories].astro",
+    "./page/docs/documents": "./src/pages/docs/[...documents].astro",
+    "./page/blog": "./src/pages/blog.astro",
+    "./page/blog/pages": "./src/pages/blog/[...page].astro",
+    "./page/blog/posts": "./src/pages/blog/[...posts].astro",
+    "./page/404": "./src/pages/404.astro",
+    "./schema": "./src/schema.ts",
+    "./blog": "./src/blog.ts",
+    "./styles": "./styles/wathqny.scss",
+    "./styles/home": "./styles/pages/_home.scss",
+    "./styles/blog": "./styles/pages/_blog.scss",
+    "./styles/categories": "./styles/pages/_categories.scss",
+    "./styles/block": "./styles/pages/_code.scss",
+    "./actions": "./src/actions.ts"
   },
   "module": "./index.ts",
 
