@@ -1,3 +1,3 @@
-import collections from 'wtqdocs/schema'
+import collections from 'wathqny/schema'
 
 export { collections }

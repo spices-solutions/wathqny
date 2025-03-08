@@ -1,1 +1,0 @@
-/// <reference path="../../apps/wathqny/node_modules/.astro/" />

@@ -1,19 +1,19 @@
 ---
-import config from "wathqny:config";
-import { PrefetchNative } from "astro-toolkit/perf";
-import { BaseHead } from "astro-toolkit/seo";
+import config from 'wathqny:config'
+import { PrefetchNative } from 'astro-toolkit/perf'
+import { BaseHead } from 'astro-toolkit/seo'
 
-import type { LayoutInterface } from "./types/components";
+import type { LayoutInterface } from './types/components'
 
 export interface Props extends LayoutInterface {}
 
-const { title, keywords, description, OGImage } = Astro.props as Props;
+const { title, keywords, description, OGImage } = Astro.props as Props
 
-const METATITLE = title ? `${title} - ${config?.siteName}` : config.siteName;
-const METAIMAGE = OGImage?.src ?? config?.OGImage?.src;
-const METAIMAGEALT = OGImage?.alt ?? config?.OGImage?.alt;
-const METADESCRIPTION = description ?? config?.description;
-const METAKEYWORDS = keywords ?? [...(config?.keywords || [])];
+const METATITLE = title ? `${title} - ${config?.siteName}` : config.siteName
+const METAIMAGE = OGImage?.src ?? config?.OGImage?.src
+const METAIMAGEALT = OGImage?.alt ?? config?.OGImage?.alt
+const METADESCRIPTION = description ?? config?.description
+const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
 ---
 
 <BaseHead

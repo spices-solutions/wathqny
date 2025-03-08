@@ -17,7 +17,7 @@ const METAIMAGE =
   typeof OGImage?.src === 'object'
     ? (OGImage?.src as { src: string }).src
     : OGImage?.src
-const METAIMAGEALT = OGImage?.alt
+const METAIMAGEALT = OGImage?.alt ?? 'Where is your alt text?'
 const METADESCRIPTION = description
 const METAKEYWORDS = keywords
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)

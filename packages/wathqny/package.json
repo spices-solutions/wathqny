@@ -1,8 +1,8 @@
 {
-  "name": "wtqdocs",
+  "name": "wathqny",
   "type": "module",
   "version": "0.2.10",
-  "description": "My awesome Astro theme created using `astro-theme-provider`!",
+  "description": "wathqny",
   "license": "MIT",
   "homepage": "http://wathqny.pages.dev",
   "publishConfig": {
@@ -15,38 +15,16 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": [
-    "astro",
-    "withastro",
-    "astro-integration"
-  ],
+  "keywords": ["astro", "withastro", "astro-integration"],
   "exports": {
     ".": {
       "import": "./index.ts"
     },
-    "./plugin": "./integration.ts",
-    "./layout/home": "./pages/home.astro",
-    "./page/injected.css": "./pages/assets/injected-styles.css.ts",
-    "./page/search.json": "./pages/search.json.js",
-    "./page/rss.xml": "./pages/rss.xml.js",
-    "./page/robots.txt": "./pages/robots.txt.ts",
-    "./page/docs": "./pages/docs.astro",
-    "./page/docs/categories": "./pages/docs/[...categories].astro",
-    "./page/docs/documents": "./pages/docs/[...documents].astro",
-    "./page/blog": "./pages/blog.astro",
-    "./page/blog/pages": "./pages/blog/[...page].astro",
-    "./page/blog/posts": "./pages/blog/[...posts].astro",
-    "./page/404": "./pages/404.astro",
     "./schema": "./schema.ts",
     "./blog": "./blog.ts",
     "./styles": "./styles/wathqny.scss",
-    "./styles/home": "./styles/pages/_home.scss",
-    "./styles/blog": "./styles/pages/_blog.scss",
-    "./styles/categories": "./styles/pages/_categories.scss",
-    "./styles/block": "./styles/pages/_code.scss",
     "./actions": "./actions.ts"
   },
-  "module": "./index.ts",
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",
     "@astrojs/rss": "^4.0.11",

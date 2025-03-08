@@ -11,24 +11,15 @@ const filteredDocs = docs.filter(
   },
 )
 
-filteredDocs.sort(
-  (a: { data: { position: number } }, b: { data: { position: number } }) =>
-    a.data.position > b.data.position ? 1 : -1,
+filteredDocs.sort((a, b) =>
+  (a.data.position ?? 0) > (b.data.position ?? 0) ? 1 : -1,
 )
 ---
 
 <div class="wtq-card-container-category">
   {
     filteredDocs.map(
-      (doc: {
-        data: {
-          category: string
-          href: string
-          title: string
-          description: string
-          link: string
-        }
-      }) => {
+      (doc) => {
         return (
           <a href={`/docs/${doc.data.link}`}   class="wtq-card wtq-shadow">
             <h2 class="wtq-card-title">{doc.data.title}</h2>
