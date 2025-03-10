@@ -19,9 +19,9 @@ type Props = MarkdownLayoutProps<{
 
 const { frontmatter } = Astro.props
 
-const tag = frontmatter.title ? 'h1' : 'h2'
+const tag = frontmatter?.title ? 'h1' : 'h2'
 const className =
-  frontmatter.title && frontmatter.subtitle ? 'wtq-title' : 'wtq-subtitle'
+  frontmatter?.title && frontmatter?.subtitle ? 'wtq-title' : 'wtq-subtitle'
 ---
 
 <BaseLayout>
@@ -31,7 +31,7 @@ const className =
       <div class="wtq-hero wtq-flex-center">
         
       {
-        frontmatter.logo && (
+        frontmatter?.logo && (
           <Image
             loading="eager"
             alt={config.OGImage.alt}
@@ -42,13 +42,13 @@ const className =
         )
       }
 
-      {frontmatter.title && <Dynamic tag={tag} class={className}>{frontmatter.title}</Dynamic>}
+      {frontmatter?.title && <Dynamic tag={tag} class={className}>{frontmatter?.title}</Dynamic>}
 
-      {frontmatter.subtitle && <Dynamic tag={tag} class={className}>{frontmatter.subtitle}</Dynamic>}
+      {frontmatter?.subtitle && <Dynamic tag={tag} class={className}>{frontmatter?.subtitle}</Dynamic>}
 
       <div class="wtq-get-started">
         {
-          frontmatter.buttons.map((button) => {
+          frontmatter?.buttons.map((button) => {
             return (
               <a
                 
