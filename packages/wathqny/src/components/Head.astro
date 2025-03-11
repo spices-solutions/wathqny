@@ -9,7 +9,7 @@ export interface Props extends LayoutInterface {}
 
 const { title, keywords, description, OGImage } = Astro.props as Props
 
-const METATITLE = title ? `${title} - ${config?.siteName}` : config.siteName
+const METATITLE = title ? `${title} - ${config?.siteName}` : config?.siteName
 const METAIMAGE = OGImage?.src ?? config?.OGImage?.src
 const METAIMAGEALT = OGImage?.alt ?? config?.OGImage?.alt
 const METADESCRIPTION = description ?? config?.description
@@ -52,4 +52,5 @@ const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
   </script>
   <meta name="generator" content="wathqny 1.0 Astro powered" />
   <slot />
+  <PrefetchNative />
 </BaseHead>

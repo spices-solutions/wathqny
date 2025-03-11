@@ -13,10 +13,7 @@ export const {
 } = Astro.props as Props
 
 const METATITLE = title
-const METAIMAGE =
-  typeof OGImage?.src === 'object'
-    ? (OGImage?.src as { src: string }).src
-    : OGImage?.src
+const METAIMAGE = typeof OGImage?.src === 'object' ? (OGImage?.src as { src: string }).src: OGImage?.src
 const METAIMAGEALT = OGImage?.alt ?? 'Where is your alt text?'
 const METADESCRIPTION = description
 const METAKEYWORDS = keywords
